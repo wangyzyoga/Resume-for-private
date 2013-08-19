@@ -1,78 +1,137 @@
 ---
 layout: post
-title: Open Source (Almost) Everything
+title: 广州10日旅游行程
 ---
 
 {{ page.title }}
 ================
 
-<p class="meta">22 Nov 2011 - San Francisco</p>
+<p class="meta">2013 - 8 - 19 - 王要佳 & 赵美娟</p>
 
-When Chris and I first started working on GitHub in late 2007, we split the work into two parts. Chris worked on the Rails app and I worked on Grit, the first ever Git bindings for Ruby. After six months of development, Grit had become complete enough to power GitHub during our public launch of the site and we were faced with an interesting question:
+###第一天（适应环境+休息）
+-----------------------------------------------------------
 
-Should we open source Grit or keep it proprietary?
+* 10:30到达白云机场接机，前往体育西路吃饭（肠粉+煎包）、休息
 
-Keeping it private would provide a higher hurdle for competing Ruby-based Git hosting sites, giving us an advantage. Open sourcing it would mean thousands of people worldwide could use it to build interesting Git tools, creating an even more vibrant Git ecosystem.
+* 14:30去猎德村住宿地方，在附近买日用品
 
-After a small amount of debate we decided to open source Grit. I don't recall the specifics of the conversation but that decision nearly four years ago has led to what I think is one of our most important core values: open source (almost) everything.
+* 18:30吃晚饭，到临江大道散步，回家休息
 
-Why is it awesome to open source (almost) everything?
------------------------------------------------------
+###第二天（沙面+陈家祠）
+-----------------------------------------------------------
 
-If you do it right, open sourcing code is **great advertising** for you and your company. At GitHub we like to talk publicly about libraries and systems we've written that are still closed but destined to become open source. This technique has several advantages. It helps determine what to open source and how much care we should put into a launch. We recently open sourced Hubot, our chat bot, to widespread delight. Within two days it had 500 watchers on GitHub and 409 upvotes on Hacker News. This translates into goodwill for GitHub and more superfans than ever before.
+* 9:00坐地铁5号线到杨箕站，转1号线到黄沙站D出口（共约40分钟），到达**沙面**，逛2个小时
 
-If your code is popular enough to attract outside contributions, you will have created a **force multiplier** that helps you get more work done faster and cheaper. More users means more use cases being explored which means more robust code. Our very own [resque](https://github.com/defunkt/resque) has been improved by 115 different individuals outside the company, with hundreds more providing 3rd-party plugins that extend resque's functionality. Every bug fix and feature that you merge is time saved and customer frustration avoided.
+* 12:00吃午饭（沙面吃的较贵，可以提前考察下吃放地方）、休息
 
-Smart people like to hang out with other smart people. Smart developers like to hang out with smart code. When you open source useful code, you **attract talent**. Every time a talented developer cracks open the code to one of your projects, you win. I've had many great conversations at tech conferences about my open source code. Some of these encounters have led to ideas that directly resulted in better solutions to problems I was having with my projects. In an industry with such a huge range of creativity and productivity between developers, the right eyeballs on your code can make a big difference.
+* 14:00坐地铁1号线或者公交125、114路等线路（两站，约10分钟），到达**陈家祠**，逛2个小时
 
-If you're hiring, **the best technical interview possible** is the one you don't have to do because the candidate is already kicking ass on one of your open source projects. Once technical excellence has been established in this way, all that remains is to verify cultural fit and convince that person to come work for you. If they're passionate about the open source code they've been writing, and you're the kind of company that cares about well-crafted code (which clearly you are), that should be simple! We hired [Vicent Martí](https://github.com/tanoku) after we saw him doing stellar work on [libgit2](https://github.com/libgit2/libgit2), a project we're spearheading at GitHub to extract core Git functionality into a standalone C library. No technical interview was necessary, Vicent had already proven his skills via open source.
+* 17:00坐地铁1号线到杨箕站，转5号线到猎德站C出口（共约40分钟），吃晚饭，回家休息
 
-Once you've hired all those great people through their contributions, dedication to open source code is an amazingly effective way to **retain that talent**. Let's face it, great developers can take their pick of jobs right now. These same developers know the value of coding in the open and will want to build up a portfolio of projects they can show off to their friends and potential future employers. That's right, a paradox! In order to keep a killer developer happy, you have to help them become more attractive to other employers. But that's ok, because that's exactly the kind of developer you want to have working for you. So relax and let them work on open source or they'll go somewhere else where they can.
+###第三天（博物馆+广州塔）
+-----------------------------------------------------------
 
-When I start a new project, I assume it will eventually be open sourced (even if it's unlikely). This mindset leads to **effortless modularization**. If you think about how other people outside your company might use your code, you become much less likely to bake in proprietary configuration details or tightly coupled interfaces. This, in turn, leads to cleaner, more maintainable code. Even internal code should pretend to be open source code. 
+* 上午休息，14:00到达**广东省博物馆**（无需门票，带身份证，周一不开放，周二至周五开放）
 
-Have you ever written an amazing library or tool at one job and then left to join another company only to rewrite that code or remain miserable in its absence? I have, and it sucks. By getting code out in the public we can drastically **reduce duplication of effort**. Less duplication means more work towards things that matter.
+* 18:00吃晚饭，在**花城广场**散步
 
-Lastly, **it's the right thing to do**. It's almost impossible to do anything these days without directly or indirectly executing huge amounts of open source code. If you use the internet, you're using open source. That code represents millions of man-hours of time that has been spent and then given away so that everyone may benefit. We all enjoy the benefits of open source software, and I believe we are all morally obligated to give back to that community. If software is an ocean, then open source is the rising tide that raises all ships.
+* 20:00到**广州塔**（每日9:00至22:00，考虑团购门票），登小蛮腰观光广州夜景，回家休息
 
-Ok, then what shouldn't I open source?
---------------------------------------
+### 第四天（圣心大教堂+待定）
+-----------------------------------------------------------
+* 9:00去**圣心大教堂**（每周日8:00-17:30）；搭乘地铁2号线至海珠广场站B出口下车，向西步行10分钟可到。或乘4路、8路、61路等在一德路下车（不能穿拖鞋、背心、超短裤群等）
 
-That's easy. Don't open source anything that represents core business value.
+* 12:00吃午饭、休息（去海珠广场附近吃饭）
 
-Here are some examples of what we don't open source and why:
+* 下午待定
 
-* Core GitHub Rails app (easier to sell when closed)
-* The Jobs Sinatra app (specially crafted integration with github.com)
+### 第五天（中山纪念堂+越秀公园）
+-----------------------------------------------------------
 
-Here are some examples of things we do open source and why:
+* 9:00去**中山纪念堂**，门票：10元，开放时间：6：00-24：00，搭地铁5号线至杨箕转1号线至公元前转2号线至纪念堂站下车
 
-* Grit (general purpose Git bindings, useful for building many tools)
-* Ernie (general purpose BERT-RPC server)
-* Resque (general purpose job processing)
-* Jekyll (general purpose static site generator)
-* Gollum (general purpose wiki app)
-* Hubot (general purpose chat bot)
-* Charlock_Holmes (general purpose character encoding detection)
-* Albino (general purpose syntax highlighting)
-* Linguist (general purpose filetype detection)
+* 12:00吃午饭、休息
 
-Notice that everything we keep closed has specific business value that could be compromised by giving it away to our competitors. Everything we open is a general purpose tool that can be used by all kinds of people and companies to build all kinds of things.
+* 14:00走去**越秀公园**逛2-3个小时
 
-What is the One True License?
------------------------------
+* 17:00去天河城附近吃晚饭，饭后散步回家
 
-I prefer the MIT license and almost everything we open source at GitHub carries this license. I love this license for several reasons:
 
-* It's short. Anyone can read this license and understand exactly what it means without wasting a bunch of money consulting high-octane lawyers.
+###第六天（休息一天）
+-----------------------------------------------------------
 
-* Enough protection is offered to be relatively sure you won't sue me if something goes wrong when you use my code.
+###第七天（华南植物园+珠江）
+-----------------------------------------------------------
 
-* Everyone understands the legal implications of the MIT license. Weird licenses like the WTFPL and the Beer license pretend to be the "ultimate in free licenses" but utterly fail at this goal. These fringe licenses are too vague and unenforceable to be acceptable for use in some companies. On the other side, the GPL is too restrictive and dogmatic to be usable in many cases. I want everyone to benefit from my code. Everyone. That's what Open should mean, and that's what Free should mean.
+* 9:00去**华南植物园**，门票：20元，参观温室需加付30元。开放时间：每天7:30-17:30。地铁5号线至珠江新城转3号线至天河客运站转广增9/15/10线至植物园站（或从天河客运站打的去）
 
-Rad, how do I get started?
---------------------------
+* 12:00吃午饭、休息
 
-Easy, just flip that switch on your GitHub repository from private to public and tell the world about your software via your blog, Twitter, Hacker News, and over beers at your local pub. Then sit back, relax, and enjoy being part of something big.
+* 14:00继续逛植物园
 
-[Discuss this post on Hacker News](http://news.ycombinator.com/item?id=3267432)
+* 17:00吃晚饭，饭后**夜游珠江**，赏广州夜景
+
+###第八天（黄埔军校+南越王墓博物馆）
+-----------------------------------------------------------
+
+* 8:30去**黄埔军校**（约1小时），地铁5号线至鱼珠站D出口，步行至鱼珠码头站（约990米），买票乘坐客轮鱼珠码头—新洲码头线在黄埔考军校码头站下车，步行至黄埔军校旧址（约170米）。门票：免费。开放时间：9:00-17:00（16:30停止进馆），周一闭馆
+
+* 12:00左右吃饭、休息
+
+* 14:00去**南越王墓博物馆**，乘坐轮渡回鱼珠站，乘地铁5号线至广州火车站转2号线至越秀公园站E出口前行300米即到。门票：12元，儿童5元，70岁以上老人免费。开放时间：9:00-17:30（16:45分停止售票进场）--可删减项目
+
+* 17:00回天河城吃饭，休息
+
+### 第九天（白云山）
+-----------------------------------------------------------
+
+* 9:00地铁5号线至小北站B出口，步行至小北站76a至广州体育馆站下车步行至**白云山**（或从小北站直接打的至白云山正门）门票：成人5元，开放时间：6:30-24:00，下山可坐缆车（票价20-30元之间）
+
+* 12:00吃饭回家，买东西，整理衣物
+
+###第十天（送去机场）
+-----------------------------------------------------------
+
+* 早8:00出门，9:00到达机场
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
