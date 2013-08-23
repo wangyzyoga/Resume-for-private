@@ -47,10 +47,5 @@ scim设置－>gtk－>嵌入式候选词标 勾去掉
 **坑爹啊，也不知道哪一步出问题，重启后又回复到原来输入法，怎么也切不回去，无解！**
 
 ######原文链接
-http://www.linuxidc.com/Linux/2012-06/62944.htm
-http://www.cnblogs.com/QLeelulu/archive/2011/12/30/2308084.html
-
-
-
-
-
+<http://www.linuxidc.com/Linux/2012-06/62944.htm>
+<http://www.cnblogs.com/QLeelulu/archive/2011/12/30/2308084.html>
