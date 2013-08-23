@@ -1,4 +1,5 @@
 ---
+category: blog
 layout: post
 title: 从零学习Ruby on rails
 ---
