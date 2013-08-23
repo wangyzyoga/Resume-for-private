@@ -16,7 +16,7 @@ html, body {
 }
 
 body {
-  background-color: white;
+  background-color: aliceblue;
   font: 13.34px helvetica, arial, clean, sans-serif;
   *font-size: small;
   text-align: center;
@@ -156,7 +156,7 @@ ul.posts {
 
   #post pre {
     border: 1px solid #ddd;
-    background-color: #eef;
+    background-color: 9999FF;
     padding: 0 .4em;
   }
 
@@ -167,7 +167,7 @@ ul.posts {
 
   #post code {
     border: 1px solid #ddd;
-    background-color: #eef;
+    background-color: 9999FF;
     font-size: 85%;
     padding: 0 .2em;
   }
