@@ -43,7 +43,3 @@ Ubuntu系统
 
 ####讨论交流
 在使用中有任何问题，可以用以下联系方式跟我讨论交流
-
-* Email：wangyzyoga@gmail.com
-* QQ: 361136342
-* weibo: [@wangyzyoga](http://weibo.com/wangyzyoga)
