@@ -28,8 +28,15 @@ var WRInitTime=(new Date()).getTime();
     <a href="/">Wangyzyoga-Blog</a>
     <a class="extra" href="/">home</a>
   </div>
-  
+
   {{ content }}
+
+              <!--<h2>Categories</h2>
+                <ul>
+                  {% for category in site.categories %}
+                  <li class="cat-item cat-item-{{category | last | size }}"><a href="/category/{{category | first}}/{{category | first}}.html" title="View all posts filed under {{category | first}}">{{category | first}} ({{category | last | size }})</a></li>
+                  {% endfor %}
+                </ul>-->
 
 <!--<a href="{{ post.url }}#disqus_thread"></a>-->
   

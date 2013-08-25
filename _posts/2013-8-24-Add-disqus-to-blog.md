@@ -1,4 +1,5 @@
 ---
+category: Blog
 layout: post
 title: 给Blog增加评论功能 Disqus
 ---
