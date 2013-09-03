@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ruby四种类型变量学习
+title: Ruby从入门到精通 学习记录一
 ---
 
 {{ page.title }}
