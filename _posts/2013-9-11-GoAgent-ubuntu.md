@@ -22,7 +22,7 @@ title: Ubuntu12.04中GoAgent使用教程--轻轻松松翻墙咯
       wget http://python.org/ftp/python/2.7.5/Python-2.7.5.tar.bz2 && tar jxvf  
       Python-2.7.5.tar.bz2 && cd Python-2.7.5 && ./configure  --with-zlib &&  
       make && sudo make install 
-
+<br>
 ##### 安装gevent
 
 使用以下命令进行安装

@@ -26,33 +26,33 @@ title: 通过Git将应用程序推送到Heroku 失败解决办法
 
 * 使用'ssh -v git@heroku.com'命令，找出sshconfig文件具体路径
 
-    debug1: Reading configuration data /etc/ssh/ssh_config
+      debug1: Reading configuration data /etc/ssh/ssh_config
 
 * 使用'sudo gedit /etc/ssh/ssh_config'打开文件，增加如下内容
 
-    Host heroku.com
-    User yourusername
-    Hostname proxy.heroku.com
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/id_rsa
-    port 22
+      Host heroku.com
+      User yourusername
+      Hostname proxy.heroku.com
+      PreferredAuthentications publickey
+      IdentityFile ~/.ssh/id_rsa
+      port 22
 
-说明：不设置这步，就不会挖出很多IP
+说明：不设置这步，就不会挖出很多IP，你也就找不到可用节点。
 
-* 再使用'ssh -v git@heroku.com'命令，找出可用节点IP，我这里找到IP是107.21.99.190
+* 再使用'ssh -v git@heroku.com'命令，找出可用节点，我这里找到IP是107.21.99.190
 
 * 再使用'sudo gedit /etc/ssh/ssh_config'打开文件，修改配置
 
-    Host heroku.com
-    User yourusername
-    Hostname 107.21.99.190 
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/id_rsa
-    port 22
+      Host heroku.com
+      User yourusername
+      Hostname 107.21.99.190 
+      PreferredAuthentications publickey
+      IdentityFile ~/.ssh/id_rsa
+      port 22
 
 说明：用具体IP代替proxy.heroku.com是最关键一步。
 
-完成以上处理，就可以通过Git把应用程序推送到Heroku～
+完成以上处理，就可以通过Git把应用程序推送到Heroku～_～
 
 
 
