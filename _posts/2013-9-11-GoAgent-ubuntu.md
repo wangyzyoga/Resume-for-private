@@ -1,13 +1,13 @@
 ---
 category: Blog
 layout: post
-title: Ubuntu 12.04 中GoAgent使用教程--轻轻松松翻墙咯
+title: Ubuntu12.04中GoAgent使用教程--轻轻松松翻墙咯
 ---
 
 {{ page.title }}
 ================
 
-<p class="meta">2013-9-12 王要佳</p>
+<p class="meta">2013-9-11 王要佳</p>
 
 ### Ubuntu下的配置 
 
