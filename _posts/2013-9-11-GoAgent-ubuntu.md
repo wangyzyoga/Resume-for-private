@@ -80,7 +80,7 @@ title: Ubuntu12.04中GoAgent使用教程--轻轻松松翻墙咯
 
 即可使用代理，也可以赋予proxy.py可执行权限之后直接双击proxy.py。（在proxy.py上面右击，属性的权限中勾选允许以程序执行文件）
 
-直接运行goagent-gtk.py可以使用gtk托盘方式运行goagent。 运行addto-startup.py即可加入开机启动。也可以自行添加一个启动项，命令为
+直接运行goagent-gtk.py可以使用gtk托盘方式运行goagent。运行addto-startup.py即可加入开机启动。也可以自行添加一个启动项，命令为
 
     python /path/to/goagent/local/goagent-gtk.py
 
