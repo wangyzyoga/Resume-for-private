@@ -1,7 +1,7 @@
 ---
 category: Blog
 layout: post
-title: Rails4 建立博客遇到问题一
+title: Rails4.0 建立博客遇到问题一
 ---
 
 {{ page.title }}
