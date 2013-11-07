@@ -7,7 +7,7 @@ title: 使用OmniAuth调用Github时provider参数设置
 {{ page.title }}
 ================
 
-<p class="meta">2013-9-11 王要佳</p>
+<p class="meta">2013-11-07 王要佳</p>
 
 跟着[Railscasts](http://railscasts-china.com/episodes/omniauth-1)学习OmniAuth调用Github时，遇到如下代码：
 

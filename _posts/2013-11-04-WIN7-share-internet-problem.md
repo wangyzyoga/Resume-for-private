@@ -7,7 +7,7 @@ title: WIN7中设置Internet连接共享保存时出现(null)错误
 {{ page.title }}
 ================
 
-<p class="meta">2013-9-11 王要佳</p>
+<p class="meta">2013-11-04 王要佳</p>
 
 在WIN7中设置Internet连接共享，点击确定出现"Internet连接共享访问被启用时，出现了一个错误(null)"。
 
