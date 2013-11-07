@@ -7,7 +7,7 @@ title: 增加Jekyll博客分页功能
 {{ page.title }}
 ================
 
-<p class="meta">2013-9-11 王要佳</p>
+<p class="meta">2013-11-08 王要佳</p>
 
 Jekyll博客分页功能添加步骤如下:
 
@@ -41,7 +41,7 @@ Jekyll博客分页功能添加步骤如下:
         endif
       endfor
       
-详细实现代码，可参见<https://github.com/wangyzyoga/wangyzyoga-blog/blob/gh-pages/_posts/2013-11-07-Jekyll-blog-pagination.md>。
+详细实现代码，可参见<https://github.com/wangyzyoga/wangyzyoga-blog/blob/gh-pages/index.html>
 
 
     
