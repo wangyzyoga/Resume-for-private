@@ -7,7 +7,7 @@ auto:        true
 server_port: 4000
 permalink:   date 
 
-paginate: 18
+paginate: 16
 
 Jan: 31
 Feb: 28

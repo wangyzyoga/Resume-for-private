@@ -15,7 +15,6 @@ title: WANGYAOJIA Blog
 
 <div id="pagination">
   <div class="pagenavi">
-    <span class="page_number">The {{paginator.page}} Page/Total {{paginator.total_pages}} Pages</span>
     <a href="/"><< First</a>
     {% if paginator.previous_page %}
       {% if paginator.previous_page == 1 %}
@@ -23,11 +22,9 @@ title: WANGYAOJIA Blog
       {% else %}
         <a href="/page{{paginator.previous_page}}">< Prev</a>
       {% endif %}
-      {% else %}
-        <span>1</span>
     {% endif %}
 
-    {% for count in (2..paginator.total_pages) limit:8 %}
+    {% for count in (1..paginator.total_pages) limit:8 %}
       {% if count == paginator.page %}
         <span class="current-page">{{count}}</span>
       {% else %}
@@ -37,8 +34,6 @@ title: WANGYAOJIA Blog
 
     {% if paginator.next_page %}
       <a href="/page{{paginator.next_page}}">Next ></a>
-    {% else %}
-      <span>Next ></span>
     {% endif %}
     <a href="/page{{paginator.total_pages}}">Last >></a>
   </div>
