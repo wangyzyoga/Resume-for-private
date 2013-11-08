@@ -15,6 +15,18 @@
    <!--<script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>-->
    
+   <style type="text/css">
+   div#footer {background-color:#99bbbb;text-align:right;}
+   </style>
+   
+   <script type="text/javascript">
+   function pageScroll() {  
+   window.scrollBy(0,-100000);  
+   scrolldelay = setTimeout('pageScroll()',100);  
+   if(document.documentElement.scrollTop==0) clearTimeout(scrolldelay);  
+   } 
+   </script>
+ 
 </head>
 <body background="/i/eg_bg_06.gif">
 
@@ -41,7 +53,7 @@ var WRInitTime=(new Date()).getTime();
                 </ul>-->
 
 <!--<a href="{{ post.url }}#disqus_thread"></a>-->
-  
+
 <a class="go_top" href="#" style="display: inline;"><i class="icon icons_go_top"></i></a>  
 
   <div class="footer">
@@ -100,6 +112,9 @@ pageTracker._trackPageview();
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
     </script>-->
+<div id="footer">
+<input type="button" onclick="pageScroll()" value="返回顶部" />
+</div>
 
 </body>
 </html>
