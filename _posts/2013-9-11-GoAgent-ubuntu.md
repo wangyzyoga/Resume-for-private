@@ -1,5 +1,5 @@
 ---
-category: Blog
+category: Tools
 layout: post
 title: Ubuntu12.04中GoAgent使用教程--轻轻松松翻墙咯
 ---

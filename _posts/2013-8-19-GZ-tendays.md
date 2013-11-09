@@ -1,4 +1,5 @@
 ---
+category: gztour
 layout: post
 title: 广州10日旅游行程安排
 ---

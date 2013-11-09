@@ -1,5 +1,5 @@
 ---
-category: Blog
+category: Rubyonrails
 layout: post
 title: HTML 初步学习 
 ---

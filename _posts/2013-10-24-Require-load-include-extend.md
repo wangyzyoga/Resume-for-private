@@ -1,5 +1,5 @@
 ---
-category: Blog
+category: Rubyonrails
 layout: post
 title: Ruby中require/load/include/extend的区别
 ---

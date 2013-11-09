@@ -1,5 +1,5 @@
 ---
-category: Blog
+category: Tools
 layout: post
 title: Github 设置个人头像 
 ---

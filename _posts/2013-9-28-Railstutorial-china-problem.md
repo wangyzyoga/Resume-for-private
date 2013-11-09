@@ -1,5 +1,5 @@
 ---
-category: Blog
+category: Rubyonrails
 layout: post
 title: Ruby On Rails 教程中遇到几个问题
 ---

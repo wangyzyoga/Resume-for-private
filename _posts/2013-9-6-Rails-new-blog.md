@@ -1,5 +1,5 @@
 ---
-category: Blog
+category: Rubyonrails
 layout: post
 title: Rails4.0 建立博客遇到问题一
 ---

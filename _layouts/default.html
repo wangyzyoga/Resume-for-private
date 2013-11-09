@@ -16,7 +16,7 @@
    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>-->
    
    <style type="text/css">
-   div#footer {background-color:#99bbbb;text-align:right;}
+   div#footer {text-align:right;}
    </style>
    
    <script type="text/javascript">
@@ -26,6 +26,10 @@
    if(document.documentElement.scrollTop==0) clearTimeout(scrolldelay);  
    } 
    </script>
+
+   <link rel="stylesheet" href="/css/global.css" type="text/css" media="all" />
+   <script type="text/javascript" src="/javascripts/calendar.js"></script> 
+   <script type="text/javascript" src="/javascripts/global.js"></script>
  
 </head>
 <body background="/i/eg_bg_06.gif">
@@ -43,16 +47,79 @@ var WRInitTime=(new Date()).getTime();
     <a class="extra" href="/">home</a>
   </div>
 
-  {{ content }}
+<div id="background_container">
+      <div id="content_container">
+        <div id="container">
+          <div id="archive_posts" style="display:none">
+            <ul>
+              {% for post in site.posts limit:5 %}
+                <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
 
-              <!--<h2>Categories</h2>
+        {{ content }}  
+
+        </div>
+        <div class="sidebar">
+          <ul>
+            <li>
+              <h2>Google Search</h2>
+              <form method="get" action="http://www.google.com/search" target="google_window">
+                <label class="hidden" for="s">Search...</label>
+                <div> 
+                  <input type="text" value="Search..." name="q" id="s" onfocus="if (this.value == 'Search...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search...';}">
+                  <input type="submit" name="btnG" id="searchsubmit" value="">
+                </div>
+                <input type="hidden" name="ie" value="UTF-8″ />
+                <input type="hidden" name="oe" value="UTF-8″ />
+                <input type="hidden" name="hl" value="zh-CN" />
+                <input type="hidden" name="domains" value="http://www.google.com" />
+                <input type="hidden" name="sitesearch" value="http://www.google.com" />
+              </form>
+              <h2>Calendar</h2>
+                <script language="javascript" type="text/javascript">
+                  calendar();
+                </script>
+              <h2>Categories</h2>
                 <ul>
                   {% for category in site.categories %}
                   <li class="cat-item cat-item-{{category | last | size }}"><a href="/category/{{category | first}}/{{category | first}}.html" title="View all posts filed under {{category | first}}">{{category | first}} ({{category | last | size }})</a></li>
                   {% endfor %}
-                </ul>-->
+                </ul>
+              <h2>Archives</h2>
+                <ul>
+                  {% for post in site.posts %}
+                    {% capture the_year %}
+                      {{ post.date|date:"%Y" }}
+                    {% endcapture %}
+                    {% capture previous_year %}
+                      {{ previous_post.date|date:"%Y" }}
+                    {% endcapture %}
+  
+                    {% if the_year != previous_year %}
+                      {% assign year_changed = true %}
+                    {% else %}
+                      {% assign year_changed = false %}
+                    {% endif %}
+                    {% if year_changed %}
+                      <li><a href="/archive/{{the_year}}/{{the_year}}.html">{{ the_year }}</a></li>
+                    {% endif %}
+                    {% assign previous_post = post %}
+                  {% endfor %}
+                </ul>
+              <div id="recentcomments" class="dsq-widget">
+                <h2 class="dsq-widget-title">Recent Comments</h2>
+                <script type="text/javascript" src="http://wangyaojiablog.disqus.com/recent_comments_widget.js?num_items=2&hide_avatars=0&avatar_size=32&excerpt_length=200"></script>
+              </div>
+            </li>        
+          </ul>
+        </div>  
+        <div class="clear_float"></div>
+      </div>    
+    </div>
 
-<!--<a href="{{ post.url }}#disqus_thread"></a>-->
+<script type="text/javascript" defer>if(VeryCD.gotop) VeryCD.gotop.ini();</script>
 
 <a class="go_top" href="#" style="display: inline;"><i class="icon icons_go_top"></i></a>  
 

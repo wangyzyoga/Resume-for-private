@@ -1,5 +1,5 @@
 ---
-category: Blog
+category: Rubyonrails
 layout: post
 title: Ruby从入门到精通 学习记录二 
 ---

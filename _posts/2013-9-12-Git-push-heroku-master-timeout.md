@@ -1,5 +1,5 @@
 ---
-category: Blog
+category: Tools
 layout: post
 title: 通过Git将应用程序推送到Heroku 失败解决办法
 ---

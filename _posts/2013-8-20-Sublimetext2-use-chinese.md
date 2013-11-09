@@ -1,4 +1,5 @@
 ---
+category: Tools
 layout: post
 title: SublimeText2不能输入汉字解决办法
 ---
