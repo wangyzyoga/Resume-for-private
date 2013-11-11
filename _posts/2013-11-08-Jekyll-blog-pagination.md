@@ -1,5 +1,5 @@
 ---
-category: Blog
+category: Rubyonrails
 layout: post
 title: 增加Jekyll博客分页功能
 ---

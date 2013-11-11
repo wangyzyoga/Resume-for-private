@@ -1,5 +1,5 @@
 ---
-category: Blog
+category: Tools
 layout: post
 title: Ubuntu系统中查找文件和字符命令介绍 
 ---

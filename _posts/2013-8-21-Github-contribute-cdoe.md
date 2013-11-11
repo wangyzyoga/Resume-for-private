@@ -1,5 +1,5 @@
 ---
-layout: post
+category: Tools
 title: Github深入应用——贡献代码
 ---
 

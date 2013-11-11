@@ -1,5 +1,5 @@
 ---
-category: Blog
+category: Tools
 layout: post
 title: WIN7中设置Internet连接共享保存时出现(null)错误
 ---

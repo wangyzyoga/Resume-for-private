@@ -1,5 +1,5 @@
 ---
-category: Blog
+category: Tools
 layout: post
 title: Ubuntu12.04 中配置VPN
 ---

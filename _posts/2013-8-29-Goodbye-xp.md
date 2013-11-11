@@ -1,5 +1,5 @@
 ---
-category: Blog
+category: Tools
 layout: post
 title: 万恶的 XP 系统 
 ---

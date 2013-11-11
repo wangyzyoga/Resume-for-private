@@ -1,5 +1,5 @@
 ---
-category: Blog
+category: Rubyonrails
 layout: post
 title: 使用OmniAuth调用Github时provider参数设置
 ---

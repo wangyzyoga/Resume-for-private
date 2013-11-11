@@ -1,7 +1,8 @@
 ---
-category: Blog
+category: Rubyonrails
 layout: post
 title: Ruby On Rails 中文教程问题2
+time: 2013-10-14 12:30:00 -04:00
 ---
 
 {{ page.title }}
