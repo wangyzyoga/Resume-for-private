@@ -1,7 +1,7 @@
 ---
 category: Blog
 layout: post
-title: Ruby从入门到精通 学习记录二 
+title: Ruby从入门到精通 学习记录二(require/CSV) 
 ---
 
 {{ page.title }}
@@ -17,7 +17,7 @@ title: Ruby从入门到精通 学习记录二
 2. 使用load加载完整文件名，即load "test.rb"
 3. 使用require_relative替代require，即require_relative "test"
 4. 使用解析后的文件路径，即require File.expand_path("./test", \_\_FILE\_\_)  
-   这里File.expand_path是将制定的参数路径解析成绝对路径，\_\_FILE\_\_是当前目录，./test是希望加载的文件
+   这里File.expand_path是将指定的参数路径解析成绝对路径，./test是希望加载的文件,\_\_FILE\_\_是当前文件绝对路径。
 5. 动态修改加载路径，即$LOAD_PATH.unshift(File.dirname(\_\_FILE\_\_))unless $LOAD_PATH.include?(File.dirname(\_\_FILE\_\_))  
    其中$LOAD_PATH 指的是Ruby读取外部文件的一个环境变量，Ruby会在这个环境变量的路径中读取需要require的文件，如果在环境变量中找不到自己想要的文件，就会报LoadError，还有$LOAD_PATH和$:指的都是同一个环境变量；File.dirname(\_\_FILE\_\_)代表当前路径；而$LOAD_PATH.unshift方法的目的就是将当前目录作用ruby标准的加载路径，即$LOAD_PATH.unshift 就是把上面得出的绝对路径加到现在已经存在所有环境变量之前。    
 <br>

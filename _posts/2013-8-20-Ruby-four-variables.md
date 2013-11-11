@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ruby从入门到精通 学习记录一
+title: Ruby从入门到精通 学习记录一(ruby四种变量)
 ---
 
 {{ page.title }}
