@@ -31,7 +31,7 @@ title: Vim中常用三个插件（nerdtree/ctrlp/ack）
 	  let NERDChristmasTree = 1
 	  let NERDTreeWinPos = "left"
       map <F8> :NERDTree<CR> 
-
+<br />
 ###2、CtrlP 快速搜索文件
 
 * 下载[CtrlP](http://kien.github.io/ctrlp.vim/)
@@ -41,7 +41,7 @@ title: Vim中常用三个插件（nerdtree/ctrlp/ack）
 * 在～/.vimrc中增加如下设置
 
       set runtimepath^=~/.vim/ctrlp.vim
-
+<br />
 ###3、Ack 全项目文件搜索含有关键字的位置
 
 * Ubuntu中使用如下命令进行安装
