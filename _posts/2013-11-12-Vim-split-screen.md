@@ -63,7 +63,7 @@ ViM中的光标键是h, j, k, l，要在各个屏间切换，只需要先按一�
      set mouse=a
      set selection=exclusive
 	 set selectmode=mouse,key
-
+<br />
 ###4、关闭分屏 
 
 关闭其他窗口：Ctrl+W  o
