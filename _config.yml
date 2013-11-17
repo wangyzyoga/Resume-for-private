@@ -21,3 +21,8 @@ Sep: 30
 Oct: 31
 Nov: 30
 Dec: 31
+
+analytics :
+  provider : google 
+  google : 
+      tracking_id : 'UA-45805822-1'
