@@ -4,7 +4,7 @@ layout: post
 title: Vim中常用三个插件（nerdtree/ctrlp/ack）
 ---
 
-###1、The NERDTree 树型结构显示文件
+##1、The NERDTree 树型结构显示文件
 
 * 下载[NERDTree](http://www.vim.org/scripts/script.php?script_id=1658)
 
@@ -29,7 +29,7 @@ title: Vim中常用三个插件（nerdtree/ctrlp/ack）
       map <F8> :NERDTree<CR> 
 {% endhighlight %}
 
-###2、CtrlP 快速搜索文件
+##2、CtrlP 快速搜索文件
 
 * 下载[CtrlP](http://kien.github.io/ctrlp.vim/)
 
@@ -41,7 +41,7 @@ title: Vim中常用三个插件（nerdtree/ctrlp/ack）
       set runtimepath^=~/.vim/ctrlp.vim
 {% endhighlight %}
 
-###3、Ack 全项目文件搜索含有关键字的位置
+##3、Ack 全项目文件搜索含有关键字的位置
 
 * Ubuntu中使用如下命令进行安装
 
