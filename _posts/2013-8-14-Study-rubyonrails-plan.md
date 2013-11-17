@@ -4,11 +4,6 @@ layout: post
 title: 从零学习Ruby on rails
 ---
 
-{{ page.title }}
-================
-
-<p class="meta">2013-8-14 王要佳</p>
-
 ####1 操作系统
 不要用windows搞ror开发，会遇到各种奇怪的问题，而且没有会帮你，因为几乎没有人会用windows开发，操作系统最推荐用Mac或者
 Ubuntu系统

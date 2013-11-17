@@ -4,11 +4,6 @@ layout: post
 title: Vim中常用三个插件（nerdtree/ctrlp/ack）
 ---
 
-{{ page.title }}
-================
-
-<p class="meta">2013-11-13 王要佳</p>
-
 ###1、The NERDTree 树型结构显示文件
 
 * 下载[NERDTree](http://www.vim.org/scripts/script.php?script_id=1658)

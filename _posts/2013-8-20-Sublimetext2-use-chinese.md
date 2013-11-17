@@ -4,11 +4,6 @@ layout: post
 title: SublimeText2不能输入汉字解决办法
 ---
 
-{{ page.title }}
-================
-
-<p class="meta">2013-8-20 王要佳</p>
-
 ####网上都说SublimeText2用着不错，但是我在ubuntu下安装后，发现不能输入中文，着实不方便。今天在网上看到解决办法，拿出来分享下：
 
 

@@ -4,11 +4,6 @@ layout: post
 title: 增加Jekyll博客分页功能
 ---
 
-{{ page.title }}
-================
-
-<p class="meta">2013-11-08 王要佳</p>
-
 Jekyll博客分页功能添加步骤如下:
 
 * _config.xml里面加上

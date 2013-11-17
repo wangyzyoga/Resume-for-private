@@ -1,14 +1,9 @@
 ---
 category: Rubyonrails
 layout: post
-title: Ruby On Rails 中文教程问题2
+title: Ruby On Rails中文教程问题2
 time: 2013-10-14 12:30:00 -04:00
 ---
-
-{{ page.title }}
-================
-
-<p class="meta">2013-10-14 王要佳</p>
 
 [Ruby On Rails教程](http://railstutorial-china.org/)目前看到第7章节，完成部分的代码已经上传[GitHub](https://github.com/wangyzyoga/sample_app)。继续把练习过程中遇到的问题进行整理，希望可以帮助遇到类似问题的人。
 

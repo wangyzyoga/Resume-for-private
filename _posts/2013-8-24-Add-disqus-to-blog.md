@@ -1,13 +1,8 @@
 ---
 category: Rubyonrails
 layout: post
-title: 给Blog增加评论功能 Disqus
+title: 给Blog增加评论功能-Disqus
 ---
-
-{{ page.title }}
-================
-
-<p class="meta">2013-8-24 王要佳</p>
 
 ### Disqus是什么
 

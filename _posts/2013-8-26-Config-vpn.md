@@ -1,13 +1,8 @@
 ---
 category: Tools
 layout: post
-title: Ubuntu12.04 中配置VPN
+title: Ubuntu12.04中配置VPN
 ---
-
-{{ page.title }}
-================
-
-<p class="meta">2013-8-26 王要佳</p>
 
 今天想在Ubuntu上使用VPN，看到网上很多人谈到如何配置，很多都写的相当复杂，看的我一直犯迷糊。最后终于找到一篇简单明了说明，成功指导我完成VPN配置。在此将自己的配置过程记录下来，分享给需要的人。
 

@@ -3,11 +3,6 @@ category: Tools
 title: Github深入应用——贡献代码
 ---
 
-{{ page.title }}
-================
-
-<p class="meta">2013-8-21 王要佳</p>
-
 用了一个多星期的github，只是会git clone别人的项目，然后本地修修改改，最后git push到自己的github上。如果你git clone别人的项目，本地修改后，在不知道别人github帐号密码的提前下，想git push到别人的github上，需要怎么办？**可以通过一下方式解决你的难题：**
 
 ######1 添加合作者

@@ -1,13 +1,8 @@
 ---
 category: Tools
 layout: post
-title: 通过Git将应用程序推送到Heroku 失败解决办法
+title: 通过Git将应用程序推送到Heroku失败解决办法
 ---
-
-{{ page.title }}
-================
-
-<p class="meta">2013-9-12 王要佳</p>
 
 今天尝试'git push heroku master'的时候一直出现：
 

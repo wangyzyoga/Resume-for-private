@@ -4,11 +4,6 @@ layout: post
 title: Ruby中特殊字符的含义
 ---
 
-{{ page.title }}
-================
-
-<p class="meta">2013-11-11 王要佳</p>
-
   **字符串  含义**
 
 1、 \a      替换成Bell声所对应的符号

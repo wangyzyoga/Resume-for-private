@@ -4,11 +4,6 @@ layout: post
 title: Ubuntu12.04中GoAgent使用教程--轻轻松松翻墙咯
 ---
 
-{{ page.title }}
-================
-
-<p class="meta">2013-9-11 王要佳</p>
-
 ### Ubuntu下的配置 
 
 要运行goagent首先必须安装了python，推荐使用python2.7,如果没有python，安装方法：(以下方法选择一种合适的即可)

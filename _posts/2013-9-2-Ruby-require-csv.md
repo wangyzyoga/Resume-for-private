@@ -4,11 +4,6 @@ layout: post
 title: Ruby从入门到精通 学习记录二(require/CSV) 
 ---
 
-{{ page.title }}
-================
-
-<p class="meta">2013-9-2 王要佳</p>
-
 ###一、REQUIRE
 
 今天学习<Ruby从入门到精通>时，使用require加载文件，老提示：LoadError。然后在网上查看原因，并整理几种加载当前路径下的某个源文件的常用方法。

@@ -1,13 +1,8 @@
 ---
 category: Rubyonrails
 layout: post
-title: Ruby On Rails 教程中遇到几个问题
+title: Ruby On Rails教程中遇到几个问题
 ---
-
-{{ page.title }}
-================
-
-<p class="meta">2013-9-28 王要佳</p>
 
 这两周断断续续在跟着[Ruby On Rails教程](http://railstutorial-china.org/)实战练习，最终会做成一个拥有用户注册/登录/发微博等功能简单应用程序。
 

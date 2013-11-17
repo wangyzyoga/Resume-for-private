@@ -1,13 +1,8 @@
 ---
 category: Rubyonrails
 layout: post
-title: Rails4.0 建立博客遇到问题一
+title: Rails4.0建立博客遇到问题一
 ---
-
-{{ page.title }}
-================
-
-<p class="meta">2013-9-6 王要佳</p>
 
 今天开始跟着[Rails初上手指南](http://guides.ruby.tw/rails3/getting_started.html)学习建立博客，遇到如下两个问题。
 

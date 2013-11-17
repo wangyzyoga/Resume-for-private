@@ -4,11 +4,6 @@ layout: post
 title: Ruby中require/load/include/extend的区别
 ---
 
-{{ page.title }}
-================
-
-<p class="meta">2013-10-24 王要佳</p>
-
 ### 1、Require：
 
 require方法是加载一个库，并且只加载一次，如果多次加载会返回false。只有当要加载的库位于一个分离的文件中时才有必要使用require，使用时不需要加扩展名，一般放在文件的最前面：

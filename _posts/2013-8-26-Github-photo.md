@@ -1,13 +1,8 @@
 ---
 category: Tools
 layout: post
-title: Github 设置个人头像 
+title: Github设置个人头像 
 ---
-
-{{ page.title }}
-================
-
-<p class="meta">2013-8-26 王要佳</p>
 
 今天打算给自己的github设置个人头像，发现不是想像那么容易，经过一段时间研究才最终搞定。
 
