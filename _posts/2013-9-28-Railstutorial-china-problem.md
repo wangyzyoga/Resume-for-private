@@ -18,12 +18,14 @@ title: Ruby On Rails教程中遇到几个问题
 
 书中5.3.2章节中提到添加根地址的路由设置：
 
+{% highlight ruby %} 
     SampleApp::Application.routes.draw do
       root to: 'static_pages#home'
       .
       .
       .
     end
+{% endhighlight %} 
 
 上面的代码会把根地址/映射到/static_pages/home页面上，也就是让http://localhost:3000/指向/static_pages/home。
 
@@ -33,13 +35,17 @@ title: Ruby On Rails教程中遇到几个问题
 
 书中6.3.3章节中提到用户身份验证时，需要调用find_by方法：
 
+{% highlight ruby %} 
     User.find_by(email: email)
+{% endhighlight %} 
 
 通过Email地址查找用户记录。
 
 当我使用上述方案调用find_by方法时，老提示：没有定义find_by方法。后来在网上查询原因才发现，书中的写法是Rails4.0的用法，Rails3.x的用法应该是这样的：
 
+{% highlight ruby %} 
     User.find_by_email(@user.email)
+{% endhighlight %} 
 
 更多升级到Rails4.0的说明，详见<http://www.oschina.net/translate/get-your-app-ready-for-rails-4>。
 

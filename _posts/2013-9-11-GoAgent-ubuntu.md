@@ -9,21 +9,27 @@ title: Ubuntu12.04中GoAgent使用教程--轻轻松松翻墙咯
 要运行goagent首先必须安装了python，推荐使用python2.7,如果没有python，安装方法：(以下方法选择一种合适的即可)
 
 * 从源安装
-   
+
+{% highlight ruby %}   
       sudo apt-get install python
+{% endhighlight %}
 
 * 从源码安装
 
+{% highlight ruby %}
       wget http://python.org/ftp/python/2.7.5/Python-2.7.5.tar.bz2 && tar jxvf  
       Python-2.7.5.tar.bz2 && cd Python-2.7.5 && ./configure  --with-zlib &&  
       make && sudo make install 
-<br>
+{% endhighlight %}
+
 ##### 安装gevent
 
 使用以下命令进行安装
 
+{% highlight ruby %}
     sudo apt-get install python-dev
-<br>
+{% endhighlight %}
+
 ##### 安装pyopenssl
 
 * PyOpenSSL是OpenSSL的python接口，用于提供加密传输支持(SSL)，如果没用该模组，会导致goagent无法生成证书而影响使用。
@@ -34,32 +40,42 @@ title: Ubuntu12.04中GoAgent使用教程--轻轻松松翻墙咯
 
   1.从源安装,如果源中有的话
 
+{% highlight ruby %}
       sudo apt-get install python-openssl
+{% endhighlight %}
 
   2.通过python包管理器pip安装
 
+{% highlight ruby %}
       sudo apt-get install python-pip
       sudo pip install pyOpenSSL
+{% endhighlight %}
 
   3.从源码编译安装
 
+{% highlight ruby %}
       wget http://pypi.python.org/packages/source/p/pyOpenSSL/  pyOpenSSL
       -0.13.tar.gz && tar zxvf pyOpenSSL-0.13.tar.gz && cd pyOpenSSL-0.13  
       && sudo python setup.py install
-<br>
+{% endhighlight %}
+
 ##### 安装gtk托盘所需模组
 
 要正常使用gtk托盘，需要安装以下软件包
 
+{% highlight ruby %}
     sudo apt-get install python-vte
-<br>
+{% endhighlight %}
+
 ### 上传GoAgent
 
 [下载goagent](https://nodeload.github.com/goagent/goagent/legacy.zip/3.0)，解压，在终端cd到goagent所在目录下
 
 * 在server目录下，编辑app.yaml文件,把第一行改为application:你创建的appid。然后在server目录下，运行
 
+{% highlight ruby %}
       python uploader.zip
+{% endhighlight %}
 
 * 根据提示输入你自己创建的appid（若要同时上传多appid在appid之间用|隔开）和你的Gmail帐号和密码(如果开启了两步验证，密码为16位的应用程序专用密码）
 
@@ -71,21 +87,27 @@ title: Ubuntu12.04中GoAgent使用教程--轻轻松松翻墙咯
 
 在local目录下，编辑proxy.ini文件，把[gae]项目的appid修改为你创建的appid。然后在local目录下，运行
 
+{% highlight ruby %}
     python proxy.py
+{% endhighlight %}
 
 即可使用代理，也可以赋予proxy.py可执行权限之后直接双击proxy.py。（在proxy.py上面右击，属性的权限中勾选允许以程序执行文件）
 
 直接运行goagent-gtk.py可以使用gtk托盘方式运行goagent。运行addto-startup.py即可加入开机启动。也可以自行添加一个启动项，命令为
 
+{% highlight ruby %}
     python /path/to/goagent/local/goagent-gtk.py
+{% endhighlight %}
 
 其中路径修改为自己系统中goagent-gtk.py的路径
 
 说明：在运行客户端时，出现"UnicodeDecodeError:'ascii' codec can't decode byte"问题,是python的编码问题,要在终端下使用中文环境，那么要声明unicode的 UTF-8方式编码 打开你的proxy.py文件，在开头添加：
 
+{% highlight ruby %}
     import sys
     reload(sys)
     sys.setdefaultencoding('utf-8')
+{% endhighlight %}
 
 问题就解决了。
 
@@ -105,8 +127,9 @@ title: Ubuntu12.04中GoAgent使用教程--轻轻松松翻墙咯
 
 * 如果以后台进程运行，先用"ps aux | grep proxy.py"找到goagent的PID，然后直接kill对应的PID
 
+{% highlight ruby %}
       ps aux|grep proxy.py|grep -v "grep"|awk '{print $2}'|xargs kill
-
+{% endhighlight %}
 
 
     

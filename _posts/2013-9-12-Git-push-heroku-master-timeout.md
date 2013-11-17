@@ -6,8 +6,10 @@ title: 通过Git将应用程序推送到Heroku失败解决办法
 
 今天尝试'git push heroku master'的时候一直出现：
 
+{% highlight ruby %}
     ssh: connect to host heroku.com port 22: Bad file number
     fatal: The remote end hung up unexpectedly
+{% endhighlight %}
 
 百度查找原因，在Ruby-China中发现如下两个帖子：
 
@@ -21,16 +23,20 @@ title: 通过Git将应用程序推送到Heroku失败解决办法
 
 * 使用'ssh -v git@heroku.com'命令，找出sshconfig文件具体路径
 
+{% highlight ruby %}
       debug1: Reading configuration data /etc/ssh/ssh_config
+{% endhighlight %}
 
 * 使用'sudo gedit /etc/ssh/ssh_config'打开文件，增加如下内容
 
+{% highlight ruby %}
       Host heroku.com
       User yourusername
       Hostname proxy.heroku.com
       PreferredAuthentications publickey
       IdentityFile ~/.ssh/id_rsa
       port 22
+{% endhighlight %}
 
 说明：不设置这步，就不会挖出很多IP，你也就找不到可用节点。
 
@@ -38,12 +44,14 @@ title: 通过Git将应用程序推送到Heroku失败解决办法
 
 * 再使用'sudo gedit /etc/ssh/ssh_config'打开文件，修改配置
 
+{% highlight ruby %}
       Host heroku.com
       User yourusername
       Hostname 107.21.99.190 
       PreferredAuthentications publickey
       IdentityFile ~/.ssh/id_rsa
       port 22
+{% endhighlight %}
 
 说明：用具体IP代替proxy.heroku.com是最关键一步。
 

@@ -11,6 +11,7 @@ time: 2013-10-14 12:30:00 -04:00
 
 书中7.1.3章节中提到为测试环境重新设置BCrypt耗时因子：
 
+{% highlight ruby %}
     SampleApp::Application.configure do
       .
       .
@@ -18,18 +19,23 @@ time: 2013-10-14 12:30:00 -04:00
       # Speed up tests by lowering bcrypt's cost function.
       ActiveModel::SecurePassword.min_cost = true
     end
+{% endhighlight %}
 
 但我修改完成后，进行测试出现提示：
 
+{% highlight ruby %}
     undefined method `min_cost=' for ActiveModel::SecurePassword:Module
     (NoMethodError)
+{% endhighlight %}
 
 Google搜索设置BCrypt耗时因子方法，发现如下代码：
 
+{% highlight ruby %}
     require 'bcrypt'
     silence_warnings do
       BCrypt::Engine::DEFAULT_COST = BCrypt::Engine::MIN_COST
     end
+{% endhighlight %}
 
 按照上面方法修改完成后，再次进行测试就通过了。**暂时不知道原因，先通过再说～**
 
@@ -37,6 +43,7 @@ Google搜索设置BCrypt耗时因子方法，发现如下代码：
 
 书中7.3.1章节中提到处理存储失败的create动作：
 
+{% highlight ruby %}
     class UsersController < ApplicationController
       .
       .
@@ -50,10 +57,13 @@ Google搜索设置BCrypt耗时因子方法，发现如下代码：
         end
       end
     end
+{% endhighlight %}
 
 修改完成后，进行测试出现提示：
 
+{% highlight ruby %}
     can't convert Symbol into string
+{% endhighlight %}
 
 问题出现原因是Gemfiles中缺少gem ‘strong_parameters’添加后，执行bundle install，再次进行测试就通过了。
 

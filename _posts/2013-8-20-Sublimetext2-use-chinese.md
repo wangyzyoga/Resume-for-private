@@ -9,6 +9,7 @@ title: SublimeText2不能输入汉字解决办法
 
 ######首先，在SublimeText2的菜单栏 -> Preferences -> Settings - User，在配置文件中增加：
 
+{% highlight ruby %} 
     // Settings in here override those in "Default/Base File.sublime-settings", and
 
     // are overridden in turn by file type specific settings. Place your settings
@@ -18,13 +19,15 @@ title: SublimeText2不能输入汉字解决办法
     {
          "font_face": "WenQuanYi Micro Hei Mono"
     }
-
+{% endhighlight %}
 
 ######其次，我们来解决中文输入的问题
 
+{% highlight ruby %} 
     sudo apt-get install scim
 
     sudo apt-get install scim-pinyin
+{% endhighlight %}
 
 ######在“系统－语言支持”设置里
 

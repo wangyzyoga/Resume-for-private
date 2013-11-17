@@ -1,6 +1,6 @@
 ---
 author: wangyzyoga
-desc: wangyzyoga&&爱上开源
+desc: Wangyzyoga&&爱上开源
 title: WangYaojia-Blog
 ---
 
@@ -20,7 +20,7 @@ title: WangYaojia-Blog
     <meta name="description" content="{{ page.desc }}" />
 		
 		<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
-   	<link rel="stylesheet" href="/css/syntax.css" type="text/css" media="screen" />	
+   	    <link rel="stylesheet" href="/css/syntax.css" type="text/css" media="screen" />	
 		<link rel="stylesheet" href="/css/default.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="/css/global.css" type="text/css" media="all" />
 			
@@ -34,14 +34,14 @@ title: WangYaojia-Blog
 			<div id="nav_background">
       	<div id="navigation">
         	<ul>
-          	<li class="menu"><a href="http://www.wangyaojia.com">home</a><a id="about-toggle" href="#">about</a><a id="archive-toggle" href="#">archive</a><a id="contact-toggle" href="#">contact</a></li>
+          	<li class="menu"><a href="http://www.wangyaojia.com">首页</a><a id="archive-toggle" href="#">归档</a><a id="contact-toggle" href="#">联系</a><a id="about-toggle" href="#">关于</a></li>
         	</ul>
 				</div>
 				<div class="clear_float"></div>
 			</div>
 			<div id="header">
 				<h1><a href="#">{{ page.desc }}</a></h1>
-				wangyzyoga&&爱上开源
+				Wangyzyoga&&爱上开源
 				{% include follow.html %}
 			</div>
 		</div>
@@ -49,11 +49,11 @@ title: WangYaojia-Blog
 			<div id="content_container">
 				<div id="container">
 					<div id="archive_posts" style="display:none">
-						<ul>
+					   <ul>
 		    			{% for post in site.posts limit:5 %}
 		      			<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
 		    			{% endfor %}
-		  			</ul>
+		  			   </ul>
 					</div>
 					
 					{{content}}
@@ -72,8 +72,8 @@ title: WangYaojia-Blog
 								<input type="hidden" name="ie" value="UTF-8″ />
 								<input type="hidden" name="oe" value="UTF-8″ />
 								<input type="hidden" name="hl" value="zh-CN" />
-								<input type="hidden" name="domains" value="http://www.wangyzyoga.com" />
-								<input type="hidden" name="sitesearch" value="http://www.wangyzyoga.com" />
+								<input type="hidden" name="domains" value="http://www.wangyaojia.com" />
+								<input type="hidden" name="sitesearch" value="http://www.wangyaojia.com" />
 							</form>
 							<h2>Calendar</h2>
 								<script language="javascript" type="text/javascript">
@@ -125,7 +125,7 @@ title: WangYaojia-Blog
 		<script type="text/javascript" defer>if(VeryCD.gotop) VeryCD.gotop.ini();</script>
 		<div id="footer">
     	<p class="credit">Theme by <a href="http://everythingisgray.com/" rel="nofollow">James Barclay</a></p>
-    	<p class="legal">Copyright © 2013 <a href="http://everythingisgray.com" rel="nofollow">Everything is Gray</a>&nbsp;&nbsp;<script src="http://s4.cnzz.com/stat.php?id=3840538&web_id=3840538&show=pic" language="JavaScript"></script></p>
+    	<p class="legal">Copyright © 2013 <a href="http://everythingisgray.com" rel="nofollow">WANGYAOJIA Blog</a>&nbsp;&nbsp;<script src="http://s4.cnzz.com/stat.php?id=3840538&web_id=3840538&show=pic" language="JavaScript"></script></p>
     	<p>&nbsp;</p>  
 		</div>
 	<a href="http://github.com/wangyzyoga"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>

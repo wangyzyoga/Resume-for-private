@@ -22,11 +22,13 @@ title: Vim中常用三个插件（nerdtree/ctrlp/ack）
 
 * 现在~/.vimrc中增加如下设置，然后在树型结构选中需要打开的文件，按Enter键，再按F8
 
+{% highlight ruby %}
       let NERDTreeShowBookmarks = 1
 	  let NERDChristmasTree = 1
 	  let NERDTreeWinPos = "left"
       map <F8> :NERDTree<CR> 
-<br />
+{% endhighlight %}
+
 ###2、CtrlP 快速搜索文件
 
 * 下载[CtrlP](http://kien.github.io/ctrlp.vim/)
@@ -35,16 +37,21 @@ title: Vim中常用三个插件（nerdtree/ctrlp/ack）
 
 * 在～/.vimrc中增加如下设置
 
+{% highlight ruby %}
       set runtimepath^=~/.vim/ctrlp.vim
-<br />
+{% endhighlight %}
+
 ###3、Ack 全项目文件搜索含有关键字的位置
 
 * Ubuntu中使用如下命令进行安装
 
+{% highlight ruby %}
       sudo apt-get install ack-grep
+{% endhighlight %}
 
 * 在～/.vimrc中增加如下设置
-      
+
+{% highlight ruby %}      
       function! Ack(args)
 	    let grepprg_bak=&grepprg
 	    set grepprg=ack\ -H\ --nocolor\ --nogroup
@@ -54,7 +61,10 @@ title: Vim中常用三个插件（nerdtree/ctrlp/ack）
 		endfunction
 
 	    command! -nargs=* -complete=file Ack call Ack(<q-args>)
+{% endhighlight %}
 
 * Ack仍然不好使用时，需要执行如下命令
 
+{% highlight ruby %}
       sudo ln -s /usr/bin/ack-grep /usr/local/ack
+{% endhighlight %}

@@ -21,23 +21,28 @@ title: Ruby从入门到精通 学习记录二(require/CSV)
 
 书中程序：
 
+{% highlight ruby %}
     require 'csv'
     CSV.open('text.txt', 'r') do |person|
       puts person.inspect
     end
+{% endhighlight %}
 
 该程序无法运行，提示：
 
+{% highlight ruby %}
     <#CSV io_type:File io_path:"text.txt" encoding:GBK lineno:0 col_sep:",
     " row_sep:"n" quote_char:""">
+{% endhighlight %}
 
 后来百度搜索一下，得知在ruby1.9.x中CSV.open的API发生了变更，在ruby1.9.x中要想打印或者输出csv/txt的文件内容，需要按照如下的写法：
 
+{% highlight ruby %}
     require 'csv'
     CSV.open('text.txt', 'r') do |person|
       person.each { |row| puts row }
     end
-     
+{% endhighlight %}     
 
 参考文章：
 

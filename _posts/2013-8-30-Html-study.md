@@ -12,6 +12,7 @@ title: HTML初步学习
 
 #####HTML 基础
 
+{% highlight html %}
      <html>
      <head>
      <title>文档名称</title>
@@ -20,59 +21,75 @@ title: HTML初步学习
      文档内容
      </body>
      </html>
+{% endhighlight %}
 
 #####TEXT 元素
 
+{% highlight html %}
      <p>文档段落</p>
      <br>换行
      <hr>水平线
      <pre>定义预格式化的文本</pre>
+{% endhighlight %}
 
 #####HTML 逻辑格式，向浏览器传达强调的消息
 
+{% highlight html %}
      <em>斜体字</em>
      <strong>字体加粗</strong>
      <code>表示计算机源代码或者其他机器可以阅读的文本内容</code>
+{% endhighlight %}
 
 #####HTML 物理格式，只是告诉浏览器的对文字操作
 
+{% highlight html %}
      <b>字体加粗</b>
      <i>斜体字</i>
+{% endhighlight %}
 
 #####HTML 链接/锚/图片
 
+{% highlight html %}
      <a href="http://www.example.com/">这是一个链接</a>
      <a href="mailto:webmaster@example.com">发送邮件</a>
      <a name="tips">Useful Tips Section</a>
      <a href="#tips">Jump to the Useful Tips Section</a>
      <a href="http://www.example.com/"><img src="URL"
      alt="破图后替换的内容"></a>
+{% endhighlight %}
 
 #####HTML 无序清单
 
+{% highlight html %}
      <ul>
      <li>First item</li>
      <li>Next item</li>
      </ul>
+{% endhighlight %}
 
 #####HTML 有序清单
 
+{% highlight html %}
      <ol>
      <li>First item</li>
      <li>Next item</li>
      </ol>
+{% endhighlight %}
 
 #####HTML 定义清单
 
+{% highlight html %}
      <dl>
      <dt>First term</dt>
      <dd>Definition</dd>
      <dt>Next term</dt>
      <dd>Definition</dd>
      </dl>
+{% endhighlight %}
 
 #####HTML 表格
 
+{% highlight html %}
      <table border="1">
      <tr>
        <th>someheader</th>
@@ -83,16 +100,20 @@ title: HTML初步学习
        <td>sometext</td>
      </tr>
      </table>
+{% endhighlight %}
 
 #####HTML 框架
 
+{% highlight html %}
      <frameset cols="25%，75%">
        <frame src="page1.htm">
        <frame src="page2.htm">
      </frameset>
+{% endhighlight %}
 
 #####HTML 表单
 
+{% highlight html %}
      <from action="http://www.example.com/test.asp" method="post/get">
      <input type="text" name="lastname"
      value="Nixon" size="30" maxlength="50">
@@ -110,15 +131,19 @@ title: HTML初步学习
      <textarea name="Comment" rows="60"
      cols="20"></textarea>
      </form>
+{% endhighlight %}
 
 #####HTML 对象
 
+{% highlight html %}
      &lt; is the same as <
      &gt; is the same as >
      &#169; is the same as ©
+{% endhighlight %}
 
 #####HTML 其它元素
 
+{% highlight html %}
      <!-- This is a comment --> 注释，不会在页面出现
      <blockquote>
      Text quoted from some source.
@@ -128,6 +153,7 @@ title: HTML初步学习
      Address 2<br>
      City<br>
      </address>
+{% endhighlight %}
      
 
 参考文章：

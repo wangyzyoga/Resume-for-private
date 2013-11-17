@@ -8,10 +8,13 @@ Jekyll博客分页功能添加步骤如下:
 
 * _config.xml里面加上
 
+{% highlight ruby %}
       paginate:10  //每一页显示的文章数为10
+{% endhighlight %}      
 
 * index.html里面加上:
 
+{% highlight ruby %}
       **分页输出**
       for post in paginator.posts
         content
@@ -35,6 +38,7 @@ Jekyll博客分页功能添加步骤如下:
           //"page" + page
         endif
       endfor
+{% endhighlight %}
       
 详细实现代码，可参见<https://github.com/wangyzyoga/wangyzyoga-blog/blob/gh-pages/index.html>
 
