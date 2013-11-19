@@ -71,8 +71,8 @@ class="logo-disqus">Disqus</span></a>
 
 然后，在首页需要添加评论的地方，写一个链接，
 
+{% highlight js linenos %}
      <a href="\{\{ post.url }}#disqus_thread"></a>
+{% endhighlight %}
+
 Disqus将会通过URL获取评论数。说明：上述代码中 \ 为转义字符，\ { \ }代表大括号。
-
-
-
