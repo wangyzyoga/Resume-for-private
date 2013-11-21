@@ -6,7 +6,7 @@ title: Ruby从入门到精通 学习记录二(require/CSV)
 
 ###一、REQUIRE
 
-今天学习<Ruby从入门到精通>时，使用require加载文件，老提示：LoadError。然后在网上查看原因，并整理几种加载当前路径下的某个源文件的常用方法。
+今天学习Ruby从入门到精通时，使用require加载文件，老提示：LoadError。然后在网上查看原因，并整理几种加载当前路径下的某个源文件的常用方法。
 
 1. 在加载的源文件名前加上当前目录"./"，即require "./test"
 2. 使用load加载完整文件名，即load "test.rb"
@@ -48,14 +48,3 @@ title: Ruby从入门到精通 学习记录二(require/CSV)
 
    <http://zorro.blog.51cto.com/2139862/893944>
    <http://blog.sina.com.cn/s/blog_67b5c7b7010154rn.html>
-
-
-
-
-
-
-
-
-
-
-
