@@ -10,7 +10,7 @@ title: HTML初步学习
 
 [W3Shool](http://www.w3school.com.cn/html/)是一个学习HTML基础知识的好地方，当然这里还有很多其它方面的内容，做的都很好，以后再讲。抽了两天时间，把HTML基础教程快速学习一遍，现在将主要内容整理出来:
 
-#####HTML 基础
+###HTML 基础
 
 {% highlight html %}
      <html>
@@ -23,7 +23,7 @@ title: HTML初步学习
      </html>
 {% endhighlight %}
 
-#####TEXT 元素
+###TEXT 元素
 
 {% highlight html %}
      <p>文档段落</p>
@@ -32,7 +32,7 @@ title: HTML初步学习
      <pre>定义预格式化的文本</pre>
 {% endhighlight %}
 
-#####HTML 逻辑格式，向浏览器传达强调的消息
+###HTML 逻辑格式，向浏览器传达强调的消息
 
 {% highlight html %}
      <em>斜体字</em>
@@ -40,14 +40,14 @@ title: HTML初步学习
      <code>表示计算机源代码或者其他机器可以阅读的文本内容</code>
 {% endhighlight %}
 
-#####HTML 物理格式，只是告诉浏览器的对文字操作
+###HTML 物理格式，只是告诉浏览器的对文字操作
 
 {% highlight html %}
      <b>字体加粗</b>
      <i>斜体字</i>
 {% endhighlight %}
 
-#####HTML 链接/锚/图片
+###HTML 链接/锚/图片
 
 {% highlight html %}
      <a href="http://www.example.com/">这是一个链接</a>
@@ -58,7 +58,7 @@ title: HTML初步学习
      alt="破图后替换的内容"></a>
 {% endhighlight %}
 
-#####HTML 无序清单
+###HTML 无序清单
 
 {% highlight html %}
      <ul>
@@ -67,7 +67,7 @@ title: HTML初步学习
      </ul>
 {% endhighlight %}
 
-#####HTML 有序清单
+###HTML 有序清单
 
 {% highlight html %}
      <ol>
@@ -76,7 +76,7 @@ title: HTML初步学习
      </ol>
 {% endhighlight %}
 
-#####HTML 定义清单
+###HTML 定义清单
 
 {% highlight html %}
      <dl>
@@ -87,7 +87,7 @@ title: HTML初步学习
      </dl>
 {% endhighlight %}
 
-#####HTML 表格
+###HTML 表格
 
 {% highlight html %}
      <table border="1">
@@ -102,7 +102,7 @@ title: HTML初步学习
      </table>
 {% endhighlight %}
 
-#####HTML 框架
+###HTML 框架
 
 {% highlight html %}
      <frameset cols="25%，75%">
@@ -111,7 +111,7 @@ title: HTML初步学习
      </frameset>
 {% endhighlight %}
 
-#####HTML 表单
+###HTML 表单
 
 {% highlight html %}
      <from action="http://www.example.com/test.asp" method="post/get">
@@ -133,7 +133,7 @@ title: HTML初步学习
      </form>
 {% endhighlight %}
 
-#####HTML 对象
+###HTML 对象
 
 {% highlight html %}
      &lt; is the same as <
@@ -141,7 +141,7 @@ title: HTML初步学习
      &#169; is the same as ©
 {% endhighlight %}
 
-#####HTML 其它元素
+###HTML 其它元素
 
 {% highlight html %}
      <!-- This is a comment --> 注释，不会在页面出现

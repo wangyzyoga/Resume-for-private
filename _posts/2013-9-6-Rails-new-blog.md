@@ -6,7 +6,11 @@ title: Rails4.0建立博客遇到问题一
 
 今天开始跟着[Rails初上手指南](http://guides.ruby.tw/rails3/getting_started.html)学习建立博客，遇到如下两个问题。
 
-#####1. rails new blog时，总是卡在 'run  bundle install'
+###1. rails new blog时，总是卡在:
+
+{% highlight ruby %} 
+    run bundle install
+{% endhighlight %}
 
 解决办法：
 
@@ -16,7 +20,11 @@ title: Rails4.0建立博客遇到问题一
     bundle install --local
 {% endhighlight %} 
 
-#####2. rails server时，报错提示 'Could not find a JavaScript runtime'
+###2. rails server时，报错提示:
+
+{% highlight ruby %} 
+    Could not find a JavaScript runtime
+{% endhighlight %}
 
 解决办法:在blog文件夹下的Gemfile文件中加入
 

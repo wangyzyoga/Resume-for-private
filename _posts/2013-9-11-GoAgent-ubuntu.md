@@ -4,7 +4,7 @@ layout: post
 title: Ubuntu12.04中GoAgent使用教程--轻轻松松翻墙咯
 ---
 
-### Ubuntu下的配置 
+## Ubuntu下的配置 
 
 要运行goagent首先必须安装了python，推荐使用python2.7,如果没有python，安装方法：(以下方法选择一种合适的即可)
 
@@ -22,7 +22,7 @@ title: Ubuntu12.04中GoAgent使用教程--轻轻松松翻墙咯
       make && sudo make install 
 {% endhighlight %}
 
-##### 安装gevent
+### 安装gevent
 
 使用以下命令进行安装
 
@@ -30,7 +30,7 @@ title: Ubuntu12.04中GoAgent使用教程--轻轻松松翻墙咯
     sudo apt-get install python-dev
 {% endhighlight %}
 
-##### 安装pyopenssl
+### 安装pyopenssl
 
 * PyOpenSSL是OpenSSL的python接口，用于提供加密传输支持(SSL)，如果没用该模组，会导致goagent无法生成证书而影响使用。
 
@@ -59,7 +59,7 @@ title: Ubuntu12.04中GoAgent使用教程--轻轻松松翻墙咯
       && sudo python setup.py install
 {% endhighlight %}
 
-##### 安装gtk托盘所需模组
+### 安装gtk托盘所需模组
 
 要正常使用gtk托盘，需要安装以下软件包
 
@@ -67,7 +67,7 @@ title: Ubuntu12.04中GoAgent使用教程--轻轻松松翻墙咯
     sudo apt-get install python-vte
 {% endhighlight %}
 
-### 上传GoAgent
+## 上传GoAgent
 
 [下载goagent](https://nodeload.github.com/goagent/goagent/legacy.zip/3.0)，解压，在终端cd到goagent所在目录下
 
@@ -83,7 +83,7 @@ title: Ubuntu12.04中GoAgent使用教程--轻轻松松翻墙咯
 
 说明：在上传时，出现goagent AttributeError: can't set attribute问题，是Gmail之前启用了二次验证的缘故，只要在输入邮箱密码的时候输入应用程序专属密码，就可以上传成功。
 
-### 运行客户端
+## 运行客户端
 
 在local目录下，编辑proxy.ini文件，把[gae]项目的appid修改为你创建的appid。然后在local目录下，运行
 
@@ -111,13 +111,13 @@ title: Ubuntu12.04中GoAgent使用教程--轻轻松松翻墙咯
 
 问题就解决了。
 
-### 使用chrome浏览器
+## 使用chrome浏览器
 
 先安装chrome浏览器，然后安装SwitchySharp插件，最后导入这个设置<http://goagent.googlecode.com/files/SwitchyOptions.bak>
 
 导入文件是指在SwitchySharp插件选项中的导入/导出设置，从文件恢复，选择刚才下载的.bak文件。
 
-### 退出
+## 退出
 
 * 如果是直接终端使用"python proxy.py"运行，在终端按"Ctrl+C"组合键可终止运行
 
