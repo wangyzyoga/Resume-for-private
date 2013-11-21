@@ -64,12 +64,12 @@ body{
 img{
     border: 0;
 }
-h1{
+/*h1{
     padding: 0 0 10px 0;
     background: url("/images/header.png") no-repeat;
     width: 299px;
     height: 41px;
-}
+}*/
 #header h1 a{
     text-indent: -9000px;
     width: 299px;
@@ -113,8 +113,8 @@ pre{
     margin: 0 auto;
     position: relative;
     width: 900px;
-    height: 80px;
-    padding: 30px 0 25px 0;
+    height: 32px;
+    padding: 25px 0 20px 0;
 }
 #background_container{
     background-color: #eae9e4;
@@ -368,11 +368,11 @@ div.highlight pre {
     margin: 0 auto;
     padding: 10px 0 0 0;
     width: 900px;
-    height: 100px;
+    height: 32px;
 }
 #footer p{
     line-height: 18px;
-    padding: 10px 0 10px 0;
+    padding: 2px 0 10px 0;
 }
 #footer a{
     color: #a52713;
