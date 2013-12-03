@@ -90,4 +90,3 @@ PostgreSQL数据库默认会创建一个Linux用户postgres，通过下面的代
 {% highlight ruby %}
     $ apt-get install -y pgadmin3
 {% endhighlight %}
-
