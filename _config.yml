@@ -1,11 +1,11 @@
-markdown:    rdiscount
-pygments:    true
+markdown:      rdiscount
+highlighter:   true
 
 destination: ./_site
-server:      true
-auto:        true
-server_port: 4000
-permalink:   date 
+jekyll server: true
+auto:          true
+port: 4000
+permalink:     date 
 
 paginate:    5
 
@@ -23,6 +23,6 @@ Nov:  30
 Dec:  31
 
 analytics :
-  provider : google 
-  google : 
-      tracking_id : 'UA-45805822-1'
+provider : google 
+google : 
+tracking_id : 'UA-45805822-1'
