@@ -1,6 +1,6 @@
 encoding:    utf-8
 markdown:    rdiscount
-pygments:    true
+highlighter:    true
 
 destination: ./_site
 jekyll server:      true
