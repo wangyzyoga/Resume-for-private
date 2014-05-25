@@ -1,11 +1,12 @@
-markdown:      rdiscount
-highlighter:   true
+encoding:    utf-8
+markdown:    rdiscount
+pygments:    true
 
 destination: ./_site
-jekyll server: true
-auto:          true
-port: 4000
-permalink:     date 
+jekyll server:      true
+auto:        true
+port:        4000
+permalink:   date 
 
 paginate:    5
 
