@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 encoding:    utf-8
 markdown:    rdiscount
 pygments:    true
@@ -7,6 +8,16 @@ jekyll server:      true
 auto:        true
 port:        4000
 permalink:   date 
+=======
+markdown:      rdiscount
+highlighter:   true
+
+destination: ./_site
+jekyll server: true
+auto:          true
+port: 4000
+permalink:     date 
+>>>>>>> 45334d713b01545b81b7f211836a7119658b4437
 
 paginate:    5
 
@@ -24,6 +35,6 @@ Nov:  30
 Dec:  31
 
 analytics :
-  provider : google 
-  google : 
-      tracking_id : 'UA-45805822-1'
+provider : google 
+google : 
+tracking_id : 'UA-45805822-1'

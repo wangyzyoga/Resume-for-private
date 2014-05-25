@@ -38,6 +38,7 @@ title: Ubuntu12.04中GoAgent使用教程--轻轻松松翻墙咯
 
 * 安装pyopenssl（0.13）(以下方法选择一种合适的即可)
 
+
   1.从源安装,如果源中有的话
 
 {% highlight ruby %}
