@@ -1,10 +1,11 @@
+encoding:    utf-8
 markdown:    rdiscount
 pygments:    true
 
 destination: ./_site
-server:      true
+jekyll server:      true
 auto:        true
-server_port: 4000
+port:        4000
 permalink:   date 
 
 paginate:    5
