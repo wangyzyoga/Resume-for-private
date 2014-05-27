@@ -14,4 +14,6 @@ $ sudo ap-hotspot configure  //这一步会检查ubuntu的网络和WIFI接口，
 $ sudo ap-hotspot start
 {% endhighlight %} 
 
-完成以上步骤，Android手机顺利识别Wifi并连接。
+完成以上步骤，Android手机顺利识别Wifi并连接。(但是不知到什么原因，连接上不是很稳定。)
+
+参考：[Young++ workspace](http://blog.csdn.net/olanmomo/article/details/16922565)
