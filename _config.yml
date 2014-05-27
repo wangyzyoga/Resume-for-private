@@ -1,9 +1,9 @@
-encoding:    utf-8
-markdown:    rdiscount
+encoding:       utf-8
+markdown:       rdiscount
 highlighter:    true
 
 destination: ./_site
-jekyll server:      true
+jekyll server:  true
 auto:        true
 port:        4000
 permalink:   date 
