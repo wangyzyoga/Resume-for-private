@@ -1,0 +1,728 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
+   	<title>
+   		
+          WangYaojia-Blog
+          
+		</title>  	
+   	<meta name="generator" content="Jekyll" />
+    <meta name="author" content="wangyzyoga" />
+    <meta name="description" content="Wangyzyoga Love Open Source" />
+		
+		<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+   	    <link rel="stylesheet" href="/css/syntax.css" type="text/css" media="screen" />	
+		<link rel="stylesheet" href="/css/default.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/css/global.css" type="text/css" media="all" />
+			
+		<script type="text/javascript" src="/js/yahoo.js"></script>
+		<script type="text/javascript" src="/js/global.js"></script>	
+		<script type="text/javascript" src="/js/calendar.js"></script>	
+	</head>
+
+	<body>
+		<div id="header_wrapper">
+			<div id="nav_background">
+      	<div id="navigation">
+        	<ul>
+          	<li class="menu"><a href="http://www.wangyaojia.com">Home</a><a id="archive-toggle" href="#">Archive</a><a id="contact-toggle" href="#">Contact</a><a id="about-toggle" href="#">About</a></li>
+        	</ul>
+				</div>
+				<div class="clear_float"></div>
+			</div>
+			<div id="header">
+         <FONT style="FONT-SIZE: 25pt; WIDTH: 100%; LINE-HEIGHT: 100%; FONT-FAMILY: 华文行楷"> 
+           <B><EM>Wangyzyoga Go For Open Source</EM></B>
+         </FONT>
+				<table>
+	<tr>
+		<td><a href="http://weibo.com/wangyzyoga" id="weibo" style="display:none" target="_blank" title="weibo" rel="nofollow"><img src="/images/sina.png" /></a></td>
+		<td><a href="https://github.com/wangyzyoga" id="github" style="display:none" target="_blank" title="github" rel="nofollow"><img src="/images/github.png" /></a></td>
+		<td><a href="http://www.facebook.com/wangyzyoga" id="facebook" style="display:none" target="_blank" title="facebook" rel="nofollow"><img src="/images/facebook.png" /></a></td>
+		<td><a href="https://twitter.com/#!/wangyzyoga" id="twitter" style="display:none" target="_blank" title="twitter" rel="nofollow"><img src="/images/twitter.png" /></a></td>
+		<td><a href="https://wangyzyoga@gmail.com" id="gmail" style="display:none" target="_blank" title="gmail" rel="nofollow"><img src="/images/gmail.png" /></a></td>
+	</tr>
+</table>
+			</div>
+		</div>
+		<div id="background_container">
+			<div id="content_container">
+				<div id="container">
+					<div id="archive_posts" style="display:none">
+					   <ul>
+		    			
+		      			<li><span>27 May 2014</span> &raquo; <a href="/Tools/2014/05/27/Ubuntu-share-wifi.html">Ubuntu中创建Android手机识别Wifi</a></li>
+		    			
+		      			<li><span>25 May 2014</span> &raquo; <a href="/Tools/2014/05/25/ThinkpadT440p-use-wifi.html">解决ThinkpadT440p无线网卡驱动问题-Ubuntu13.10</a></li>
+		    			
+		      			<li><span>03 Dec 2013</span> &raquo; <a href="/Rubyonrails/2013/12/03/Ruby-Keywords.html">Ruby中部分Keywords的含义及用法</a></li>
+		    			
+		      			<li><span>03 Dec 2013</span> &raquo; <a href="/Rubyonrails/2013/12/03/Ruby-Basicdatatypes.html">Ruby的基本数据类型</a></li>
+		    			
+		      			<li><span>24 Nov 2013</span> &raquo; <a href="/Tools/2013/11/24/Ubuntu-postgresql.html">Ubuntu12.04下安装与配置PostgreSQL-9.1详解</a></li>
+		    			
+		      			<li><span>24 Nov 2013</span> &raquo; <a href="/Rubyonrails/2013/11/24/Ruby-postgresql.html">Rails中使用PostgreSQL数据库经常遇到两个问题</a></li>
+		    			
+		      			<li><span>21 Nov 2013</span> &raquo; <a href="/Rubyonrails/2013/11/21/Ruby-yield.html">Ruby中yield的用法</a></li>
+		    			
+		      			<li><span>18 Nov 2013</span> &raquo; <a href="/Rubyonrails/2013/11/18/Ruby-self.html">Ruby中self各种含义诠释</a></li>
+		    			
+		      			<li><span>13 Nov 2013</span> &raquo; <a href="/Tools/2013/11/13/Vim-three-plug-in.html">Vim中常用三个插件（nerdtree/ctrlp/ack）</a></li>
+		    			
+		      			<li><span>12 Nov 2013</span> &raquo; <a href="/Tools/2013/11/12/Vim-split-screen.html">Vim中分屏操作大全详解</a></li>
+		    			
+		  			   </ul>
+					</div>
+					
+						<div class="posts">
+		<h2><a href="/Rubyonrails/2013/12/03/Ruby-Keywords.html" title="Ruby中部分Keywords的含义及用法">Ruby中部分Keywords的含义及用法</a> <g:plusone size="medium"></g:plusone></h2>
+		<span style="float:right">03 Dec 2013</span>
+		<div class="entry">
+			<h2>一、alias</h2>
+
+<p>是Ruby的一个关键字，对一个函数名或者变量重新命名，当对变量重新命名之后，就和旧的变量绑定在一起，无论哪一个变量改变都会造成变量的改变。重命名函数(方法)名后，即使重新定义了原始方法，别名方法仍保持着重定义前老方法的特性。若改变了某方法的内容后，又想使用修改前的方法时，别名会很有用。</p>
+
+<div>
+  <pre><code class='ruby'>def meth
+  puts &quot;I am old!&quot;
+end
+alias :new_meth :meth
+def meth
+  puts &quot;I am new!&quot;
+end
+puts meth  $: I am new!
+puts new_meth  $: I am old!</code></pre>
+</div>
+
+
+<h2>二、alias_method</h2>
+
+<p>是Module类的一个方法，它的参数是字符串或者symbol，并用逗号分隔，alias_method可以重定义。</p>
+
+<div>
+  <pre><code class='ruby'>class A
+  def a
+    p &quot;aaa&quot;
+  end
+  alias_method :ab, :a
+end
+c = A.new
+c.ab  $: aaa</code></pre>
+</div>
+
+
+<h2>三、BEGIN</h2>
+
+<p>BEGIN块中的代码在所有代码执行之前执行，允许设置多个BEGIN块并按出现顺序执行块中代码。只有当起始大括号和BEGIN标识符号位于同一行时，代码才能正确执行，同时GEGIN块也不受任何控制结果的影响，只要出现就会得到执行并只执行一次。</p>
+
+<div>
+  <pre><code class='ruby'>BEGIN{
+  print &quot;OnInit(object sender, EventArgs args)\n&quot;
+}
+BEGIN{
+  print &quot;OnLoad(object sender, EventArgs args)\n&quot;
+}
+print &quot;Running&quot;</code></pre>
+</div>
+
+
+<h2>四、break</h2>
+
+<p>是Ruby的一个关键字，如果符合当前条件，就跳出当前循环。</p>
+
+<div>
+  <pre><code class='ruby'>loop do
+  puts &quot;Running...&quot;
+  print &quot;Enter q to quit:&quot;
+  gets
+  chomp
+  break if $_==&quot;q&quot;
+end</code></pre>
+</div>
+
+
+<h2>五、defined</h2>
+
+<p>是Ruby语法中一个操作符，因此不会对参数进行计算。如果一个方法以大写字母开头，使用defined？判断需要在方法名后添加"()"，否则方法名会被当常数处理。</p>
+
+<div>
+  <pre><code class='ruby'>p defined? Foo  $: nil
+p defined? Foo()  $:&quot;method&quot;</code></pre>
+</div>
+
+
+<h2>六、END</h2>
+
+<p>END块与BEGIN块相反，在所有代码执行之后执行，多个END块时最先出现的最后执行。除此之外，END块不受while的影响，但可能通过if来控制END块执行与否。</p>
+
+<div>
+  <pre><code class='ruby'>if false
+   END{
+     print &quot;Init&quot;  #不输出
+   }
+end
+END{
+  print &quot;Load\n&quot;   #最后输出
+}
+END{
+  pring &quot;Start\n&quot;  #先与Load输出
+}</code></pre>
+</div>
+
+
+<h2>七、ensure</h2>
+
+<p>Ruby异常处理关键字ensure，无论begin块是否成功，ensure代码域都将执行。Ruby异常处理可以只用ensure或rescue，但当它们在同一begin...end域中时，rescue必须放在ensure前面。</p>
+
+<div>
+  <pre><code class='ruby'>begin
+  file = open(&quot;/tmp/file&quot;,&quot;w&quot;)
+  # write to the file...
+  rescue
+  # handle the exceptions...
+  ensure
+  file.close
+end</code></pre>
+</div>
+
+
+<h2>八、for</h2>
+
+<p>是通过调用each实现，在each的scope外面定义一个同名变量，因此for更慢一些。</p>
+
+<div>
+  <pre><code class='ruby'>(1..5).each do |i|
+i = nil; for i in (1..5)  # 两者等价</code></pre>
+</div>
+
+
+<p><strong>下面的这些关键字，我就只讲含义，不一一举例说明。</strong></p>
+
+<h2>九、module</h2>
+
+<p>是用来区分同名但属于不同开发者或组织的代码。</p>
+
+<h2>十、next</h2>
+
+<p>忽略本次循环的剩余部分，开始下一次循环。</p>
+
+<h2>十一、redo</h2>
+
+<p>重新开始循环，还是从这一次开始执行。</p>
+
+<h2>十二、retry</h2>
+
+<p>重新开始执行这个循环体。</p>
+
+<h2>十三、super</h2>
+
+<p>代替的是父类中和当前方法名相同的方法，如果不带任何参数(也没有括号)，实际上作用就是自动调用父类中的当前方法，并且把当前参数也传过去。如果父类该方法的参数和子类不一样，才需要显示传入参数调用。</p>
+
+<h2>十四、then</h2>
+
+<p>在if、unless、case语句中，then都可省略。</p>
+
+<h2>十五、undef</h2>
+
+<p>可以将类的方法取消定义(彻底删除掉)，需要注意：如果一个类继承自父类，并且又定义与父类同名的方法，用undef取消该方法后，将连带父类的同名方法一起取消。</p>
+
+			<p class="postmetadata">
+				<div id="disqus_thread"></div>
+				<script type="text/javascript">
+				    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+				    var disqus_shortname = 'wangyaojiablog'; // required: replace example with your forum shortname
+				
+				    /* * * DON'T EDIT BELOW THIS LINE * * */
+				    (function() {
+				        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+				        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				    })();
+				</script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-45805822-1']);
+      _gaq.push(['_trackPageview']);
+
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+    </script>
+				
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		</p>
+		</div>
+
+		<div class="navigation">
+	    
+	      <a class="next" href="/Tools/2014/05/25/ThinkpadT440p-use-wifi.html" rel="bookmark">&laquo;&nbsp;解决ThinkpadT440p无线网卡驱动问题-Ubuntu13.10</a>
+	    
+	    
+	    	<a class="prev" href="/Rubyonrails/2013/12/03/Ruby-Basicdatatypes.html" rel="bookmark" style="float:right">Ruby的基本数据类型&nbsp;&raquo;</a>
+	    
+  	    </div>
+  </div>
+					
+				</div>
+				<div class="sidebar">
+					<ul>
+						<li>
+							<h2>Google Search</h2>
+							<form method="get" action="http://www.google.com/search" target="google_window">
+								<label class="hidden" for="s">Search...</label>
+								<div>	
+				    			<input type="text" value="Search..." name="q" id="s" onfocus="if (this.value == 'Search...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search...';}">
+				    			<input type="submit" name="btnG" id="searchsubmit" value="">
+								</div>
+								<input type="hidden" name="ie" value="UTF-8″ />
+								<input type="hidden" name="oe" value="UTF-8″ />
+								<input type="hidden" name="hl" value="zh-CN" />
+								<input type="hidden" name="domains" value="http://www.wangyaojia.com" />
+								<input type="hidden" name="sitesearch" value="http://www.wangyaojia.com" />
+							</form>
+							<h2>Calendar</h2>
+								<script language="javascript" type="text/javascript">
+									calendar();
+								</script>
+							<h2>Categories</h2>
+								<ul>
+									
+									<li class="cat-item cat-item-18"><a href="/category/Rubyonrails/Rubyonrails.html" title="View all posts filed under Rubyonrails">Rubyonrails (18)</a></li>
+									
+									<li class="cat-item cat-item-1"><a href="/category/gztour/gztour.html" title="View all posts filed under gztour">gztour (1)</a></li>
+									
+									<li class="cat-item cat-item-14"><a href="/category/Tools/Tools.html" title="View all posts filed under Tools">Tools (14)</a></li>
+									
+								</ul>
+							<h2>Archives</h2>
+								<ul>
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+							        <li><a href="/archive/
+											2014
+										/
+											2014
+										.html">
+											2014
+										</a></li>
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+							        <li><a href="/archive/
+											2013
+										/
+											2013
+										.html">
+											2013
+										</a></li>
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+								</ul>
+							<h2>Related Posts</h2>
+								<ul>
+									
+						  			<li><span>27 May 2014</span> &raquo; <a href="/Tools/2014/05/27/Ubuntu-share-wifi.html">Ubuntu中创建Android手机识别Wifi</a></li>
+									
+						  			<li><span>25 May 2014</span> &raquo; <a href="/Tools/2014/05/25/ThinkpadT440p-use-wifi.html">解决ThinkpadT440p无线网卡驱动问题-Ubuntu13.10</a></li>
+									
+						  			<li><span>03 Dec 2013</span> &raquo; <a href="/Rubyonrails/2013/12/03/Ruby-Basicdatatypes.html">Ruby的基本数据类型</a></li>
+									
+						  			<li><span>24 Nov 2013</span> &raquo; <a href="/Tools/2013/11/24/Ubuntu-postgresql.html">Ubuntu12.04下安装与配置PostgreSQL-9.1详解</a></li>
+									
+						  			<li><span>24 Nov 2013</span> &raquo; <a href="/Rubyonrails/2013/11/24/Ruby-postgresql.html">Rails中使用PostgreSQL数据库经常遇到两个问题</a></li>
+									
+								</ul>
+							<div id="recentcomments" class="dsq-widget">
+								<h2 class="dsq-widget-title">Recent Comments</h2>
+								<script type="text/javascript" src="http://wangyaojiablog.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=200"></script>
+							</div>
+						</li>        
+					</ul>
+				</div>	
+				<div class="clear_float"></div>
+			</div>		
+		</div>
+		<script type="text/javascript" defer>if(VeryCD.gotop) VeryCD.gotop.ini();</script>
+		<div id="footer">
+    	<p class="credit">Theme by <a href="http://www.wangyaojia.com/" rel="nofollow">wangyzyoga</a></p>
+    	<p class="legal">Copyright © 2013 <a href="http://www.wangyaojia.com" rel="nofollow">WangYaojia-Blog</a>&nbsp;&nbsp;</p>
+    	<p>&nbsp;</p>  
+		</div>
+	<a href="http://github.com/wangyzyoga"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+	<script type="text/javascript" src="/js/prettify.js"></script>
+	<script type="text/javascript" src="/js/jquery-1.9.1.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		// google-code-prettify
+		prettyPrint();
+		
+		$('a#about-toggle').click(function() {
+			$('#header').slideToggle(400);
+			return false;
+		});
+		
+		$('a#contact-toggle').click(function() {
+			$('#weibo').slideToggle(400);
+			$('#github').slideToggle(400);
+			$('#facebook').slideToggle(400);
+			$('#twitter').slideToggle(400);
+			$('#gmail').slideToggle(400);
+			return false;
+		});
+		
+		$('a#archive-toggle').click(function() {
+			$('#archive_posts').slideToggle(400);
+			return false;
+		});
+	});
+	</script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-45805822-1']);
+      _gaq.push(['_trackPageview']);
+
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+    </script>
+
+	<script type="text/javascript">
+		/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'wangyaojiablog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+
+   <!-- UJian Button BEGIN
+   <div class="ujian-hook"></div>
+   <script type="text/javascript">var ujian_config = {num:8,showType:3};</script>
+   <script type="text/javascript" src="http://v1.ujian.cc/code/ujian.js?uid=1866619"></script>
+   <a href="http://www.ujian.cc" style="border:0;"><img src="http://img.ujian.cc/pixel.png" alt="友荐云推荐" style="border:0;padding:0;margin:0;" /></a>
+   UJian Button END -->
+
+	<script>
+    (function(d, t) {
+    var g = d.createElement(t),
+    s = d.getElementsByTagName(t)[0];
+    g.async = true;
+    g.src = 'https://apis.google.com/js/plusone.js';
+    s.parentNode.insertBefore(g, s);
+    })(document, 'script');
+  </script>
+
+  <!-- Baidu Button BEGIN -->
+  <script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=6&amp;pos=right&amp;uid=6867463" ></script>
+  <script type="text/javascript" id="bdshell_js"></script>
+  <script type="text/javascript">
+  document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+  </script>
+  <!-- Baidu Button END -->
+
+	</body>
+</html>

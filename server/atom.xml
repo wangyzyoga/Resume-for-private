@@ -1,0 +1,2561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>wangyzyoga&&爱上开源</title>
+ <link href="http://wangyzyoga.github.com/atom.xml" rel="self" type="application/atom+xml"/>
+ <link href="" rel="alternate" type="text/html"/>
+ <updated>2014-05-27T21:58:04+08:00</updated>
+ <id></id>
+ <author>
+   <name>wangyzyoga</name>
+   <email>wangyzyoga@gmail.com</email>
+ </author>
+
+ 
+ <entry>
+   <title>Ubuntu中创建Android手机识别Wifi</title>
+   <link href="/Tools/2014/05/27/Ubuntu-share-wifi.html"/>
+   <updated>2014-05-27T00:00:00+08:00</updated>
+   <id>/Tools/2014/05/27/Ubuntu-share-wifi</id>
+   <content type="html">&lt;p&gt;用Ubuntu系统自带功能创建AP操作是非常简单，但大多数Android手机都搜索不到它的信号，那是因为Android一般都不支持Ad-hoc模式的Wifi。为了在Ubuntu中创建一个Android手机能够识别的AP,下面向大家介绍另外一种方法：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;$ sudo add-apt-repository ppa:nilarimogard/webupd8
+$ sudo apt-get update
+$ sudo apt-get install ap-hotspot
+$ sudo ap-hotspot configure  //这一步会检查ubuntu的网络和WIFI接口，确定后会提示你配置热点，输入ssid和密码等内容
+$ sudo ap-hotspot start&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;完成以上步骤，Android手机顺利识别Wifi并连接。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>解决ThinkpadT440p无线网卡驱动问题-Ubuntu13.10</title>
+   <link href="/Tools/2014/05/25/ThinkpadT440p-use-wifi.html"/>
+   <updated>2014-05-25T00:00:00+08:00</updated>
+   <id>/Tools/2014/05/25/ThinkpadT440p-use-wifi</id>
+   <content type="html">&lt;p&gt;新入手ThinkpadT440p本本，安装ubuntu13.10后，发现无法使用网线上网。找了好久才发现如下解决办法：&lt;/p&gt;
+
+&lt;h3&gt;1. 下载驱动文件&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;$ wget https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1239578/+attachment/4057550/+files/rtl_92ce_92se_92de_8723ae_88ee_8723be_92ee_linux_mac80211_0017.1016v2.2013.tar.gz&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;2. 解压驱动文件&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;$ tar zxf rtl_92ce_92se_92de_8723ae_88ee_8723be_92ee_linux_mac80211_0017.1016v2.2013.tar.gz&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;3. 进入驱动文件目录&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;$ cd rtl_92ce_92se_92de_8723ae_88ee_8723be_92ee_linux_mac80211_0017.1016v2.2013&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;4. 安装驱动文件&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;$ sudo make &amp;amp;&amp;amp; make install&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;5. 挂载新驱动文件&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;$ modprobe rtl8192ee&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;完成以上操作，就可以搜到WIFI信号，连接无线网络上网。&lt;/p&gt;
+
+&lt;p&gt;参考：&lt;a href=&quot;http://www.cnblogs.com/l137/p/3679279.html&quot;&gt;L137's Blog&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ruby中部分Keywords的含义及用法</title>
+   <link href="/Rubyonrails/2013/12/03/Ruby-Keywords.html"/>
+   <updated>2013-12-03T00:00:00+08:00</updated>
+   <id>/Rubyonrails/2013/12/03/Ruby-Keywords</id>
+   <content type="html">&lt;h2&gt;一、alias&lt;/h2&gt;
+
+&lt;p&gt;是Ruby的一个关键字，对一个函数名或者变量重新命名，当对变量重新命名之后，就和旧的变量绑定在一起，无论哪一个变量改变都会造成变量的改变。重命名函数(方法)名后，即使重新定义了原始方法，别名方法仍保持着重定义前老方法的特性。若改变了某方法的内容后，又想使用修改前的方法时，别名会很有用。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;def meth
+  puts &amp;quot;I am old!&amp;quot;
+end
+alias :new_meth :meth
+def meth
+  puts &amp;quot;I am new!&amp;quot;
+end
+puts meth  $: I am new!
+puts new_meth  $: I am old!&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;二、alias_method&lt;/h2&gt;
+
+&lt;p&gt;是Module类的一个方法，它的参数是字符串或者symbol，并用逗号分隔，alias_method可以重定义。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;class A
+  def a
+    p &amp;quot;aaa&amp;quot;
+  end
+  alias_method :ab, :a
+end
+c = A.new
+c.ab  $: aaa&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;三、BEGIN&lt;/h2&gt;
+
+&lt;p&gt;BEGIN块中的代码在所有代码执行之前执行，允许设置多个BEGIN块并按出现顺序执行块中代码。只有当起始大括号和BEGIN标识符号位于同一行时，代码才能正确执行，同时GEGIN块也不受任何控制结果的影响，只要出现就会得到执行并只执行一次。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;BEGIN{
+  print &amp;quot;OnInit(object sender, EventArgs args)\n&amp;quot;
+}
+BEGIN{
+  print &amp;quot;OnLoad(object sender, EventArgs args)\n&amp;quot;
+}
+print &amp;quot;Running&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;四、break&lt;/h2&gt;
+
+&lt;p&gt;是Ruby的一个关键字，如果符合当前条件，就跳出当前循环。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;loop do
+  puts &amp;quot;Running...&amp;quot;
+  print &amp;quot;Enter q to quit:&amp;quot;
+  gets
+  chomp
+  break if $_==&amp;quot;q&amp;quot;
+end&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;五、defined&lt;/h2&gt;
+
+&lt;p&gt;是Ruby语法中一个操作符，因此不会对参数进行计算。如果一个方法以大写字母开头，使用defined？判断需要在方法名后添加&quot;()&quot;，否则方法名会被当常数处理。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;p defined? Foo  $: nil
+p defined? Foo()  $:&amp;quot;method&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;六、END&lt;/h2&gt;
+
+&lt;p&gt;END块与BEGIN块相反，在所有代码执行之后执行，多个END块时最先出现的最后执行。除此之外，END块不受while的影响，但可能通过if来控制END块执行与否。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;if false
+   END{
+     print &amp;quot;Init&amp;quot;  #不输出
+   }
+end
+END{
+  print &amp;quot;Load\n&amp;quot;   #最后输出
+}
+END{
+  pring &amp;quot;Start\n&amp;quot;  #先与Load输出
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;七、ensure&lt;/h2&gt;
+
+&lt;p&gt;Ruby异常处理关键字ensure，无论begin块是否成功，ensure代码域都将执行。Ruby异常处理可以只用ensure或rescue，但当它们在同一begin...end域中时，rescue必须放在ensure前面。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;begin
+  file = open(&amp;quot;/tmp/file&amp;quot;,&amp;quot;w&amp;quot;)
+  # write to the file...
+  rescue
+  # handle the exceptions...
+  ensure
+  file.close
+end&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;八、for&lt;/h2&gt;
+
+&lt;p&gt;是通过调用each实现，在each的scope外面定义一个同名变量，因此for更慢一些。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;(1..5).each do |i|
+i = nil; for i in (1..5)  # 两者等价&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;下面的这些关键字，我就只讲含义，不一一举例说明。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2&gt;九、module&lt;/h2&gt;
+
+&lt;p&gt;是用来区分同名但属于不同开发者或组织的代码。&lt;/p&gt;
+
+&lt;h2&gt;十、next&lt;/h2&gt;
+
+&lt;p&gt;忽略本次循环的剩余部分，开始下一次循环。&lt;/p&gt;
+
+&lt;h2&gt;十一、redo&lt;/h2&gt;
+
+&lt;p&gt;重新开始循环，还是从这一次开始执行。&lt;/p&gt;
+
+&lt;h2&gt;十二、retry&lt;/h2&gt;
+
+&lt;p&gt;重新开始执行这个循环体。&lt;/p&gt;
+
+&lt;h2&gt;十三、super&lt;/h2&gt;
+
+&lt;p&gt;代替的是父类中和当前方法名相同的方法，如果不带任何参数(也没有括号)，实际上作用就是自动调用父类中的当前方法，并且把当前参数也传过去。如果父类该方法的参数和子类不一样，才需要显示传入参数调用。&lt;/p&gt;
+
+&lt;h2&gt;十四、then&lt;/h2&gt;
+
+&lt;p&gt;在if、unless、case语句中，then都可省略。&lt;/p&gt;
+
+&lt;h2&gt;十五、undef&lt;/h2&gt;
+
+&lt;p&gt;可以将类的方法取消定义(彻底删除掉)，需要注意：如果一个类继承自父类，并且又定义与父类同名的方法，用undef取消该方法后，将连带父类的同名方法一起取消。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ruby的基本数据类型</title>
+   <link href="/Rubyonrails/2013/12/03/Ruby-Basicdatatypes.html"/>
+   <updated>2013-12-03T00:00:00+08:00</updated>
+   <id>/Rubyonrails/2013/12/03/Ruby-Basicdatatypes</id>
+   <content type="html">&lt;h2&gt;一、字符串 strings&lt;/h2&gt;
+
+&lt;p&gt;ruby中没有字符，只有字符串。
+单引号字符串，只有'和\需要进行转义，其它的字符保持字面的含义；
+双引号字符串，双引号字符串最大的特点是可以进行数值内插，产生双引号字符串的方式有很多种。
+单引号中两个相连的反斜线被替换成一个反斜线，一个反斜线后跟一个单引号被替换成一个单引号。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;insert = 100
+print '#{insert}_string'  # #{insert}_sting
+print %q/#{insert}_string/  # %q分隔符表示单引号字符串
+print &amp;quot;#{insert}_string\n&amp;quot;  # 100_string
+print %/#{insert}_string\n/ # %分隔符或%Q表示双引号字符串
+print %Q/#{insert}_string\n/&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;二、数值型 numbers&lt;/h2&gt;
+
+&lt;p&gt;整数支持二进制，八进制，十进制，十六进制，根据整数的大小动态决定整数是Fixnum类型还是Bignum类型。浮点数支持科学计数法，小数点后至少有一个数字。
+数值类型继承图如下：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;Numeric
+  |--Integer
+     |--Fixnum
+            |--Bignum
+    |--Float
+    |--Complex(标准库)
+    |--BigDecimal(标准库)
+    |--Rational(标准库)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;三、区间 ranges&lt;/h2&gt;
+
+&lt;p&gt;区间提供了处理值具有连续特性的对象集合的简便方法，ruby为了节省空间只是在内存中保留了区间首尾两个对象的引用。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;for i in 1..3  # 闭合区间，1 2 3
+  print i
+end
+for i in &amp;quot;num1&amp;quot;...&amp;quot;num3&amp;quot;  # 首闭尾开，输出num1 num2
+  print i
+end&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;四、数组 arrays&lt;/h2&gt;
+
+&lt;p&gt;可以容纳各种类型对象的集合。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;arr1 = [1,2,3,&amp;quot;num1&amp;quot;]
+arr2 = %w/1 2 3 num1/ #%w和%W为字符数组分隔符，元素必须用空格隔开
+print arr1,&amp;quot;\n&amp;quot;,arr2,&amp;quot;\n&amp;quot;
+print arr1[1].class,&amp;quot;\n&amp;quot;  # Fixnum类型
+print arr2[1].class  # String类型&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;五、散列表 hashes&lt;/h2&gt;
+
+&lt;p&gt;键－值对的集合，应用广泛。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;hash1 = { 1 =&amp;gt; &amp;quot;first&amp;quot;, &amp;quot;second&amp;quot; =&amp;gt; 2 }
+print hash1[&amp;quot;second&amp;quot;]&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;六、符号 Symbol&lt;/h2&gt;
+
+&lt;p&gt;由于相同的字符串在内存中有不同的拷贝，所以采用符号来节省内存，相同的符号在内存中只有一份拷贝，另外需注意字符串和符号是完全不同的类型。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;print &amp;quot;string&amp;quot;.object_id,&amp;quot;\n&amp;quot;  # 相同的字符串具有不同的id
+print &amp;quot;string&amp;quot;.object_id,&amp;quot;\n&amp;quot;
+print :string.object_id,&amp;quot;\n&amp;quot;  # 相同的符号具有相同的id
+print :string.object_id,&amp;quot;\n&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ubuntu12.04下安装与配置PostgreSQL-9.1详解</title>
+   <link href="/Tools/2013/11/24/Ubuntu-postgresql.html"/>
+   <updated>2013-11-24T00:00:00+08:00</updated>
+   <id>/Tools/2013/11/24/Ubuntu-postgresql</id>
+   <content type="html">&lt;h2&gt;一、在Ubuntu下安装Postgresql&lt;/h2&gt;
+
+&lt;h3&gt;1.使用 apt-get install 安装&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;$ sudo apt-get install -y postgresql-9.1 postgresql-client-9.1 postgresql-contrib-9.1 postgresql-server-dev-9.1&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;二、修改PostgreSQL数据库的默认用户postgres的密码&lt;/h2&gt;
+
+&lt;h3&gt;1.使用postgres用户登录psql客户端&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;$ sudo -u postgres psql&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;2.修改PostgreSQL默认用户postgres的密码（postgres=#为psql中的命令行）&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;postgres=# ALTER USER postgres WITH PASSWORD 'postgres';&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;3.退出PostgreSQL的psql客户端&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;postgres=# \q&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;三、修改Linux系统的postgres用户的密码&lt;/h2&gt;
+
+&lt;h3&gt;1.设置PostgreSQL用户密码&lt;/h3&gt;
+
+&lt;p&gt;PostgreSQL数据库默认会创建一个Linux用户postgres，通过下面的代码修改密码为'postgres’。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;$ sudo -u postgres passwd
+    输入新的 UNIX 密码：
+    重新输入新的 UNIX 密码：&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;现在就可以在数据库服务器上，用postgres帐号通过psql或者pgAdmin等等客户端操作数据库了。&lt;/p&gt;
+
+&lt;h2&gt;四、修改PostgresSQL数据库配置实现远程访问&lt;/h2&gt;
+
+&lt;h3&gt;1.监听任何地址访问，修改连接权限&lt;/h3&gt;
+
+&lt;p&gt;将/etc/postgresql/9.1/main/postgresql.conf文档中如下注释去掉：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;#listen_addresses = ‘localhost’ 改为 listen_addresses = ‘*’
+    #password_encryption = on 改为 password_encryption = on&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;在/etc/postgresql/9.1/main/pg_hba.conf文档末尾加上如下内容：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;# to allow your client visiting postgresql server
+    host all all 0.0.0.0 0.0.0.0 md5&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;2.重启PostgreSQL数据库&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;$ /etc/init.d/postgresql restart&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;五、管理PostgreSQL用户和数据库&lt;/h2&gt;
+
+&lt;h3&gt;1.登录postgre SQL数据库&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;$ psql -U postgres -h 127.0.0.1&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;2.创建新用户test，密码123456，无建数据库的权限&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;$ postgres=# create user “test” with password ‘123456’ nocreatedb;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;3.建立数据库，并指定所有者&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;$ postgres=# create database “testdb” with owner=”test”;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;六、安装postgresql数据库pgAdmin3客户端管理程序&lt;/h2&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;$ apt-get install -y pgadmin3&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Rails中使用PostgreSQL数据库经常遇到两个问题</title>
+   <link href="/Rubyonrails/2013/11/24/Ruby-postgresql.html"/>
+   <updated>2013-11-24T00:00:00+08:00</updated>
+   <id>/Rubyonrails/2013/11/24/Ruby-postgresql</id>
+   <content type="html">&lt;h2&gt;问题一、找不到.s.PGSQL.5432这个文件&lt;/h2&gt;
+
+&lt;p&gt;页面提示具体错误信息如下：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;No such file or directory 
+    Is the server running locally and accepting 
+    connections on Unix domain socket &amp;quot;/var/run/postgresql/.s.PGSQL.5432&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;遇到这个问题需要先运行&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;sudo netstat -nlp | grep 5432&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;找出与端口5432（PostgreSQL默认端口号）相关进程信息,如果你更改了PostgreSQL的端口（我把端口改为5433），需要对应修改上述命令的端口。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;tcp        0      0 0.0.0.0:5433            0.0.0.0:*               LISTEN      6209/postgres
+    tcp6       0      0 :::5433                 :::*                    LISTEN      6209/postgres
+    unix       2      [ ACC ]                   流                      LISTENING   40311    6209/postgres       /var/run/postgresql/.s.PGSQL.5433&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;找到/var/run/postgresql/.s.PGSQL.5433文件，然后与/var/run/postgresql/.s.PGSQL.5432文件建立软链接就解决该问题。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;sudo ln -s /var/run/postgresql/.s.PGSQL.5433 /var/run/postgresql/.s.PGSQL.5432&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;问题二、PostgreSQL数据库用户认证失败&lt;/h2&gt;
+
+&lt;p&gt;页面提示具体错误信息如下：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;Peer authentication failed for user &amp;quot;postgres&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;这个问题是因为在/etc/postgresql/9.1/main/pg_hba.conf中：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;# &amp;quot;local&amp;quot; is for Unix domain socket connections only
+    local             all             all             peer&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;只需要把peer改为md5，然后重启PostgreSQL数据库就解决该问题。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ruby中yield的用法</title>
+   <link href="/Rubyonrails/2013/11/21/Ruby-yield.html"/>
+   <updated>2013-11-21T00:00:00+08:00</updated>
+   <id>/Rubyonrails/2013/11/21/Ruby-yield</id>
+   <content type="html">&lt;p&gt;在Ruby语言中，yield方法能自动检测传递给它的代码块，并将控制权移交给该代码块。简单说yield就是占位符，先在前面的某部分代码中用yield把位置占着，然后才在后面的某个代码块(block)里真正实现它,从而完成对号入座的过程。&lt;/p&gt;
+
+&lt;p&gt;例如：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;def each_vowel
+      a = %w{ a e i o u }
+      a.each { |vowel| yield vowel } #yield先占位，至于具体实现什么功能，暂时不知道
+    end
+    
+    each_vowel { |vowel| puts vowel } #该处就是上面yield具体实现功能&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;运行结果：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;a
+    e
+    i
+    o
+    u&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ruby中self各种含义诠释</title>
+   <link href="/Rubyonrails/2013/11/18/Ruby-self.html"/>
+   <updated>2013-11-18T00:00:00+08:00</updated>
+   <id>/Rubyonrails/2013/11/18/Ruby-self</id>
+   <content type="html">&lt;p&gt;Ruby中任何东西都是对象，方法是对象，类也是对象...，所以self就会有很多环境，区分不同环境的self含义才能更好的理解程序。&lt;/p&gt;
+
+&lt;h2&gt;一、Top Level Context&lt;/h2&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;puts self&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;运行结果打印出main，这个代表Object的默认对象main。&lt;/p&gt;
+
+&lt;h2&gt;二、在class或module的定义中&lt;/h2&gt;
+
+&lt;p&gt;在class和module的定义中，self代表这个class或这module对象。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;# self1.rb
+    class S
+      puts 'Just started class S'
+      puts self
+      module M
+        puts 'Nested module S::M'    
+        puts self    
+      end
+      puts 'Back in the outer level of S'
+      puts self
+    end&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;运行结果：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;&amp;gt;ruby self1.rb 
+    Just started class S 
+    S 
+    Nested module S::M 
+    S::M 
+    Back in the outer level of S 
+    S 
+    &amp;gt;Exit code: 0&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;三、在实例的方法定义中&lt;/h2&gt;
+
+&lt;p&gt;程序自动传递的调用这个方法的对象。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;# self2.rb 
+    class S
+      def m
+        puts 'Class S method m:'
+        puts self
+      end
+    end
+    s = S.new
+    s.m&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;运行结果：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;&amp;gt;ruby self2.rb 
+    Class S method m: 
+    #&amp;lt;S:0x2835908&amp;gt; 
+    &amp;gt;Exit code: 0&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;四、在单例方法或者类方法中&lt;/h2&gt;
+
+&lt;h3&gt;1.单例方法是针对一个对象添加的方法，只有这个对象拥有和访问这个方法，这时候self是拥有这个方法的对象。&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;# self3.rb
+    obj = Object.new
+    def obj.show
+     print 'I am an object: '
+     puts &amp;quot;here's self inside a singleton method of mine:&amp;quot;
+     puts self
+    end
+    obj.show
+    print 'And inspecting obj from outside, '
+    puts &amp;quot;to be sure it's the same object:&amp;quot;
+    puts obj&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;运行结果：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;ruby self3.rb 
+    I am an object: here's self inside a singleton method of mine: 
+    #&amp;lt;Object:0x2835688&amp;gt; 
+    And inspecting obj from outside, to be sure it's the same object: 
+    #&amp;lt;Object:0x2835688&amp;gt; 
+    &amp;gt;Exit code: 0&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;2.在类方法中self代表这个类对象。&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;# self4.rb
+    class S
+      def S.x 
+        puts &amp;quot;Class method of class S&amp;quot;    
+        puts self    
+      end
+    end
+    S.x&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;运行结果：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;&amp;gt;ruby self4.rb 
+    Class method of class S 
+    S 
+    &amp;gt;Exit code: 0&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;从上面的例子我们可以看出ruby中的self都表示在当前的环境下你可以访问的当前的或者默认的对象。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Vim中常用三个插件（nerdtree/ctrlp/ack）</title>
+   <link href="/Tools/2013/11/13/Vim-three-plug-in.html"/>
+   <updated>2013-11-13T00:00:00+08:00</updated>
+   <id>/Tools/2013/11/13/Vim-three-plug-in</id>
+   <content type="html">&lt;h2&gt;1、The NERDTree 树型结构显示文件&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;下载&lt;a href=&quot;http://www.vim.org/scripts/script.php?script_id=1658&quot;&gt;NERDTree&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;把下载的压缩包解压到~/.vim目录中&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;用vim打开工程，就出现树型结构&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;此处需要特别注意的是，在树型结构选中需要打开的文件，如果按Enter键，树型结构就会消失，全屏显示你刚才想打开的文件。&lt;/p&gt;
+
+&lt;p&gt;有三个办法可以既打开想要显示的文件，还保持树型结构存在，这才是我们希望实现功能：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;在树型结构选中需要打开的文件，按i键，此时屏幕左边是树型结构，右边是需要显示的文件&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在树型结构选中需要打开的文件，按Enter键，再输入 :NERDTree&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;现在~/.vimrc中增加如下设置，然后在树型结构选中需要打开的文件，按Enter键，再按F8&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;let NERDTreeShowBookmarks = 1
+      let NERDChristmasTree = 1
+      let NERDTreeWinPos = &amp;quot;left&amp;quot;
+      map &amp;lt;F8&amp;gt; :NERDTree&amp;lt;CR&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;2、CtrlP 快速搜索文件&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;下载&lt;a href=&quot;http://kien.github.io/ctrlp.vim/&quot;&gt;CtrlP&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;把下载的压缩包解压到~/.vim目录中&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在～/.vimrc中增加如下设置&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;set runtimepath^=~/.vim/ctrlp.vim&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;3、Ack 全项目文件搜索含有关键字的位置&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ubuntu中使用如下命令进行安装&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;sudo apt-get install ack-grep&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;在～/.vimrc中增加如下设置&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;function! Ack(args)
+        let grepprg_bak=&amp;amp;grepprg
+        set grepprg=ack\ -H\ --nocolor\ --nogroup
+        execute &amp;quot;silent! grep &amp;quot; . a:args
+        botright copen
+        let &amp;amp;grepprg=grepprg_bak
+        endfunction
+
+        command! -nargs=* -complete=file Ack call Ack(&amp;lt;q-args&amp;gt;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Ack仍然不好使用时，需要执行如下命令&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;sudo ln -s /usr/bin/ack-grep /usr/local/ack&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Vim中分屏操作大全详解</title>
+   <link href="/Tools/2013/11/12/Vim-split-screen.html"/>
+   <updated>2013-11-12T00:00:00+08:00</updated>
+   <id>/Tools/2013/11/12/Vim-split-screen</id>
+   <content type="html">&lt;p&gt;今天无意看到Vim还可以分屏显示，个人觉得很酷，因此把Vim中关于分屏相关操作整理。&lt;/p&gt;
+
+&lt;h2&gt;1、分屏启动&lt;/h2&gt;
+
+&lt;p&gt;使用大写的O参数来垂直分屏：vim -On file1 file2 ...&lt;/p&gt;
+
+&lt;p&gt;使用小写的o参数来水平分屏：vim -on file1 file2 ...&lt;/p&gt;
+
+&lt;p&gt;注释：n代表数字，表示分成几个屏。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;小技巧：使用vim编程时需要多行缩进，可以在命令模式输入：开始行号,结束行号 &amp;lt; 或 &gt; 向左缩进或向右缩进&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2&gt;2、Vim分屏&lt;/h2&gt;
+
+&lt;p&gt;上下分割当前打开的文件：Ctrl+W s&lt;/p&gt;
+
+&lt;p&gt;上下分割并打开一个新的文件：:sp file&lt;/p&gt;
+
+&lt;p&gt;左右分割当前打开的文件：Ctrl+W v&lt;/p&gt;
+
+&lt;p&gt;左右分割并打开一个新的文件：:vsp file&lt;/p&gt;
+
+&lt;p&gt;命令模式下：&lt;/p&gt;
+
+&lt;p&gt;:new，新建文件并分屏，Ctrl+W n&lt;/p&gt;
+
+&lt;p&gt;:spilt，水平分屏，将当前屏分为两个，水平的：Ctrl+w s&lt;/p&gt;
+
+&lt;p&gt;:vsplit，垂直分屏，将当前屏分为两个，垂直的：Ctrl+w v&lt;/p&gt;
+
+&lt;p&gt;:only，取消当前的屏，当前屏指的是光标所在屏&lt;/p&gt;
+
+&lt;h2&gt;3、切换分屏&lt;/h2&gt;
+
+&lt;p&gt;ViM中的光标键是h, j, k, l，要在各个屏间切换，只需要先按一下Ctrl+W。&lt;/p&gt;
+
+&lt;p&gt;把光标移到右边的屏：Ctrl+W l&lt;/p&gt;
+
+&lt;p&gt;把光标移到左边的屏中：Ctrl+W h&lt;/p&gt;
+
+&lt;p&gt;把光标移到上边的屏中：Ctrl+W k&lt;/p&gt;
+
+&lt;p&gt;把光标移到下边的屏中：Ctrl+W j&lt;/p&gt;
+
+&lt;p&gt;把光标移到下一个的屏中：Ctrl+W w&lt;/p&gt;
+
+&lt;p&gt;把光标移到下一个的屏中：Ctrl+W p&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;小技巧：通过在.vimrc文件增加如下设置，可以使用鼠标在分屏之间切换光标&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;set mouse=a
+     set selection=exclusive
+     set selectmode=mouse,key&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;4、关闭分屏&lt;/h2&gt;
+
+&lt;p&gt;关闭其他窗口：Ctrl+W  o&lt;/p&gt;
+
+&lt;p&gt;关闭当前窗口：Ctrl+W c&lt;/p&gt;
+
+&lt;p&gt;关闭当前窗口，如果只剩最后一个了，则退出Vim：Ctrl+W q&lt;/p&gt;
+
+&lt;h2&gt;5、加载文件&lt;/h2&gt;
+
+&lt;p&gt;在新的垂直分屏中打开文件：:vs 文件路径/文件名&lt;/p&gt;
+
+&lt;p&gt;在新的水平分屏中打开文件：:sv 文件路径/文件名&lt;/p&gt;
+
+&lt;h2&gt;6、屏幕尺寸&lt;/h2&gt;
+
+&lt;p&gt;下面是改变尺寸的一些操作，主要是高度，对于宽度你可以使用Ctrl+W &amp;lt; 或是 &gt;。&lt;/p&gt;
+
+&lt;p&gt;让所有的屏都有一样的高度：Ctrl+W =&lt;/p&gt;
+
+&lt;p&gt;增加高度：Ctrl+W +&lt;/p&gt;
+
+&lt;p&gt;减少高度：Ctrl+W -&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ruby中特殊字符的含义</title>
+   <link href="/Rubyonrails/2013/11/11/Ruby-special-string.html"/>
+   <updated>2013-11-11T00:00:00+08:00</updated>
+   <id>/Rubyonrails/2013/11/11/Ruby-special-string</id>
+   <content type="html">&lt;p&gt;  &lt;strong&gt;字符串  含义&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;1、 \a      替换成Bell声所对应的符号&lt;/p&gt;
+
+&lt;p&gt;2、 \nnn    nnn表示一个八进制数值，替换成该八进制所对应的字符&lt;/p&gt;
+
+&lt;p&gt;3、 \b      退格符，替换成退格键所对应的字符&lt;/p&gt;
+
+&lt;p&gt;4、 \xnn    xnn表示一个十六进制数，替换成该十六进制数所对应的字符&lt;/p&gt;
+
+&lt;p&gt;5、 \e      替换成Escape键对应的字符&lt;/p&gt;
+
+&lt;p&gt;6、 \cx     替换成Ctrl+X组合键对应的字符，其中x可以是任意键对应的字符&lt;/p&gt;
+
+&lt;p&gt;7、 \C-x    替换成Ctrl+X组合键对应的字符，其中x可以是任意键对应的字符&lt;/p&gt;
+
+&lt;p&gt;8、 \n      换行符，替换成一个空行&lt;/p&gt;
+
+&lt;p&gt;9、 \M-x    替换成Alt+X组合键对应的字符，其中x可以是任意键对应的字符&lt;/p&gt;
+
+&lt;p&gt;10、\r      回车符，替换成一个回车&lt;/p&gt;
+
+&lt;p&gt;11、\M-\C-x 替换成Ctrl+Alt+X组合键对应的字符，其中x可以是任意键对应的字符&lt;/p&gt;
+
+&lt;p&gt;12、\s      空白符，替换成一个空白字符&lt;/p&gt;
+
+&lt;p&gt;13、\t      替换成一个Tab键所对应的字符&lt;/p&gt;
+
+&lt;p&gt;14、\v      替换成一个垂直Tab键所对应的字符&lt;/p&gt;
+
+&lt;p&gt;15、\d      与任何数字相匹配&lt;/p&gt;
+
+&lt;p&gt;16、\w      与任何数字、字母或下划线相匹配&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>增加Jekyll博客分页功能</title>
+   <link href="/Rubyonrails/2013/11/08/Jekyll-blog-pagination.html"/>
+   <updated>2013-11-08T00:00:00+08:00</updated>
+   <id>/Rubyonrails/2013/11/08/Jekyll-blog-pagination</id>
+   <content type="html">&lt;p&gt;Jekyll博客分页功能添加步骤如下:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;_config.xml里面加上&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;paginate:10  //每一页显示的文章数为10&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;index.html里面加上:&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;**分页输出**
+      for post in paginator.posts
+        content
+      endfor
+      
+      **分页功能**
+      if paginator.previous_page
+        //判断输出前一个分页
+        //&amp;quot;page&amp;quot; + paginator.previous_page
+      endif
+      if paginator.next_page
+        //判断输出后一个分页
+        //&amp;quot;page&amp;quot; + paginator.next_page
+      endif
+      for page in (1..paginator.total_pages)
+        if page == paginator.page
+          //如果是当前分页
+          //page
+        else
+          //不是的话输出其他分页链接号码
+          //&amp;quot;page&amp;quot; + page
+        endif
+      endfor&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;详细实现代码，可参见&lt;a href=&quot;https://github.com/wangyzyoga/wangyzyoga-blog/blob/gh-pages/index.html&quot;&gt;https://github.com/wangyzyoga/wangyzyoga-blog/blob/gh-pages/index.html&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>使用OmniAuth调用Github时provider参数设置</title>
+   <link href="/Rubyonrails/2013/11/07/Omniauth-github.html"/>
+   <updated>2013-11-07T00:00:00+08:00</updated>
+   <id>/Rubyonrails/2013/11/07/Omniauth-github</id>
+   <content type="html">&lt;p&gt;跟着&lt;a href=&quot;http://railscasts-china.com/episodes/omniauth-1&quot;&gt;Railscasts&lt;/a&gt;学习OmniAuth调用Github时，遇到如下代码：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;Rails.application.config.middleware.use OmniAuth::Builder do
+      provider :github, 'key', 'secrets'
+    end&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;不知道代码中key与secrets两个参数在Github中如何找到，Google/百度各种搜索，折腾1个多小时没解决。&lt;/p&gt;
+
+&lt;p&gt;最后还是在&lt;a href=&quot;http://ruby-china.org&quot;&gt;RubyChina社区&lt;/a&gt;找到帮助，具体方法如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;使用github帐号登录到github主页面，点击‘Edit Your Profile’&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在Profile页面左侧，点击‘Application’&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在Application页面右侧，点击‘Register-new-application’,填写Oauth－application的名字/URL/callbackURL,我的信息是这样填写的:&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;Application name
+      Omniauth
+
+      Homepage URL
+      http://localhost:3000
+
+      Authorization callback URL
+      http://localhost:3000/auth/github&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;最后点击‘Register-application’，页面就会出现ClientID/ClientSecret的信息&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;用ClientID替换key,ClientSecret替换secrets即可&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>WIN7中设置Internet连接共享保存时出现(null)错误</title>
+   <link href="/Tools/2013/11/04/WIN7-share-internet-problem.html"/>
+   <updated>2013-11-04T00:00:00+08:00</updated>
+   <id>/Tools/2013/11/04/WIN7-share-internet-problem</id>
+   <content type="html">&lt;p&gt;在WIN7中设置Internet连接共享，点击确定出现&quot;Internet连接共享访问被启用时，出现了一个错误(null)&quot;。&lt;/p&gt;
+
+&lt;p&gt;这个大多数都是没有启用'windows firewall'服务导致的，因为360安全卫士会禁用掉，只要手动启用就正常了。&lt;/p&gt;
+
+&lt;p&gt;手动启用的方法很简单：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;点击开始按钮——搜索框中输入：服务，回车打开服务管理界面。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;找到'windows firewall'服务，点击启动即可。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Rails4.0中ActiveModel::ForbiddenAttributesError的解决方法</title>
+   <link href="/Rubyonrails/2013/11/03/Rails4.0-ForbiddenAttributesError.html"/>
+   <updated>2013-11-03T00:00:00+08:00</updated>
+   <id>/Rubyonrails/2013/11/03/Rails4.0-ForbiddenAttributesError</id>
+   <content type="html">&lt;p&gt;在rails4.0中执行&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;def create
+      #params.permit!
+      @post = Post.find(params[:post_id])
+      @comment = @post.comments.new(params[:comment])
+      redirect_to @post if @comment.save
+    end&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;错误提示：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;ActiveModel::ForbiddenAttributesError&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;提示错误代码所在位置：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;@comment = @post.comments.new(params[:comment])&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;网上搜到有两种解决方法：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;去掉上面代码中注释掉的部分即可，简便但是有些粗暴。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;允许需要的参数传进来,将params[:comment]改为comment_params,并为comment_params建立一个私有方法。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;class CommentsController &amp;lt;ApplicationController 
+
+      def create
+        @post = Post.find(params[:post_id])
+        @comment = @post.comments.new(comment_params)
+        redirect_to @post if @comment.save
+      end
+  
+      private
+      def comment_params
+        params.require(:comment).permit(:post_id , :content)
+      end
+  
+      end&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ruby中require/load/include/extend的区别</title>
+   <link href="/Rubyonrails/2013/10/24/Require-load-include-extend.html"/>
+   <updated>2013-10-24T00:00:00+08:00</updated>
+   <id>/Rubyonrails/2013/10/24/Require-load-include-extend</id>
+   <content type="html">&lt;h2&gt;1、Require：&lt;/h2&gt;
+
+&lt;p&gt;require方法是加载一个库，并且只加载一次，如果多次加载会返回false。只有当要加载的库位于一个分离的文件中时才有必要使用require，使用时不需要加扩展名，一般放在文件的最前面：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;require ‘test_library’&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;1.1、Require引用文件默认路径：&lt;/h3&gt;
+
+&lt;p&gt;运行&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;xxx@ubuntu:~/repos/sample_app/ruby-1.9.3$ require 'filename'&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;系统会在ruby安装的lib目录和~/repos/sample_app/ruby-1.9.3/目录下查找加载的文件。&lt;/p&gt;
+
+&lt;h3&gt;1.2、Require引用单个文件的四种方法：&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;1  require File.join(__FILE__, '../file_to_require')。  # __FILE__为常量，表示当前文件绝对路径
+    2  require File.expand_path('../file_to_require', __FILE__)  # 这种方法是Rails常用的做法
+    3  require File.dirname(__FILE__) + '/file_to_require'    
+    4  $LOAD_PATH.unshift(File.dirname(__FILE__))  # 先把目录加入LOAD_PATH变量中，然后直接引用文件名
+       require 'filename'&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;1.3、Require引用一个目录下所有文件的两种方法：&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;1  Dir[File.dirname(__FILE__) + '/lib/*.rb'].each {|file| require file }
+    2  引用Require_all gem搞定,地址：https://rubygems.org/gems/require_all&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;2、Load：&lt;/h2&gt;
+
+&lt;p&gt;load用来多次加载一个库，必须指定扩展名：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;load ‘test_library.rb’&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;3、Include:&lt;/h2&gt;
+
+&lt;p&gt;当库被加载之后，可以在类定义中包含一个module，让module的实例方法和变量成为类本身的实例方法和类变量，它们mix进来。include并不会把module的实例方法拷贝到类中，只是做了引用，包含module的不同类都指向了同一个对象。如果改变了module的定义，即使程序还在运行，所有包含module的类都会改变行为。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;module Log 
+        def class_type 
+            “This class is of type: #{self.class}” 
+        end 
+    end 
+    class TestClass 
+        include Log 
+    end 
+
+    &amp;gt; TestClass.new.class_type    =&amp;gt; This class is of type: TestClass&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;4、Extend:&lt;/h2&gt;
+
+&lt;p&gt;extend会把module的实例方法作为类方法加入类中：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;module Log 
+        def class_type 
+           “This class is of type: #{self.class}” 
+        end 
+    end 
+    class TestClass 
+        extend Log 
+    end
+ 
+    &amp;gt; TestClass.class_type    =&amp;gt; This class is of type: TestClass&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ruby On Rails中文教程问题2</title>
+   <link href="/Rubyonrails/2013/10/14/Railstutorial-china-problem2.html"/>
+   <updated>2013-10-14T00:00:00+08:00</updated>
+   <id>/Rubyonrails/2013/10/14/Railstutorial-china-problem2</id>
+   <content type="html">&lt;p&gt;&lt;a href=&quot;http://railstutorial-china.org/&quot;&gt;Ruby On Rails教程&lt;/a&gt;目前看到第7章节，完成部分的代码已经上传&lt;a href=&quot;https://github.com/wangyzyoga/sample_app&quot;&gt;GitHub&lt;/a&gt;。继续把练习过程中遇到的问题进行整理，希望可以帮助遇到类似问题的人。&lt;/p&gt;
+
+&lt;h3&gt;1. 重新设置BCrypt耗时因子&lt;/h3&gt;
+
+&lt;p&gt;书中7.1.3章节中提到为测试环境重新设置BCrypt耗时因子：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;SampleApp::Application.configure do
+      .
+      .
+      .
+      # Speed up tests by lowering bcrypt's cost function.
+      ActiveModel::SecurePassword.min_cost = true
+    end&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;但我修改完成后，进行测试出现提示：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;undefined method `min_cost=' for ActiveModel::SecurePassword:Module
+    (NoMethodError)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Google搜索设置BCrypt耗时因子方法，发现如下代码：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;require 'bcrypt'
+    silence_warnings do
+      BCrypt::Engine::DEFAULT_COST = BCrypt::Engine::MIN_COST
+    end&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;按照上面方法修改完成后，再次进行测试就通过了。&lt;strong&gt;暂时不知道原因，先通过再说～&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3&gt;2. can't convert Symbol into string&lt;/h3&gt;
+
+&lt;p&gt;书中7.3.1章节中提到处理存储失败的create动作：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;class UsersController &amp;lt; ApplicationController
+      .
+      .
+      .
+      def create
+        @user = User.new(params[:user])    # Not the final implementation!
+        if @user.save
+          # Handle a successful save.
+        else
+          render 'new'
+        end
+      end
+    end&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;修改完成后，进行测试出现提示：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;can't convert Symbol into string&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;问题出现原因是Gemfiles中缺少gem ‘strong_parameters’添加后，执行bundle install，再次进行测试就通过了。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ruby On Rails教程中遇到几个问题</title>
+   <link href="/Rubyonrails/2013/09/28/Railstutorial-china-problem.html"/>
+   <updated>2013-09-28T00:00:00+08:00</updated>
+   <id>/Rubyonrails/2013/09/28/Railstutorial-china-problem</id>
+   <content type="html">&lt;p&gt;这两周断断续续在跟着&lt;a href=&quot;http://railstutorial-china.org/&quot;&gt;Ruby On Rails教程&lt;/a&gt;实战练习，最终会做成一个拥有用户注册/登录/发微博等功能简单应用程序。&lt;/p&gt;
+
+&lt;p&gt;目前我看到第6章节，完成部分的代码已经上传&lt;a href=&quot;https://github.com/wangyzyoga/sample_app&quot;&gt;GitHub&lt;/a&gt;。现在把练习过程中遇到的3个问题进行整理，希望可以帮助遇到类似问题的人。&lt;/p&gt;
+
+&lt;h3&gt;1.Gemfile中Gem版本兼容问题&lt;/h3&gt;
+
+&lt;p&gt;本书推荐使用Ruby：2.0.0，Rails：4.0，我电脑上的环境是Ruby:1.9.3，Rails:3.2.13，这就会导致一些高版本内容不支持低版本情况。如果直接复制第3章-基本静态页面中Gemfile的内容，并运行‘bundle install’时会出现问题。&lt;/p&gt;
+
+&lt;p&gt;大家根据错误提示，修改Gemfile对应Gem的版本即可。&lt;/p&gt;
+
+&lt;h3&gt;2.Rails 路由设置&lt;/h3&gt;
+
+&lt;p&gt;书中5.3.2章节中提到添加根地址的路由设置：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;SampleApp::Application.routes.draw do
+      root to: 'static_pages#home'
+      .
+      .
+      .
+    end&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;上面的代码会把根地址/映射到/static_pages/home页面上，也就是让http://localhost:3000/指向/static_pages/home。&lt;/p&gt;
+
+&lt;p&gt;我按照书中介绍进行配置后，死活都无法实现输入http://localhost:3000/，展现/static_pages/home内容。折腾了两三天后，我突然想起之前在“Ruby从入门到精通”里面看到要更改首页，除了更改路由设置，还需要把rails默认首页删除才行。将sample_app/public路径下的index.html文件删除后，首页就指向/static_pages/home。&lt;/p&gt;
+
+&lt;h3&gt;3.动态find_by的变化&lt;/h3&gt;
+
+&lt;p&gt;书中6.3.3章节中提到用户身份验证时，需要调用find_by方法：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;User.find_by(email: email)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;通过Email地址查找用户记录。&lt;/p&gt;
+
+&lt;p&gt;当我使用上述方案调用find_by方法时，老提示：没有定义find_by方法。后来在网上查询原因才发现，书中的写法是Rails4.0的用法，Rails3.x的用法应该是这样的：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;User.find_by_email(@user.email)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;更多升级到Rails4.0的说明，详见&lt;a href=&quot;http://www.oschina.net/translate/get-your-app-ready-for-rails-4&quot;&gt;http://www.oschina.net/translate/get-your-app-ready-for-rails-4&lt;/a&gt;。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>通过Git将应用程序推送到Heroku失败解决办法</title>
+   <link href="/Tools/2013/09/12/Git-push-heroku-master-timeout.html"/>
+   <updated>2013-09-12T00:00:00+08:00</updated>
+   <id>/Tools/2013/09/12/Git-push-heroku-master-timeout</id>
+   <content type="html">&lt;p&gt;今天尝试'git push heroku master'的时候一直出现：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;ssh: connect to host heroku.com port 22: Bad file number
+    fatal: The remote end hung up unexpectedly&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;百度查找原因，在Ruby-China中发现如下两个帖子：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://ruby-china.org/topics/10813&quot;&gt;Heroku push timeout 错误，折腾半天，已解决。Fuck GFW!!!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://ruby-china.org/topics/11097&quot;&gt;求教 Heroku 不能 push 的问题：port22&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;都提到在'$ vi ~/.ssh/config'中更改配置，实际上，我在这个路径下就没有找到对应config文件。&lt;/p&gt;
+
+&lt;p&gt;参考上面两篇文章一些办法，最后我是这样解决的：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用'ssh -v git@heroku.com'命令，找出sshconfig文件具体路径&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;debug1: Reading configuration data /etc/ssh/ssh_config&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;使用'sudo gedit /etc/ssh/ssh_config'打开文件，增加如下内容&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;Host heroku.com
+      User yourusername
+      Hostname proxy.heroku.com
+      PreferredAuthentications publickey
+      IdentityFile ~/.ssh/id_rsa
+      port 22&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;说明：不设置这步，就不会挖出很多IP，你也就找不到可用节点。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;再使用'ssh -v git@heroku.com'命令，找出可用节点，我这里找到IP是107.21.99.190&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;再使用'sudo gedit /etc/ssh/ssh_config'打开文件，修改配置&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;Host heroku.com
+      User yourusername
+      Hostname 107.21.99.190 
+      PreferredAuthentications publickey
+      IdentityFile ~/.ssh/id_rsa
+      port 22&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;说明：用具体IP代替proxy.heroku.com是最关键一步。&lt;/p&gt;
+
+&lt;p&gt;完成以上处理，就可以通过Git把应用程序推送到Heroku～_～&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ubuntu12.04中GoAgent使用教程--轻轻松松翻墙咯</title>
+   <link href="/Tools/2013/09/11/GoAgent-ubuntu.html"/>
+   <updated>2013-09-11T00:00:00+08:00</updated>
+   <id>/Tools/2013/09/11/GoAgent-ubuntu</id>
+   <content type="html">&lt;h2&gt;Ubuntu下的配置&lt;/h2&gt;
+
+&lt;p&gt;要运行goagent首先必须安装了python，推荐使用python2.7,如果没有python，安装方法：(以下方法选择一种合适的即可)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;从源安装&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;sudo apt-get install python&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;从源码安装&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;wget http://python.org/ftp/python/2.7.5/Python-2.7.5.tar.bz2 &amp;amp;&amp;amp; tar jxvf  
+      Python-2.7.5.tar.bz2 &amp;amp;&amp;amp; cd Python-2.7.5 &amp;amp;&amp;amp; ./configure  --with-zlib &amp;amp;&amp;amp;  
+      make &amp;amp;&amp;amp; sudo make install&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;安装gevent&lt;/h3&gt;
+
+&lt;p&gt;使用以下命令进行安装&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;sudo apt-get install python-dev&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;安装pyopenssl&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;PyOpenSSL是OpenSSL的python接口，用于提供加密传输支持(SSL)，如果没用该模组，会导致goagent无法生成证书而影响使用。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;若系统没有openssl，先安装openssl，一般系统都已安装，可以忽略此步&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装pyopenssl（0.13）(以下方法选择一种合适的即可)&lt;/p&gt;
+
+&lt;p&gt;1.从源安装,如果源中有的话&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;sudo apt-get install python-openssl&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;  2.通过python包管理器pip安装&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;sudo apt-get install python-pip
+      sudo pip install pyOpenSSL&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;  3.从源码编译安装&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;wget http://pypi.python.org/packages/source/p/pyOpenSSL/  pyOpenSSL
+      -0.13.tar.gz &amp;amp;&amp;amp; tar zxvf pyOpenSSL-0.13.tar.gz &amp;amp;&amp;amp; cd pyOpenSSL-0.13  
+      &amp;amp;&amp;amp; sudo python setup.py install&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;安装gtk托盘所需模组&lt;/h3&gt;
+
+&lt;p&gt;要正常使用gtk托盘，需要安装以下软件包&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;sudo apt-get install python-vte&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;上传GoAgent&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodeload.github.com/goagent/goagent/legacy.zip/3.0&quot;&gt;下载goagent&lt;/a&gt;，解压，在终端cd到goagent所在目录下&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在server目录下，编辑app.yaml文件,把第一行改为application:你创建的appid。然后在server目录下，运行&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;python uploader.zip&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;根据提示输入你自己创建的appid（若要同时上传多appid在appid之间用|隔开）和你的Gmail帐号和密码(如果开启了两步验证，密码为16位的应用程序专用密码）&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;如何创建appid详见&lt;a href=&quot;http://www.douban.com/note/262773856/&quot;&gt;申请Google App Engine并创建appid&lt;/a&gt;,据说一个appid每天流量1G，超了就不能用，次日可以继续使用，所以你要可以多创建一些appid。&lt;/p&gt;
+
+&lt;p&gt;说明：在上传时，出现goagent AttributeError: can't set attribute问题，是Gmail之前启用了二次验证的缘故，只要在输入邮箱密码的时候输入应用程序专属密码，就可以上传成功。&lt;/p&gt;
+
+&lt;h2&gt;运行客户端&lt;/h2&gt;
+
+&lt;p&gt;在local目录下，编辑proxy.ini文件，把[gae]项目的appid修改为你创建的appid。然后在local目录下，运行&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;python proxy.py&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;即可使用代理，也可以赋予proxy.py可执行权限之后直接双击proxy.py。（在proxy.py上面右击，属性的权限中勾选允许以程序执行文件）&lt;/p&gt;
+
+&lt;p&gt;直接运行goagent-gtk.py可以使用gtk托盘方式运行goagent。运行addto-startup.py即可加入开机启动。也可以自行添加一个启动项，命令为&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;python /path/to/goagent/local/goagent-gtk.py&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;其中路径修改为自己系统中goagent-gtk.py的路径&lt;/p&gt;
+
+&lt;p&gt;说明：在运行客户端时，出现&quot;UnicodeDecodeError:'ascii' codec can't decode byte&quot;问题,是python的编码问题,要在终端下使用中文环境，那么要声明unicode的 UTF-8方式编码 打开你的proxy.py文件，在开头添加：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;import sys
+    reload(sys)
+    sys.setdefaultencoding('utf-8')&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;问题就解决了。&lt;/p&gt;
+
+&lt;h2&gt;使用chrome浏览器&lt;/h2&gt;
+
+&lt;p&gt;先安装chrome浏览器，然后安装SwitchySharp插件，最后导入这个设置&lt;a href=&quot;http://goagent.googlecode.com/files/SwitchyOptions.bak&quot;&gt;http://goagent.googlecode.com/files/SwitchyOptions.bak&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;导入文件是指在SwitchySharp插件选项中的导入/导出设置，从文件恢复，选择刚才下载的.bak文件。&lt;/p&gt;
+
+&lt;h2&gt;退出&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;如果是直接终端使用&quot;python proxy.py&quot;运行，在终端按&quot;Ctrl+C&quot;组合键可终止运行&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果使用gtk托盘，在托盘图标上右键菜单有退出选项&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;直接关闭终端窗口也会退出&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果以后台进程运行，先用&quot;ps aux | grep proxy.py&quot;找到goagent的PID，然后直接kill对应的PID&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;ps aux|grep proxy.py|grep -v &amp;quot;grep&amp;quot;|awk '{print $2}'|xargs kill&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Rails4.0建立博客遇到问题一</title>
+   <link href="/Rubyonrails/2013/09/06/Rails-new-blog.html"/>
+   <updated>2013-09-06T00:00:00+08:00</updated>
+   <id>/Rubyonrails/2013/09/06/Rails-new-blog</id>
+   <content type="html">&lt;p&gt;今天开始跟着&lt;a href=&quot;http://guides.ruby.tw/rails3/getting_started.html&quot;&gt;Rails初上手指南&lt;/a&gt;学习建立博客，遇到如下两个问题。&lt;/p&gt;
+
+&lt;h3&gt;1. rails new blog时，总是卡在:&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;run bundle install&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;解决办法：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;rails new blog --sikp-bundle
+    cd blog
+    bundle install --local&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;2. rails server时，报错提示:&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;Could not find a JavaScript runtime&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;解决办法:在blog文件夹下的Gemfile文件中加入&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;gem 'therubyracer'
+    gem 'execjs'&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;运行'rails server'后，在浏览器输入http://127.0.0.1:3000，应该就会看到Rails的预设首页。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ubuntu系统中查找文件和字符命令介绍</title>
+   <link href="/Tools/2013/09/04/Ubuntu-search.html"/>
+   <updated>2013-09-04T00:00:00+08:00</updated>
+   <id>/Tools/2013/09/04/Ubuntu-search</id>
+   <content type="html">&lt;p&gt;在刚开始接触Ubuntu的时候，通常会遇到自己建立的文件不知道放在硬盘的什么地方，这就需要掌握一些搜索命令，快速找到我们想找的文件。下来我们以查找文件和查找字符两大类，对find、locate、which、grep四种命令进行介绍。&lt;/p&gt;
+
+&lt;h2&gt;一、查找文件&lt;/h2&gt;
+
+&lt;h3&gt;1、find命令&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;1.1 find的语法：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;find [起始目录] 寻找条件 操作
+    find PATH OPTION [-exec COMMAND { } \;]&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;该命令中的寻找条件可以是一个用逻辑运算符not、and、or组成的复合条件,逻辑运算符and、or、not的含义为：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;and：逻辑与，在命令中用“-a”表示，是系统缺省的选项，表示只有当所给的条件都满足时，寻找条件才算满足。例如:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;find –name ’tmp’ –xtype c -user ’inin’&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;该命令寻找三个给定条件都满足的所有文件。&lt;/p&gt;
+
+&lt;p&gt;or：逻辑或，在命令中用“-o”表示。该运算符表示只要所给的条件中有一个满足时，寻找条件就算满足。例如:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;find –name ’tmp’ –o –name ’mina*’&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;该命令查询文件名为’tmp’或是匹配’mina*’的所有文件。&lt;/p&gt;
+
+&lt;p&gt;not：逻辑非，在命令中用“!”表示。该运算符表示查找不满足所给条件的文件。例如:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;find ! –name ’tmp’&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;该命令查询文件名不是’tmp’的所有文件。&lt;/p&gt;
+
+&lt;p&gt;需要说明的是：当使用很多的逻辑选项时，可以用括号把这些选项括起来。例如：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;find (–name ’tmp’ –xtype c -user ’inin’ )&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;1.2 在option中，具体有参数：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;-name ’字串’ 查找文件名匹配所给字串的所有文件，字串内可用通配符 *、?、[ ]。&lt;/p&gt;
+
+&lt;p&gt;-lname ’字串’ 查找文件名匹配所给字串的所有符号链接文件，字串内可用通配符 *、?、[ ]。&lt;/p&gt;
+
+&lt;p&gt;-gid n 查找属于ID号为 n 的用户组的所有文件。&lt;/p&gt;
+
+&lt;p&gt;-uid n 查找属于ID号为 n 的用户的所有文件。&lt;/p&gt;
+
+&lt;p&gt;-group ’字串’ 查找属于用户组名为所给字串的所有的文件。&lt;/p&gt;
+
+&lt;p&gt;-user ’字串’ 查找属于用户名为所给字串的所有的文件。&lt;/p&gt;
+
+&lt;p&gt;-empty 查找大小为 0的目录或文件。&lt;/p&gt;
+
+&lt;p&gt;-path ’字串’ 查找路径名匹配所给字串的所有文件，字串内可用通配符*、?、[ ]。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1.3 我们再看一下exec选项：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;-exec：对搜索的结构指令指定的shell命令。注意格式要正确：&quot;-exec 命令 {} \;&quot;&lt;/p&gt;
+
+&lt;p&gt;在}和\之间一定要有空格才行;{}表示命令的参数即为所找到的文件;命令的末尾必须以“\;”结束。&lt;/p&gt;
+
+&lt;p&gt;例如：对root以及子目录查找不包括目录/root/bin的，greek用户的，文件类型为普通文件的，3天之前的名为test-find.c的文件进行删除操作，命令如下：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;find / -name &amp;quot;test-find.c&amp;quot; -type f -mtime +3 -user greek -prune /root/bin -exec rm {} \;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;find命令指令实例：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;find . - name ‘main*’ - exec more {} \;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;查找当前目录中所有以main开头的文件，并显示这些文件的内容。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;find . (- name a.out - o - name ‘*.o’)&amp;gt; - atime +7 - exec rm {} \;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;删除当前目录下所有一周之内没有被访问过的a .out或*.o文件。&lt;/p&gt;
+
+&lt;p&gt;命令中的“.”表示当前目录，此时 find 将从当前目录开始，逐个在其子目录中查找满足后面指定条件的文件。&lt;/p&gt;
+
+&lt;p&gt;“-name a.out” 是指要查找名为a.out的文件;&lt;/p&gt;
+
+&lt;p&gt;“-name ‘*.o’” 是指要查找所有名字以 .o 结尾的文件。&lt;/p&gt;
+
+&lt;p&gt;这两个 -name 之间的 -o 表示逻辑或(or)，即查找名字为a.out或名字以 .o结尾的文件。&lt;/p&gt;
+
+&lt;p&gt;find命令在当前目录及其子目录下找到这佯的文件之后，再进行判断，看其最后访问时间是否在7天以前(条件 -atime +7)，若是，则对该文件执行命令rm(-exec rm {} \;)。&lt;/p&gt;
+
+&lt;p&gt;其中 {} 代表当前查到的符合条件的文件名，\;则是语法所要求的。&lt;/p&gt;
+
+&lt;h3&gt;2、locate命令&lt;/h3&gt;
+
+&lt;p&gt;locate命令其实是“find -name”的另一种写法，但是要比后者快得多，原因在于它不搜索具体目录，而是搜索一个数据库（/var/lib/locatedb），这个数据库中含有本地所有文件信息。Linux系统自动创建这个数据库，并且每天自动更新一次，所以使用locate命令查不到最新变动过的文件。为了避免这种情况，可以在使用locate之前，先使用'sudo updatedb'命令，手动更新数据库。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;locate常用写法：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;locate filename&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;locate命令的使用实例：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;locate /etc/sh&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;搜索etc目录下所有以sh开头的文件。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;locate ~/m&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;搜索用户主目录下，所有以m开头的文件。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;locate -i ~/m&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;搜索用户主目录下，所有以m开头的文件，并且忽略大小写。&lt;/p&gt;
+
+&lt;h3&gt;3、which命令&lt;/h3&gt;
+
+&lt;p&gt;根据可执行文件的文件名,查找可执行文件。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;which常用写法：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;which executeable_name&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;例如:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;which apache2&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;返回/usr/sbin/apache2&lt;/p&gt;
+
+&lt;h2&gt;二、查找字符&lt;/h2&gt;
+
+&lt;h3&gt;4、grep命令&lt;/h3&gt;
+
+&lt;p&gt;grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来。grep全称是Global Regular Expression Print，表示全局正则表达式版本，它的使用权限是所有用户。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4.1 grep的语法：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;语法: grep [options] PATTERN [FILE...]&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;4.2 [options]主要参数：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;－c：只输出匹配行的计数。&lt;/p&gt;
+
+&lt;p&gt;－I：不区分大 小写(只适用于单字符)。&lt;/p&gt;
+
+&lt;p&gt;－h：查询多文件时不显示文件名。&lt;/p&gt;
+
+&lt;p&gt;－l：查询多文件时只输出包含匹配字符的文件名。&lt;/p&gt;
+
+&lt;p&gt;－n：显示匹配行及 行号。&lt;/p&gt;
+
+&lt;p&gt;－s：不显示不存在或无匹配文本的错误信息。&lt;/p&gt;
+
+&lt;p&gt;－v：显示不包含匹配文本的所有行。&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;4.3 PATTERN主要参数：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;\： 忽略正则表达式中特殊字符的原有含义。&lt;/p&gt;
+
+&lt;p&gt;^：匹配正则表达式的开始行。&lt;/p&gt;
+
+&lt;p&gt;$: 匹配正则表达式的结束行。&lt;/p&gt;
+
+&lt;p&gt;\&amp;lt;：从匹配正则表达 式的行开始。&lt;/p&gt;
+
+&lt;p&gt;&gt;：到匹配正则表达式的行结束。&lt;/p&gt;
+
+&lt;p&gt;[ ]：单个字符，如[A]即A符合要求 。&lt;/p&gt;
+
+&lt;p&gt;[ - ]：范围，如[A-Z]，即A、B、C一直到Z都符合要求 。&lt;/p&gt;
+
+&lt;p&gt;。：所有的单个字符。&lt;/p&gt;
+
+&lt;p&gt;* ：有字符，长度可以为0。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4.4 grep命令使用简单实例&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;grep ‘test’ d*&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;显示所有以d开头的文件中包含 test的行。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;grep ‘test’ aa bb cc&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;显示在aa，bb，cc文件中匹配test的行。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;grep ‘[a-z]\{5\}’ aa&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;显示所有包含每个字符串至少有5个连续小写字符的字符串的行。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;grep ‘w\(es\)t.*\1′ aa&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;如果west被匹配，则es就被存储到内存中，并标记为1，然后搜索任意个字符(.&lt;em&gt;)，这些字符后面紧跟着 另外一个es(\1)，找到就显示该行。如果用egrep或grep -E，就不用”\”号进行转义，直接写成’w(es)t.&lt;/em&gt;\1′就可以了。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4.5 grep命令使用复杂实例&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;假设在’/usr/src/Linux/Doc’目录下搜索带字符 串’magic’的文件：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;grep magic /usr/src/Linux/Doc/*
+    sysrq.txt:* How do I enable the magic SysRQ key?
+    sysrq.txt:* How do I use the magic SysRQ key?&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;其中文件’sysrp.txt’包含该字符串，讨论的是SysRQ的功能。
+默认情况下，’grep’只搜索当前目录。如果此目录下有许多子目录，’grep’会以如下形式列出：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;grep: sound: Is a directory&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;这可能会使’grep’ 的输出难于阅读。这里有两种解决的办法：
+明确要求搜索子目录：grep -r
+或忽略子目录：grep -d skip
+如果有很多输出时，可以通过管道将其转到’less’上阅读：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;grep magic /usr/src/Linux/Documentation/* | less&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;这样，就可以更方便地阅读。&lt;/p&gt;
+
+&lt;p&gt;有一点要注意，必需提供一个文件过滤方式(搜索全部文件的话用 *)。如果忘了，’grep’会一直等着，直到该程序被中断。如果遇到了这样的情况，按 &lt;CTRL c&gt; ，然后再试。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ruby从入门到精通 学习记录二(require/CSV)</title>
+   <link href="/Rubyonrails/2013/09/02/Ruby-require-csv.html"/>
+   <updated>2013-09-02T00:00:00+08:00</updated>
+   <id>/Rubyonrails/2013/09/02/Ruby-require-csv</id>
+   <content type="html">&lt;h3&gt;一、REQUIRE&lt;/h3&gt;
+
+&lt;p&gt;今天学习Ruby从入门到精通时，使用require加载文件，老提示：LoadError。然后在网上查看原因，并整理几种加载当前路径下的某个源文件的常用方法。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;在加载的源文件名前加上当前目录&quot;./&quot;，即require &quot;./test&quot;&lt;/li&gt;
+&lt;li&gt;使用load加载完整文件名，即load &quot;test.rb&quot;&lt;/li&gt;
+&lt;li&gt;使用require_relative替代require，即require_relative &quot;test&quot;&lt;/li&gt;
+&lt;li&gt;使用解析后的文件路径，即require File.expand_path(&quot;./test&quot;, __FILE__)&lt;br/&gt;
+这里File.expand_path是将指定的参数路径解析成绝对路径，./test是希望加载的文件,__FILE__是当前文件绝对路径。&lt;/li&gt;
+&lt;li&gt;动态修改加载路径，即$LOAD_PATH.unshift(File.dirname(__FILE__))unless $LOAD_PATH.include?(File.dirname(__FILE__))&lt;br/&gt;
+其中$LOAD_PATH 指的是Ruby读取外部文件的一个环境变量，Ruby会在这个环境变量的路径中读取需要require的文件，如果在环境变量中找不到自己想要的文件，就会报LoadError，还有$LOAD_PATH和$:指的都是同一个环境变量；File.dirname(__FILE__)代表当前路径；而$LOAD_PATH.unshift方法的目的就是将当前目录作用ruby标准的加载路径，即$LOAD_PATH.unshift 就是把上面得出的绝对路径加到现在已经存在所有环境变量之前。  &lt;br/&gt;
+&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;h3&gt;二、CSV&lt;/h3&gt;
+
+&lt;p&gt;书中程序：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;require 'csv'
+    CSV.open('text.txt', 'r') do |person|
+      puts person.inspect
+    end&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;该程序无法运行，提示：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;&amp;lt;#CSV io_type:File io_path:&amp;quot;text.txt&amp;quot; encoding:GBK lineno:0 col_sep:&amp;quot;,
+    &amp;quot; row_sep:&amp;quot;n&amp;quot; quote_char:&amp;quot;&amp;quot;&amp;quot;&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;后来百度搜索一下，得知在ruby1.9.x中CSV.open的API发生了变更，在ruby1.9.x中要想打印或者输出csv/txt的文件内容，需要按照如下的写法：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;require 'csv'
+    CSV.open('text.txt', 'r') do |person|
+      person.each { |row| puts row }
+    end&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;参考文章：&lt;/p&gt;
+
+&lt;p&gt;   &lt;a href=&quot;http://zorro.blog.51cto.com/2139862/893944&quot;&gt;http://zorro.blog.51cto.com/2139862/893944&lt;/a&gt;
+   &lt;a href=&quot;http://blog.sina.com.cn/s/blog_67b5c7b7010154rn.html&quot;&gt;http://blog.sina.com.cn/s/blog_67b5c7b7010154rn.html&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>HTML初步学习</title>
+   <link href="/Rubyonrails/2013/08/30/Html-study.html"/>
+   <updated>2013-08-30T00:00:00+08:00</updated>
+   <id>/Rubyonrails/2013/08/30/Html-study</id>
+   <content type="html">&lt;p&gt;我的博客已基本搭建成功，可以写博客，也增加评论功能。但是我觉得整体功能还是不太友好，比如页面的格局不是我想要的，没有常见的日历/博客分类功能，也没有go_top功能等。随着时间推移，要是内容增多，就很不方便管理。&lt;/p&gt;
+
+&lt;p&gt;我讲下决定要暂时放下修改博客功能，快速系统学习HTML的原由。我在现有博客基础上，第一个意识要加的功能其实是go_top功能。因为我本身是做软件实施的，了解现场客户一些基本心里与需求。像这个满足基本功能后，下来要考虑的便是如何让客户用的舒服，享受使用的过程。于是我使用Chromuim浏览器，抓取到别人页面的go_top代码，试着放进自己的代码中，但是发现根本没有达到希望功能。我意识到，还是需要快速学习基础知识，一味的模仿，而不去学习的人，无法进行创新。此处说的有点大，呵呵。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.w3school.com.cn/html/&quot;&gt;W3Shool&lt;/a&gt;是一个学习HTML基础知识的好地方，当然这里还有很多其它方面的内容，做的都很好，以后再讲。抽了两天时间，把HTML基础教程快速学习一遍，现在将主要内容整理出来:&lt;/p&gt;
+
+&lt;h3&gt;HTML 基础&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='html'&gt;&amp;lt;html&amp;gt;
+     &amp;lt;head&amp;gt;
+     &amp;lt;title&amp;gt;文档名称&amp;lt;/title&amp;gt;
+     &amp;lt;/head&amp;gt;
+     &amp;lt;body&amp;gt;
+     文档内容
+     &amp;lt;/body&amp;gt;
+     &amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;TEXT 元素&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='html'&gt;&amp;lt;p&amp;gt;文档段落&amp;lt;/p&amp;gt;
+     &amp;lt;br&amp;gt;换行
+     &amp;lt;hr&amp;gt;水平线
+     &amp;lt;pre&amp;gt;定义预格式化的文本&amp;lt;/pre&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;HTML 逻辑格式，向浏览器传达强调的消息&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='html'&gt;&amp;lt;em&amp;gt;斜体字&amp;lt;/em&amp;gt;
+     &amp;lt;strong&amp;gt;字体加粗&amp;lt;/strong&amp;gt;
+     &amp;lt;code&amp;gt;表示计算机源代码或者其他机器可以阅读的文本内容&amp;lt;/code&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;HTML 物理格式，只是告诉浏览器的对文字操作&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='html'&gt;&amp;lt;b&amp;gt;字体加粗&amp;lt;/b&amp;gt;
+     &amp;lt;i&amp;gt;斜体字&amp;lt;/i&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;HTML 链接/锚/图片&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='html'&gt;&amp;lt;a href=&amp;quot;http://www.example.com/&amp;quot;&amp;gt;这是一个链接&amp;lt;/a&amp;gt;
+     &amp;lt;a href=&amp;quot;mailto:webmaster@example.com&amp;quot;&amp;gt;发送邮件&amp;lt;/a&amp;gt;
+     &amp;lt;a name=&amp;quot;tips&amp;quot;&amp;gt;Useful Tips Section&amp;lt;/a&amp;gt;
+     &amp;lt;a href=&amp;quot;#tips&amp;quot;&amp;gt;Jump to the Useful Tips Section&amp;lt;/a&amp;gt;
+     &amp;lt;a href=&amp;quot;http://www.example.com/&amp;quot;&amp;gt;&amp;lt;img src=&amp;quot;URL&amp;quot;
+     alt=&amp;quot;破图后替换的内容&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;HTML 无序清单&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='html'&gt;&amp;lt;ul&amp;gt;
+     &amp;lt;li&amp;gt;First item&amp;lt;/li&amp;gt;
+     &amp;lt;li&amp;gt;Next item&amp;lt;/li&amp;gt;
+     &amp;lt;/ul&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;HTML 有序清单&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='html'&gt;&amp;lt;ol&amp;gt;
+     &amp;lt;li&amp;gt;First item&amp;lt;/li&amp;gt;
+     &amp;lt;li&amp;gt;Next item&amp;lt;/li&amp;gt;
+     &amp;lt;/ol&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;HTML 定义清单&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='html'&gt;&amp;lt;dl&amp;gt;
+     &amp;lt;dt&amp;gt;First term&amp;lt;/dt&amp;gt;
+     &amp;lt;dd&amp;gt;Definition&amp;lt;/dd&amp;gt;
+     &amp;lt;dt&amp;gt;Next term&amp;lt;/dt&amp;gt;
+     &amp;lt;dd&amp;gt;Definition&amp;lt;/dd&amp;gt;
+     &amp;lt;/dl&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;HTML 表格&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='html'&gt;&amp;lt;table border=&amp;quot;1&amp;quot;&amp;gt;
+     &amp;lt;tr&amp;gt;
+       &amp;lt;th&amp;gt;someheader&amp;lt;/th&amp;gt;
+       &amp;lt;th&amp;gt;someheader&amp;lt;/th&amp;gt;
+     &amp;lt;/tr&amp;gt;
+     &amp;lt;tr&amp;gt;
+       &amp;lt;td&amp;gt;sometext&amp;lt;/td&amp;gt;
+       &amp;lt;td&amp;gt;sometext&amp;lt;/td&amp;gt;
+     &amp;lt;/tr&amp;gt;
+     &amp;lt;/table&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;HTML 框架&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='html'&gt;&amp;lt;frameset cols=&amp;quot;25%，75%&amp;quot;&amp;gt;
+       &amp;lt;frame src=&amp;quot;page1.htm&amp;quot;&amp;gt;
+       &amp;lt;frame src=&amp;quot;page2.htm&amp;quot;&amp;gt;
+     &amp;lt;/frameset&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;HTML 表单&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='html'&gt;&amp;lt;from action=&amp;quot;http://www.example.com/test.asp&amp;quot; method=&amp;quot;post/get&amp;quot;&amp;gt;
+     &amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;lastname&amp;quot;
+     value=&amp;quot;Nixon&amp;quot; size=&amp;quot;30&amp;quot; maxlength=&amp;quot;50&amp;quot;&amp;gt;
+     &amp;lt;input type=&amp;quot;password&amp;quot;&amp;gt;
+     &amp;lt;input type=&amp;quot;checkbox&amp;quot; checked=&amp;quot;checked&amp;quot;&amp;gt;
+     &amp;lt;input type=&amp;quot;radio&amp;quot; checked=&amp;quot;checked&amp;quot;&amp;gt;
+     &amp;lt;input type=&amp;quot;submit&amp;quot;&amp;gt;
+     &amp;lt;input type=&amp;quot;reset&amp;quot;&amp;gt;
+     &amp;lt;input type=&amp;quot;hidden&amp;quot;&amp;gt;
+     &amp;lt;select&amp;gt;
+     &amp;lt;option&amp;gt;Apples
+     &amp;lt;option selected&amp;gt;Bananas
+     &amp;lt;option&amp;gt;Cherries
+     &amp;lt;/select&amp;gt;
+     &amp;lt;textarea name=&amp;quot;Comment&amp;quot; rows=&amp;quot;60&amp;quot;
+     cols=&amp;quot;20&amp;quot;&amp;gt;&amp;lt;/textarea&amp;gt;
+     &amp;lt;/form&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;HTML 对象&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='html'&gt;&amp;amp;lt; is the same as &amp;lt;
+     &amp;amp;gt; is the same as &amp;gt;
+     &amp;amp;#169; is the same as ©&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;HTML 其它元素&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='html'&gt;&amp;lt;!-- This is a comment --&amp;gt; 注释，不会在页面出现
+     &amp;lt;blockquote&amp;gt;
+     Text quoted from some source.
+     &amp;lt;/blockquote&amp;gt;
+     &amp;lt;address&amp;gt;
+     Address 1&amp;lt;br&amp;gt;
+     Address 2&amp;lt;br&amp;gt;
+     City&amp;lt;br&amp;gt;
+     &amp;lt;/address&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;参考文章：&lt;/p&gt;
+
+&lt;p&gt;   &lt;a href=&quot;http://www.w3school.com.cn/html/html_quick.asp&quot;&gt;http://www.w3school.com.cn/html/html_quick.asp&lt;/a&gt;
+   &lt;a href=&quot;http://hi.baidu.com/snowicesky/item/3d22450b826124304ac4a311&quot;&gt;http://hi.baidu.com/snowicesky/item/3d22450b826124304ac4a311&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>万恶的 XP系统</title>
+   <link href="/Tools/2013/08/29/Goodbye-xp.html"/>
+   <updated>2013-08-29T00:00:00+08:00</updated>
+   <id>/Tools/2013/08/29/Goodbye-xp</id>
+   <content type="html">&lt;p&gt;神奇的笔记本，温度突然居高不下，CPU保持在88度左右，这是啥概念啊，鲁大师一直高温预警。我认为那应该是风扇老化，不给力了，幸好公司买了戴尔服务，可以电脑免费维修。随便说一句，戴尔电脑实在不乍滴，那公司为什么选择戴尔，多半因为服务比较好吧。此处绝对不是广告！&lt;/p&gt;
+
+&lt;p&gt;原本以为换了风扇万事大吉，可本本的温度还是没有随着新风扇的到来而下降。那肯定是主板有毛病，再换一个新主板吧，反正不掏钱，换换更健康。对新主板充满期待，并寄予厚望，结果却应了“希望越大，失望越大”，温度还是维持在快90度。&lt;/p&gt;
+
+&lt;p&gt;见这情况，我内心捣鼓着，燃烧吧，电脑！直接搞残废了，换一个新的更好。可是在还没彻底残废前，也不能做事不理，就试着重新装下系统，虽然内心一直认为高温和系统两者八杆子打不着的关系。重装系统后，温度还真呼呼下来了，50度，绝对可以接受的一个数值。俗话说好事多磨，哪那么容易就正常了。现在本本又出现蓝屏，插网线能PING通，不能上网等症状。蓝屏分析提示是网卡驱动不稳定导致，可按照360修复提示更新驱动，到官网也手动下载合适驱动都还不行，蓝屏偶尔还是会发生。插一句，上述的蓝屏/不能上网两个问题，只发生在家里，在公司一切正常，我真的是有理说不清。&lt;/p&gt;
+
+&lt;p&gt;折腾两天蓝屏/不能上网，问题还是没有彻底解决，我真都快要疯了。破XP系统，明天再换Win7试试，要不是公司软件不支持Linux,我真打算把公司电脑也换Ubuntu了。希望明天重装后，一切正常吧，再折腾不起了啊!~&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Github设置个人头像</title>
+   <link href="/Tools/2013/08/26/Github-photo.html"/>
+   <updated>2013-08-26T00:00:00+08:00</updated>
+   <id>/Tools/2013/08/26/Github-photo</id>
+   <content type="html">&lt;p&gt;今天打算给自己的github设置个人头像，发现不是想像那么容易，经过一段时间研究才最终搞定。&lt;/p&gt;
+
+&lt;h3&gt;首先&lt;/h3&gt;
+
+&lt;p&gt;登录github，鼠标放在github的默认头像上，页面提示Change your avatar at gravatar，点击默认头像页面跳转到gravatar登录页面。此时需要你有Wordpress账号。如果没有账号，需要注册一个wordpress的账号。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;是不是发现注册wordpress的网址无法打开，那一定是被墙了，不要犹豫，快点翻墙吧。翻墙的方法就不在此处介绍，大家各显神通咯！～&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3&gt;其次&lt;/h3&gt;
+
+&lt;p&gt;注册完账号wordpress之后，系统会发一封激活邮件，激活账号登录到gravatar，添加一张个人照片。&lt;/p&gt;
+
+&lt;h3&gt;最后&lt;/h3&gt;
+
+&lt;p&gt;进入github，你就看到头像出现了，就是之前在gravatar中添加那一张照片。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;如果登录github发现头像仍然是默认头像，这个问题主要是因为gravatar中的邮箱地址和github的注册邮箱地址不一致造成的。找到github的Accountsettings当中Profile,在Gravatar Email (Private)这里修改你的邮箱，换成wordpress的注册邮箱，点击保存即可解决。&lt;/strong&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ubuntu12.04中配置VPN</title>
+   <link href="/Tools/2013/08/26/Config-vpn.html"/>
+   <updated>2013-08-26T00:00:00+08:00</updated>
+   <id>/Tools/2013/08/26/Config-vpn</id>
+   <content type="html">&lt;p&gt;今天想在Ubuntu上使用VPN，看到网上很多人谈到如何配置，很多都写的相当复杂，看的我一直犯迷糊。最后终于找到一篇简单明了说明，成功指导我完成VPN配置。在此将自己的配置过程记录下来，分享给需要的人。&lt;/p&gt;
+
+&lt;h3&gt;1 配置 VPN&lt;/h3&gt;
+
+&lt;p&gt;单击屏幕左上角 Network Connections 标志，在下拉选项里单击 &quot;VPN Connections&quot;，单击 &quot;Configure VPN...&quot; 进入 VPN 的设置。&lt;/p&gt;
+
+&lt;h3&gt;2 添加 VPN&lt;/h3&gt;
+
+&lt;p&gt;点击 &quot;VPN&quot; 菜单下右侧的 &quot;Add&quot; 按钮，添加 VPN 服务。&lt;/p&gt;
+
+&lt;h3&gt;3 选择 VPN 类型&lt;/h3&gt;
+
+&lt;p&gt;我电脑上只有 &quot;Point-to-Point Tunneling Protocol (PPTP)&quot;，选择后点击 &quot;Create...&quot; 按钮。&lt;/p&gt;
+
+&lt;h3&gt;4 填写 VPN 信息&lt;/h3&gt;
+
+&lt;p&gt;&quot;Connection name&quot;栏中填入“VPN (PPTP)”；&quot;Gateway&quot;中填入服务器域名；&quot;User name&quot;中填入你的VPN帐号用户名；&quot;Password&quot;中填入你的VPN帐号密码；最后点击&quot;Advanced...&quot;按钮。&lt;/p&gt;
+
+&lt;h3&gt;5 PPTP 高级选项&lt;/h3&gt;
+
+&lt;p&gt;选中 &quot;Use Point-to-Point encryption (MPPE)&quot;，点击 &quot;OK&quot; 按钮。&lt;/p&gt;
+
+&lt;h3&gt;6 保存 VPN&lt;/h3&gt;
+
+&lt;p&gt;点击 &quot;Save...&quot; 按钮。&lt;/p&gt;
+
+&lt;h3&gt;7 连接 VPN&lt;/h3&gt;
+
+&lt;p&gt;单击 &quot;VPN Connections&quot; 下的“VPN (PPTP)”，就是之前填写的Connection name，开始连接 VPN。&lt;/p&gt;
+
+&lt;h3&gt;8 连接成功&lt;/h3&gt;
+
+&lt;p&gt;VPN 连接成功后系统会有提示信息，同时 Network Connections 上会有小锁的标志。如果提示连接失败，重新执行上一步连接 VPN，应该就成功了。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>给Blog增加评论功能-Disqus</title>
+   <link href="/Rubyonrails/2013/08/24/Add-disqus-to-blog.html"/>
+   <updated>2013-08-24T00:00:00+08:00</updated>
+   <id>/Rubyonrails/2013/08/24/Add-disqus-to-blog</id>
+   <content type="html">&lt;h3&gt;Disqus是什么&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Disqus是一家第三方社会化评论系统，主要为网站主提供评论托管服务。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;当前有80万家第三方网站在使用Disqus提供的第三方评论系统，CNN、NBC、Fox News、Engadget、Time等知名网站均使用了Disqus提供的社会化评论系统。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;WordPress、Blogger、Tumblr等第三方博客平台均提供了Disqus第三方评论插件。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;首先&lt;/h3&gt;
+
+&lt;p&gt;注册&lt;a href=&quot;http://disqus.com&quot; target=&quot;_blank&quot;&gt;Disqus&lt;/a&gt;帐号，SiteURL,SiteName,SiteShortname这3个都是必填项，其中Site Shortname将会在最后的install时自动生存js代码中用到。&lt;/p&gt;
+
+&lt;h3&gt;其次&lt;/h3&gt;
+
+&lt;p&gt;接下来会有一些简单的设置，比如语言／社交工具／评论选项等等内容。&lt;/p&gt;
+
+&lt;h3&gt;接着&lt;/h3&gt;
+
+&lt;p&gt;install，在platform中选择&lt;a href=&quot;http://docs.disqus.com/developers/universal/&quot; target=&quot;_blank&quot;&gt;Universal Code&lt;/a&gt;,所谓install，其实就是将一段js代码嵌入到你的博客源代码里面。&lt;/p&gt;
+
+&lt;h3&gt;最后&lt;/h3&gt;
+
+&lt;p&gt;获取js代码，DisQus生成了如下的一段代码：&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='js'&gt;&amp;lt;div id=&amp;quot;disqus_thread&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'example'; // replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || 
+        document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();&amp;lt;/script&amp;gt;
+&amp;lt;noscript&amp;gt;Please enable JavaScript to view the &amp;lt;a href=&amp;quot;http://disqus.com/?ref_noscript&amp;quot;&amp;gt;
+comments powered by Disqus.&amp;lt;/a&amp;gt;&amp;lt;/noscript&amp;gt;
+&amp;lt;a href=&amp;quot;http://disqus.com&amp;quot; class=&amp;quot;dsq-brlink&amp;quot;&amp;gt;blog comments powered by &amp;lt;span 
+class=&amp;quot;logo-disqus&amp;quot;&amp;gt;Disqus&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;只需将代码中的'example'替换为注册时填写的Shortname，然后将它嵌入到所需页面中，通常是 /layout/post.html。&lt;/p&gt;
+
+&lt;h3&gt;添加评论计数到首页&lt;/h3&gt;
+
+&lt;p&gt;首先，添加下面的js代码到首页模板（default.html）&lt;/body&gt;前。&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='js'&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'example'; // replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || 
+      document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;然后，在首页需要添加评论的地方，写一个链接，&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='js'&gt;&amp;lt;a href=&amp;quot;\{\{ post.url }}#disqus_thread&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Disqus将会通过URL获取评论数。说明：上述代码中 \ 为转义字符，\ { \ }代表大括号。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Github深入应用——贡献代码</title>
+   <link href="/Tools/2013/08/21/Github-contribute-cdoe.html"/>
+   <updated>2013-08-21T00:00:00+08:00</updated>
+   <id>/Tools/2013/08/21/Github-contribute-cdoe</id>
+   <content type="html">&lt;p&gt;用了一个多星期的github，只是会git clone别人的项目，然后本地修修改改，最后git push到自己的github上。如果你git clone别人的项目，本地修改后，在不知道别人github帐号密码的提前下，想git push到别人的github上，需要怎么办？可以通过一下方式解决你的难题：&lt;/p&gt;
+
+&lt;h2&gt;1 添加合作者&lt;/h2&gt;
+
+&lt;p&gt;github可以给项目添加合作者，假如你想参与我的项目，你跟我说一声，我就把你添加到我的项目里作为合作者，这个选项在项目的Settings里面有Collaborators，github需要你输入自己帐号密码确认你真的准备添加合作者，然后通过输入合作者github帐号，点击add就成功了。只要我添加你为合作者后，你就可以git clone我的代码，然后修修改改，直接push到我的github上来。--添加项目合作者要谨慎！&lt;/p&gt;
+
+&lt;h2&gt;2 通过github上fork&lt;/h2&gt;
+
+&lt;p&gt;先通过github上的fork，fork下别人的项目，于是你的github上就出现了同名的项目，这个项目就属于你自己。你把这个自己的项目git clone到本地，修修改改，然后push到你自己的项目里。这里又引发一个问题，那么你如何把你对自己项目的改动，发给之前fork的那个原项目呢？在github上你的项目页面有个叫Pull Requests的按钮，点击就会把你改动代码发到对方的项目里，对方还会收到邮件，由原项目主人决定是否接受你的修改。如果是在你fork别人的项目后，原项目代码发生了改动，你要想同步到本地，就直接git fetch origin 从原项目地址同步最新的项目代码，然后再merge就好了。&lt;/p&gt;
+
+&lt;p&gt;以上内容也都是我的理论，还未进行实践。如果大家在实践过程中，遇到问题欢迎随时跟我讨论。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>SublimeText2不能输入汉字解决办法</title>
+   <link href="/Tools/2013/08/20/Sublimetext2-use-chinese.html"/>
+   <updated>2013-08-20T00:00:00+08:00</updated>
+   <id>/Tools/2013/08/20/Sublimetext2-use-chinese</id>
+   <content type="html">&lt;p&gt;网上都说SublimeText2用着不错，但是我在ubuntu下安装后，发现不能输入中文，着实不方便。今天在网上看到解决办法，拿出来分享下：&lt;/p&gt;
+
+&lt;h3&gt;首先，在SublimeText2的菜单栏 -&gt; Preferences -&gt; Settings - User，在配置文件中增加：&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;// Settings in here override those in &amp;quot;Default/Base File.sublime-settings&amp;quot;, and
+
+    // are overridden in turn by file type specific settings. Place your settings
+
+    // here, to ensure they're preserved when upgrading.
+
+    {
+         &amp;quot;font_face&amp;quot;: &amp;quot;WenQuanYi Micro Hei Mono&amp;quot;
+    }&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;其次，我们来解决中文输入的问题&lt;/h3&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;sudo apt-get install scim
+
+    sudo apt-get install scim-pinyin&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;在“系统－语言支持”设置里&lt;/h3&gt;
+
+&lt;p&gt;Keyboard input method system 选“scim-bridge”&lt;/p&gt;
+
+&lt;h3&gt;在“系统－首选项－scim设置里”&lt;/h3&gt;
+
+&lt;p&gt;scim设置－&gt;全局设置－&gt;将预字符串嵌入到客户端中 勾去掉&lt;/p&gt;
+
+&lt;p&gt;scim设置－&gt;gtk－&gt;嵌入式候选词标 勾去掉&lt;/p&gt;
+
+&lt;p&gt;记得这些修改完要注销重新登录进来,或者打开终端,输入 pkill scim,然后输入 scim -d&lt;/p&gt;
+
+&lt;p&gt;如果不起作用，那还是建议注销一下。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;坑爹啊，也不知道哪一步出问题，重启后又回复到原来输入法，怎么也切不回去，无解！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3&gt;原文链接&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.linuxidc.com/Linux/2012-06/62944.htm&quot;&gt;http://www.linuxidc.com/Linux/2012-06/62944.htm&lt;/a&gt;
+&lt;a href=&quot;http://www.cnblogs.com/QLeelulu/archive/2011/12/30/2308084.html&quot;&gt;http://www.cnblogs.com/QLeelulu/archive/2011/12/30/2308084.html&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ruby从入门到精通 学习记录一(ruby四种变量)</title>
+   <link href="/Rubyonrails/2013/08/20/Ruby-four-variables.html"/>
+   <updated>2013-08-20T00:00:00+08:00</updated>
+   <id>/Rubyonrails/2013/08/20/Ruby-four-variables</id>
+   <content type="html">&lt;h4&gt;Ruby提供了四种类型的变量:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;局部变量：局部变量是在一个方法中定义的变量,局部变量的变量名以小写字母或_开始。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;x = 10
+       puts x&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;实例变量：实例变量是在任何特定的实例或对象的变量，对象的所有方法都可访问对象的实例变量，实例变量的变量名以符号（@）开始。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;class Square
+         def initialize(side_length)
+           @side_length = side_length
+       end&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;类变量：类变量是在类及所有子对象使用的变量，类变量的变量名以符号（@ @）开始。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;class Square
+         def initialize
+           if defined?(@@number_of_squares)
+              @@number_of_squares += 1
+           else
+              @@number_of_squares = 1
+           end
+         end
+       end&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;全局变量：类变量是不能跨类，如果你想有一个在当前程序任何位置使用的变量，那你需要定义一个全局变量，全局变量的变量名以美元符号（$）开始。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;def basic_method 
+         puts $x
+       end
+       $ = 10
+       basic_method&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>广州10日旅游行程安排</title>
+   <link href="/gztour/2013/08/19/GZ-tendays.html"/>
+   <updated>2013-08-19T00:00:00+08:00</updated>
+   <id>/gztour/2013/08/19/GZ-tendays</id>
+   <content type="html">&lt;h3&gt;第一天（适应环境+休息）&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;10:30到达白云机场接机，前往体育西路吃饭（肠粉+煎包）、休息&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;14:30去猎德村住宿地方，在附近买日用品&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;18:30吃晚饭，到临江大道散步，回家休息&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;第二天（沙面+陈家祠）&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;9:00坐地铁5号线到杨箕站，转1号线到黄沙站D出口（共约40分钟），到达&lt;strong&gt;沙面&lt;/strong&gt;，逛2个小时&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;12:00吃午饭（沙面吃的较贵，可以提前考察下吃放地方）、休息&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;14:00坐地铁1号线或者公交125、114路等线路（两站，约10分钟），到达&lt;strong&gt;陈家祠&lt;/strong&gt;，逛2个小时&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;17:00坐地铁1号线到杨箕站，转5号线到猎德站C出口（共约40分钟），吃晚饭，回家休息&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;第三天（博物馆+广州塔）&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;上午休息，14:00到达&lt;strong&gt;广东省博物馆&lt;/strong&gt;（无需门票，带身份证，周一不开放，周二至周五开放）&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;18:00吃晚饭，在&lt;strong&gt;花城广场&lt;/strong&gt;散步&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;20:00到&lt;strong&gt;广州塔&lt;/strong&gt;（每日9:00至22:00，考虑团购门票），登小蛮腰观光广州夜景，回家休息&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;第四天（圣心大教堂+待定）&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;9:00去&lt;strong&gt;圣心大教堂&lt;/strong&gt;（每周日8:00-17:30）；搭乘地铁2号线至海珠广场站B出口下车，向西步行10分钟可到。或乘4路、8路、61路等在一德路下车（不能穿拖鞋、背心、超短裤群等）&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;12:00吃午饭、休息（去海珠广场附近吃饭）&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;下午待定&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;第五天（中山纪念堂+越秀公园）&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;9:00去&lt;strong&gt;中山纪念堂&lt;/strong&gt;，门票：10元，开放时间：6：00-24：00，搭地铁5号线至杨箕转1号线至公元前转2号线至纪念堂站下车&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;12:00吃午饭、休息&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;14:00走去&lt;strong&gt;越秀公园&lt;/strong&gt;逛2-3个小时&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;17:00去天河城附近吃晚饭，饭后散步回家&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3&gt;第六天（休息一天）&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3&gt;第七天（华南植物园+珠江）&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;9:00去&lt;strong&gt;华南植物园&lt;/strong&gt;，门票：20元，参观温室需加付30元。开放时间：每天7:30-17:30。地铁5号线至珠江新城转3号线至天河客运站转广增9/15/10线至植物园站（或从天河客运站打的去）&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;12:00吃午饭、休息&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;14:00继续逛植物园&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;17:00吃晚饭，饭后&lt;strong&gt;夜游珠江&lt;/strong&gt;，赏广州夜景&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;第八天（黄埔军校+南越王墓博物馆）&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;8:30去&lt;strong&gt;黄埔军校&lt;/strong&gt;（约1小时），地铁5号线至鱼珠站D出口，步行至鱼珠码头站（约990米），买票乘坐客轮鱼珠码头—新洲码头线在黄埔考军校码头站下车，步行至黄埔军校旧址（约170米）。门票：免费。开放时间：9:00-17:00（16:30停止进馆），周一闭馆&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;12:00左右吃饭、休息&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;14:00去&lt;strong&gt;南越王墓博物馆&lt;/strong&gt;，乘坐轮渡回鱼珠站，乘地铁5号线至广州火车站转2号线至越秀公园站E出口前行300米即到。门票：12元，儿童5元，70岁以上老人免费。开放时间：9:00-17:30（16:45分停止售票进场）--可删减项目&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;17:00回天河城吃饭，休息&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;第九天（白云山）&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;9:00地铁5号线至小北站B出口，步行至小北站76a至广州体育馆站下车步行至&lt;strong&gt;白云山&lt;/strong&gt;（或从小北站直接打的至白云山正门）门票：成人5元，开放时间：6:30-24:00，下山可坐缆车（票价20-30元之间）&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;12:00吃饭回家，买东西，整理衣物&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;第十天（送去机场）&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;早8:00出门，9:00到达机场&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>从零学习Ruby on rails</title>
+   <link href="/Rubyonrails/2013/08/14/Study-rubyonrails-plan.html"/>
+   <updated>2013-08-14T00:00:00+08:00</updated>
+   <id>/Rubyonrails/2013/08/14/Study-rubyonrails-plan</id>
+   <content type="html">&lt;h4&gt;1 操作系统&lt;/h4&gt;
+
+&lt;p&gt;不要用windows搞ror开发，会遇到各种奇怪的问题，而且没有会帮你，因为几乎没有人会用windows开发，操作系统最推荐用Mac或者
+Ubuntu系统&lt;/p&gt;
+
+&lt;h4&gt;2 加入社区&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://ruby-china.org/&quot;&gt;http://ruby-china.org/&lt;/a&gt;这个社区里面问所有问题都有人回复，ruby社区不同于其它社区，所有大牛都热情回答新手问题&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://ruby-china.org/wiki&quot;&gt;http://ruby-china.org/wiki&lt;/a&gt; 这个页面上有很多给新手准备的文章，都写的很好，不管懂不懂里面讲的是什么，可以先看看这个页面上面
+的链接&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h4&gt;3 Git版本管理&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;再说一个非常基础但是非常重要的东西：git&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com&quot;&gt;https://github.com&lt;/a&gt;github是每个ROR都不能离开的网站，先注册一个账号，然后琢磨一下git到底怎么用，是什么意图&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h4&gt;4 ROR开发元素&lt;/h4&gt;
+
+&lt;p&gt;基本功就是这几个东西：ubuntu、mac (开发环境) + git + ruby，Ruby教程不是最重要的，因为ruby那怕懂一点能开始就行，以后边用边
+学&lt;/p&gt;
+
+&lt;h4&gt;5 教学基地一&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.codeschool.com/paths/rub&quot;&gt;http://www.codeschool.com/paths/rub&lt;/a&gt;这里面有很多免费课程，都是边动手边学习的，很不错&lt;/li&gt;
+&lt;li&gt;还有这本书：https://leanpub.com/rails-101&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h4&gt;6 实践内容，&lt;/h4&gt;
+
+&lt;p&gt;自己做一个blog系统，然后放在github上面，然后部署到heroku上面，再把自己的域名配置上去&lt;/p&gt;
+
+&lt;h4&gt;7 教学基地二&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://railscasts.com/&quot;&gt;http://railscasts.com/&lt;/a&gt;有空了从第一个视频往过看，有些已经过时了，但是看看没错，以来练听力，而来熟悉rails的发展和演变过程&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://railscasts-china.com/&quot;&gt;http://railscasts-china.com/&lt;/a&gt;这个视频是我的前同事录制的，学着railscasts的方式录的，都是中文视频，从第一个往过看。两个
+可以同时穿插着看，一开始看中文更容易理解，英文那个内容量很大，有空了就随时看看&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h4&gt;8 教学基地三&lt;/h4&gt;
+
+&lt;p&gt;另外再推荐一个学习基础知识的地方：&lt;a href=&quot;http://www.w3schools.com/&quot;&gt;http://www.w3schools.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4&gt;讨论交流&lt;/h4&gt;
+
+&lt;p&gt;在使用中有任何问题，可以用以下联系方式跟我讨论交流&lt;/p&gt;
+</content>
+ </entry>
+ 
+ 
+</feed>

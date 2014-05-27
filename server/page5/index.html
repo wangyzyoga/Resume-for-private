@@ -1,0 +1,1150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
+   	<title>
+   		
+          WangYaojia-Blog
+          
+		</title>  	
+   	<meta name="generator" content="Jekyll" />
+    <meta name="author" content="wangyzyoga" />
+    <meta name="description" content="Wangyzyoga Love Open Source" />
+		
+		<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+   	    <link rel="stylesheet" href="/css/syntax.css" type="text/css" media="screen" />	
+		<link rel="stylesheet" href="/css/default.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/css/global.css" type="text/css" media="all" />
+			
+		<script type="text/javascript" src="/js/yahoo.js"></script>
+		<script type="text/javascript" src="/js/global.js"></script>	
+		<script type="text/javascript" src="/js/calendar.js"></script>	
+	</head>
+
+	<body>
+		<div id="header_wrapper">
+			<div id="nav_background">
+      	<div id="navigation">
+        	<ul>
+          	<li class="menu"><a href="http://www.wangyaojia.com">Home</a><a id="archive-toggle" href="#">Archive</a><a id="contact-toggle" href="#">Contact</a><a id="about-toggle" href="#">About</a></li>
+        	</ul>
+				</div>
+				<div class="clear_float"></div>
+			</div>
+			<div id="header">
+         <FONT style="FONT-SIZE: 25pt; WIDTH: 100%; LINE-HEIGHT: 100%; FONT-FAMILY: 华文行楷"> 
+           <B><EM>Wangyzyoga Go For Open Source</EM></B>
+         </FONT>
+				<table>
+	<tr>
+		<td><a href="http://weibo.com/wangyzyoga" id="weibo" style="display:none" target="_blank" title="weibo" rel="nofollow"><img src="/images/sina.png" /></a></td>
+		<td><a href="https://github.com/wangyzyoga" id="github" style="display:none" target="_blank" title="github" rel="nofollow"><img src="/images/github.png" /></a></td>
+		<td><a href="http://www.facebook.com/wangyzyoga" id="facebook" style="display:none" target="_blank" title="facebook" rel="nofollow"><img src="/images/facebook.png" /></a></td>
+		<td><a href="https://twitter.com/#!/wangyzyoga" id="twitter" style="display:none" target="_blank" title="twitter" rel="nofollow"><img src="/images/twitter.png" /></a></td>
+		<td><a href="https://wangyzyoga@gmail.com" id="gmail" style="display:none" target="_blank" title="gmail" rel="nofollow"><img src="/images/gmail.png" /></a></td>
+	</tr>
+</table>
+			</div>
+		</div>
+		<div id="background_container">
+			<div id="content_container">
+				<div id="container">
+					<div id="archive_posts" style="display:none">
+					   <ul>
+		    			
+		      			<li><span>27 May 2014</span> &raquo; <a href="/Tools/2014/05/27/Ubuntu-share-wifi.html">Ubuntu中创建Android手机识别Wifi</a></li>
+		    			
+		      			<li><span>25 May 2014</span> &raquo; <a href="/Tools/2014/05/25/ThinkpadT440p-use-wifi.html">解决ThinkpadT440p无线网卡驱动问题-Ubuntu13.10</a></li>
+		    			
+		      			<li><span>03 Dec 2013</span> &raquo; <a href="/Rubyonrails/2013/12/03/Ruby-Keywords.html">Ruby中部分Keywords的含义及用法</a></li>
+		    			
+		      			<li><span>03 Dec 2013</span> &raquo; <a href="/Rubyonrails/2013/12/03/Ruby-Basicdatatypes.html">Ruby的基本数据类型</a></li>
+		    			
+		      			<li><span>24 Nov 2013</span> &raquo; <a href="/Tools/2013/11/24/Ubuntu-postgresql.html">Ubuntu12.04下安装与配置PostgreSQL-9.1详解</a></li>
+		    			
+		      			<li><span>24 Nov 2013</span> &raquo; <a href="/Rubyonrails/2013/11/24/Ruby-postgresql.html">Rails中使用PostgreSQL数据库经常遇到两个问题</a></li>
+		    			
+		      			<li><span>21 Nov 2013</span> &raquo; <a href="/Rubyonrails/2013/11/21/Ruby-yield.html">Ruby中yield的用法</a></li>
+		    			
+		      			<li><span>18 Nov 2013</span> &raquo; <a href="/Rubyonrails/2013/11/18/Ruby-self.html">Ruby中self各种含义诠释</a></li>
+		    			
+		      			<li><span>13 Nov 2013</span> &raquo; <a href="/Tools/2013/11/13/Vim-three-plug-in.html">Vim中常用三个插件（nerdtree/ctrlp/ack）</a></li>
+		    			
+		      			<li><span>12 Nov 2013</span> &raquo; <a href="/Tools/2013/11/12/Vim-split-screen.html">Vim中分屏操作大全详解</a></li>
+		    			
+		  			   </ul>
+					</div>
+					
+						
+	<div class="posts">
+		<h2><a href="/Rubyonrails/2013/09/06/Rails-new-blog.html" title="Rails4.0建立博客遇到问题一">Rails4.0建立博客遇到问题一</a></h2>
+		<span style="float:right">06 Sep 2013</span>
+		<div class="entry">
+			<p>今天开始跟着<a href="http://guides.ruby.tw/rails3/getting_started.html">Rails初上手指南</a>学习建立博客，遇到如下两个问题。</p>
+
+<h3>1. rails new blog时，总是卡在:</h3>
+
+<div>
+  <pre><code class='ruby'>run bundle install</code></pre>
+</div>
+
+
+<p>解决办法：</p>
+
+<div>
+  <pre><code class='ruby'>rails new blog --sikp-bundle
+    cd blog
+    bundle install --local</code></pre>
+</div>
+
+
+<h3>2. rails server时，报错提示:</h3>
+
+<div>
+  <pre><code class='ruby'>Could not find a JavaScript runtime</code></pre>
+</div>
+
+
+<p>解决办法:在blog文件夹下的Gemfile文件中加入</p>
+
+<div>
+  <pre><code class='ruby'>gem 'therubyracer'
+    gem 'execjs'</code></pre>
+</div>
+
+
+<p>运行'rails server'后，在浏览器输入http://127.0.0.1:3000，应该就会看到Rails的预设首页。</p>
+
+			<p class="postmetadata"><a href="/Rubyonrails/2013/09/06/Rails-new-blog.html#disqus_thread"></a><br /><br /></p>
+		</div><br />
+	  </div>
+	  
+	<div class="posts">
+		<h2><a href="/Tools/2013/09/04/Ubuntu-search.html" title="Ubuntu系统中查找文件和字符命令介绍">Ubuntu系统中查找文件和字符命令介绍</a></h2>
+		<span style="float:right">04 Sep 2013</span>
+		<div class="entry">
+			<p>在刚开始接触Ubuntu的时候，通常会遇到自己建立的文件不知道放在硬盘的什么地方，这就需要掌握一些搜索命令，快速找到我们想找的文件。下来我们以查找文件和查找字符两大类，对find、locate、which、grep四种命令进行介绍。</p>
+
+<h2>一、查找文件</h2>
+
+<h3>1、find命令</h3>
+
+<p><strong>1.1 find的语法：</strong></p>
+
+<div>
+  <pre><code class='ruby'>find [起始目录] 寻找条件 操作
+    find PATH OPTION [-exec COMMAND { } \;]</code></pre>
+</div>
+
+
+<p><strong>该命令中的寻找条件可以是一个用逻辑运算符not、and、or组成的复合条件,逻辑运算符and、or、not的含义为：</strong></p>
+
+<p>and：逻辑与，在命令中用“-a”表示，是系统缺省的选项，表示只有当所给的条件都满足时，寻找条件才算满足。例如:</p>
+
+<div>
+  <pre><code class='ruby'>find –name ’tmp’ –xtype c -user ’inin’</code></pre>
+</div>
+
+
+<p>该命令寻找三个给定条件都满足的所有文件。</p>
+
+<p>or：逻辑或，在命令中用“-o”表示。该运算符表示只要所给的条件中有一个满足时，寻找条件就算满足。例如:</p>
+
+<div>
+  <pre><code class='ruby'>find –name ’tmp’ –o –name ’mina*’</code></pre>
+</div>
+
+
+<p>该命令查询文件名为’tmp’或是匹配’mina*’的所有文件。</p>
+
+<p>not：逻辑非，在命令中用“!”表示。该运算符表示查找不满足所给条件的文件。例如:</p>
+
+<div>
+  <pre><code class='ruby'>find ! –name ’tmp’</code></pre>
+</div>
+
+
+<p>该命令查询文件名不是’tmp’的所有文件。</p>
+
+<p>需要说明的是：当使用很多的逻辑选项时，可以用括号把这些选项括起来。例如：</p>
+
+<div>
+  <pre><code class='ruby'>find (–name ’tmp’ –xtype c -user ’inin’ )</code></pre>
+</div>
+
+
+<p><strong>1.2 在option中，具体有参数：</strong></p>
+
+<p>-name ’字串’ 查找文件名匹配所给字串的所有文件，字串内可用通配符 *、?、[ ]。</p>
+
+<p>-lname ’字串’ 查找文件名匹配所给字串的所有符号链接文件，字串内可用通配符 *、?、[ ]。</p>
+
+<p>-gid n 查找属于ID号为 n 的用户组的所有文件。</p>
+
+<p>-uid n 查找属于ID号为 n 的用户的所有文件。</p>
+
+<p>-group ’字串’ 查找属于用户组名为所给字串的所有的文件。</p>
+
+<p>-user ’字串’ 查找属于用户名为所给字串的所有的文件。</p>
+
+<p>-empty 查找大小为 0的目录或文件。</p>
+
+<p>-path ’字串’ 查找路径名匹配所给字串的所有文件，字串内可用通配符*、?、[ ]。</p>
+
+<p><strong>1.3 我们再看一下exec选项：</strong></p>
+
+<p>-exec：对搜索的结构指令指定的shell命令。注意格式要正确："-exec 命令 {} \;"</p>
+
+<p>在}和\之间一定要有空格才行;{}表示命令的参数即为所找到的文件;命令的末尾必须以“\;”结束。</p>
+
+<p>例如：对root以及子目录查找不包括目录/root/bin的，greek用户的，文件类型为普通文件的，3天之前的名为test-find.c的文件进行删除操作，命令如下：</p>
+
+<div>
+  <pre><code class='ruby'>find / -name &quot;test-find.c&quot; -type f -mtime +3 -user greek -prune /root/bin -exec rm {} \;</code></pre>
+</div>
+
+
+<p>find命令指令实例：</p>
+
+<div>
+  <pre><code class='ruby'>find . - name ‘main*’ - exec more {} \;</code></pre>
+</div>
+
+
+<p>查找当前目录中所有以main开头的文件，并显示这些文件的内容。</p>
+
+<div>
+  <pre><code class='ruby'>find . (- name a.out - o - name ‘*.o’)&gt; - atime +7 - exec rm {} \;</code></pre>
+</div>
+
+
+<p>删除当前目录下所有一周之内没有被访问过的a .out或*.o文件。</p>
+
+<p>命令中的“.”表示当前目录，此时 find 将从当前目录开始，逐个在其子目录中查找满足后面指定条件的文件。</p>
+
+<p>“-name a.out” 是指要查找名为a.out的文件;</p>
+
+<p>“-name ‘*.o’” 是指要查找所有名字以 .o 结尾的文件。</p>
+
+<p>这两个 -name 之间的 -o 表示逻辑或(or)，即查找名字为a.out或名字以 .o结尾的文件。</p>
+
+<p>find命令在当前目录及其子目录下找到这佯的文件之后，再进行判断，看其最后访问时间是否在7天以前(条件 -atime +7)，若是，则对该文件执行命令rm(-exec rm {} \;)。</p>
+
+<p>其中 {} 代表当前查到的符合条件的文件名，\;则是语法所要求的。</p>
+
+<h3>2、locate命令</h3>
+
+<p>locate命令其实是“find -name”的另一种写法，但是要比后者快得多，原因在于它不搜索具体目录，而是搜索一个数据库（/var/lib/locatedb），这个数据库中含有本地所有文件信息。Linux系统自动创建这个数据库，并且每天自动更新一次，所以使用locate命令查不到最新变动过的文件。为了避免这种情况，可以在使用locate之前，先使用'sudo updatedb'命令，手动更新数据库。</p>
+
+<p><strong>locate常用写法：</strong></p>
+
+<div>
+  <pre><code class='ruby'>locate filename</code></pre>
+</div>
+
+
+<p>locate命令的使用实例：</p>
+
+<div>
+  <pre><code class='ruby'>locate /etc/sh</code></pre>
+</div>
+
+
+<p>搜索etc目录下所有以sh开头的文件。</p>
+
+<div>
+  <pre><code class='ruby'>locate ~/m</code></pre>
+</div>
+
+
+<p>搜索用户主目录下，所有以m开头的文件。</p>
+
+<div>
+  <pre><code class='ruby'>locate -i ~/m</code></pre>
+</div>
+
+
+<p>搜索用户主目录下，所有以m开头的文件，并且忽略大小写。</p>
+
+<h3>3、which命令</h3>
+
+<p>根据可执行文件的文件名,查找可执行文件。</p>
+
+<p><strong>which常用写法：</strong></p>
+
+<div>
+  <pre><code class='ruby'>which executeable_name</code></pre>
+</div>
+
+
+<p>例如:</p>
+
+<div>
+  <pre><code class='ruby'>which apache2</code></pre>
+</div>
+
+
+<p>返回/usr/sbin/apache2</p>
+
+<h2>二、查找字符</h2>
+
+<h3>4、grep命令</h3>
+
+<p>grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来。grep全称是Global Regular Expression Print，表示全局正则表达式版本，它的使用权限是所有用户。</p>
+
+<p><strong>4.1 grep的语法：</strong></p>
+
+<div>
+  <pre><code class='ruby'>语法: grep [options] PATTERN [FILE...]</code></pre>
+</div>
+
+
+<p><strong>4.2 [options]主要参数：</strong></p>
+
+<blockquote><p>－c：只输出匹配行的计数。</p>
+
+<p>－I：不区分大 小写(只适用于单字符)。</p>
+
+<p>－h：查询多文件时不显示文件名。</p>
+
+<p>－l：查询多文件时只输出包含匹配字符的文件名。</p>
+
+<p>－n：显示匹配行及 行号。</p>
+
+<p>－s：不显示不存在或无匹配文本的错误信息。</p>
+
+<p>－v：显示不包含匹配文本的所有行。</p></blockquote>
+
+<p><strong>4.3 PATTERN主要参数：</strong></p>
+
+<p>\： 忽略正则表达式中特殊字符的原有含义。</p>
+
+<p>^：匹配正则表达式的开始行。</p>
+
+<p>$: 匹配正则表达式的结束行。</p>
+
+<p>\&lt;：从匹配正则表达 式的行开始。</p>
+
+<p>>：到匹配正则表达式的行结束。</p>
+
+<p>[ ]：单个字符，如[A]即A符合要求 。</p>
+
+<p>[ - ]：范围，如[A-Z]，即A、B、C一直到Z都符合要求 。</p>
+
+<p>。：所有的单个字符。</p>
+
+<p>* ：有字符，长度可以为0。</p>
+
+<p><strong>4.4 grep命令使用简单实例</strong></p>
+
+<div>
+  <pre><code class='ruby'>grep ‘test’ d*</code></pre>
+</div>
+
+
+<p>显示所有以d开头的文件中包含 test的行。</p>
+
+<div>
+  <pre><code class='ruby'>grep ‘test’ aa bb cc</code></pre>
+</div>
+
+
+<p>显示在aa，bb，cc文件中匹配test的行。</p>
+
+<div>
+  <pre><code class='ruby'>grep ‘[a-z]\{5\}’ aa</code></pre>
+</div>
+
+
+<p>显示所有包含每个字符串至少有5个连续小写字符的字符串的行。</p>
+
+<div>
+  <pre><code class='ruby'>grep ‘w\(es\)t.*\1′ aa</code></pre>
+</div>
+
+
+<p>如果west被匹配，则es就被存储到内存中，并标记为1，然后搜索任意个字符(.<em>)，这些字符后面紧跟着 另外一个es(\1)，找到就显示该行。如果用egrep或grep -E，就不用”\”号进行转义，直接写成’w(es)t.</em>\1′就可以了。</p>
+
+<p><strong>4.5 grep命令使用复杂实例</strong></p>
+
+<p>假设在’/usr/src/Linux/Doc’目录下搜索带字符 串’magic’的文件：</p>
+
+<div>
+  <pre><code class='ruby'>grep magic /usr/src/Linux/Doc/*
+    sysrq.txt:* How do I enable the magic SysRQ key?
+    sysrq.txt:* How do I use the magic SysRQ key?</code></pre>
+</div>
+
+
+<p>其中文件’sysrp.txt’包含该字符串，讨论的是SysRQ的功能。
+默认情况下，’grep’只搜索当前目录。如果此目录下有许多子目录，’grep’会以如下形式列出：</p>
+
+<div>
+  <pre><code class='ruby'>grep: sound: Is a directory</code></pre>
+</div>
+
+
+<p>这可能会使’grep’ 的输出难于阅读。这里有两种解决的办法：
+明确要求搜索子目录：grep -r
+或忽略子目录：grep -d skip
+如果有很多输出时，可以通过管道将其转到’less’上阅读：</p>
+
+<div>
+  <pre><code class='ruby'>grep magic /usr/src/Linux/Documentation/* | less</code></pre>
+</div>
+
+
+<p>这样，就可以更方便地阅读。</p>
+
+<p>有一点要注意，必需提供一个文件过滤方式(搜索全部文件的话用 *)。如果忘了，’grep’会一直等着，直到该程序被中断。如果遇到了这样的情况，按 <CTRL c> ，然后再试。</p>
+
+			<p class="postmetadata"><a href="/Tools/2013/09/04/Ubuntu-search.html#disqus_thread"></a><br /><br /></p>
+		</div><br />
+	  </div>
+	  
+	<div class="posts">
+		<h2><a href="/Rubyonrails/2013/09/02/Ruby-require-csv.html" title="Ruby从入门到精通 学习记录二(require/CSV)">Ruby从入门到精通 学习记录二(require/CSV)</a></h2>
+		<span style="float:right">02 Sep 2013</span>
+		<div class="entry">
+			<h3>一、REQUIRE</h3>
+
+<p>今天学习Ruby从入门到精通时，使用require加载文件，老提示：LoadError。然后在网上查看原因，并整理几种加载当前路径下的某个源文件的常用方法。</p>
+
+<ol>
+<li>在加载的源文件名前加上当前目录"./"，即require "./test"</li>
+<li>使用load加载完整文件名，即load "test.rb"</li>
+<li>使用require_relative替代require，即require_relative "test"</li>
+<li>使用解析后的文件路径，即require File.expand_path("./test", __FILE__)<br/>
+这里File.expand_path是将指定的参数路径解析成绝对路径，./test是希望加载的文件,__FILE__是当前文件绝对路径。</li>
+<li>动态修改加载路径，即$LOAD_PATH.unshift(File.dirname(__FILE__))unless $LOAD_PATH.include?(File.dirname(__FILE__))<br/>
+其中$LOAD_PATH 指的是Ruby读取外部文件的一个环境变量，Ruby会在这个环境变量的路径中读取需要require的文件，如果在环境变量中找不到自己想要的文件，就会报LoadError，还有$LOAD_PATH和$:指的都是同一个环境变量；File.dirname(__FILE__)代表当前路径；而$LOAD_PATH.unshift方法的目的就是将当前目录作用ruby标准的加载路径，即$LOAD_PATH.unshift 就是把上面得出的绝对路径加到现在已经存在所有环境变量之前。  <br/>
+<br></li>
+</ol>
+
+
+<h3>二、CSV</h3>
+
+<p>书中程序：</p>
+
+<div>
+  <pre><code class='ruby'>require 'csv'
+    CSV.open('text.txt', 'r') do |person|
+      puts person.inspect
+    end</code></pre>
+</div>
+
+
+<p>该程序无法运行，提示：</p>
+
+<div>
+  <pre><code class='ruby'>&lt;#CSV io_type:File io_path:&quot;text.txt&quot; encoding:GBK lineno:0 col_sep:&quot;,
+    &quot; row_sep:&quot;n&quot; quote_char:&quot;&quot;&quot;&gt;</code></pre>
+</div>
+
+
+<p>后来百度搜索一下，得知在ruby1.9.x中CSV.open的API发生了变更，在ruby1.9.x中要想打印或者输出csv/txt的文件内容，需要按照如下的写法：</p>
+
+<div>
+  <pre><code class='ruby'>require 'csv'
+    CSV.open('text.txt', 'r') do |person|
+      person.each { |row| puts row }
+    end</code></pre>
+</div>
+
+
+<p>参考文章：</p>
+
+<p>   <a href="http://zorro.blog.51cto.com/2139862/893944">http://zorro.blog.51cto.com/2139862/893944</a>
+   <a href="http://blog.sina.com.cn/s/blog_67b5c7b7010154rn.html">http://blog.sina.com.cn/s/blog_67b5c7b7010154rn.html</a></p>
+
+			<p class="postmetadata"><a href="/Rubyonrails/2013/09/02/Ruby-require-csv.html#disqus_thread"></a><br /><br /></p>
+		</div><br />
+	  </div>
+	  
+	<div class="posts">
+		<h2><a href="/Rubyonrails/2013/08/30/Html-study.html" title="HTML初步学习">HTML初步学习</a></h2>
+		<span style="float:right">30 Aug 2013</span>
+		<div class="entry">
+			<p>我的博客已基本搭建成功，可以写博客，也增加评论功能。但是我觉得整体功能还是不太友好，比如页面的格局不是我想要的，没有常见的日历/博客分类功能，也没有go_top功能等。随着时间推移，要是内容增多，就很不方便管理。</p>
+
+<p>我讲下决定要暂时放下修改博客功能，快速系统学习HTML的原由。我在现有博客基础上，第一个意识要加的功能其实是go_top功能。因为我本身是做软件实施的，了解现场客户一些基本心里与需求。像这个满足基本功能后，下来要考虑的便是如何让客户用的舒服，享受使用的过程。于是我使用Chromuim浏览器，抓取到别人页面的go_top代码，试着放进自己的代码中，但是发现根本没有达到希望功能。我意识到，还是需要快速学习基础知识，一味的模仿，而不去学习的人，无法进行创新。此处说的有点大，呵呵。</p>
+
+<p><a href="http://www.w3school.com.cn/html/">W3Shool</a>是一个学习HTML基础知识的好地方，当然这里还有很多其它方面的内容，做的都很好，以后再讲。抽了两天时间，把HTML基础教程快速学习一遍，现在将主要内容整理出来:</p>
+
+<h3>HTML 基础</h3>
+
+<div>
+  <pre><code class='html'>&lt;html&gt;
+     &lt;head&gt;
+     &lt;title&gt;文档名称&lt;/title&gt;
+     &lt;/head&gt;
+     &lt;body&gt;
+     文档内容
+     &lt;/body&gt;
+     &lt;/html&gt;</code></pre>
+</div>
+
+
+<h3>TEXT 元素</h3>
+
+<div>
+  <pre><code class='html'>&lt;p&gt;文档段落&lt;/p&gt;
+     &lt;br&gt;换行
+     &lt;hr&gt;水平线
+     &lt;pre&gt;定义预格式化的文本&lt;/pre&gt;</code></pre>
+</div>
+
+
+<h3>HTML 逻辑格式，向浏览器传达强调的消息</h3>
+
+<div>
+  <pre><code class='html'>&lt;em&gt;斜体字&lt;/em&gt;
+     &lt;strong&gt;字体加粗&lt;/strong&gt;
+     &lt;code&gt;表示计算机源代码或者其他机器可以阅读的文本内容&lt;/code&gt;</code></pre>
+</div>
+
+
+<h3>HTML 物理格式，只是告诉浏览器的对文字操作</h3>
+
+<div>
+  <pre><code class='html'>&lt;b&gt;字体加粗&lt;/b&gt;
+     &lt;i&gt;斜体字&lt;/i&gt;</code></pre>
+</div>
+
+
+<h3>HTML 链接/锚/图片</h3>
+
+<div>
+  <pre><code class='html'>&lt;a href=&quot;http://www.example.com/&quot;&gt;这是一个链接&lt;/a&gt;
+     &lt;a href=&quot;mailto:webmaster@example.com&quot;&gt;发送邮件&lt;/a&gt;
+     &lt;a name=&quot;tips&quot;&gt;Useful Tips Section&lt;/a&gt;
+     &lt;a href=&quot;#tips&quot;&gt;Jump to the Useful Tips Section&lt;/a&gt;
+     &lt;a href=&quot;http://www.example.com/&quot;&gt;&lt;img src=&quot;URL&quot;
+     alt=&quot;破图后替换的内容&quot;&gt;&lt;/a&gt;</code></pre>
+</div>
+
+
+<h3>HTML 无序清单</h3>
+
+<div>
+  <pre><code class='html'>&lt;ul&gt;
+     &lt;li&gt;First item&lt;/li&gt;
+     &lt;li&gt;Next item&lt;/li&gt;
+     &lt;/ul&gt;</code></pre>
+</div>
+
+
+<h3>HTML 有序清单</h3>
+
+<div>
+  <pre><code class='html'>&lt;ol&gt;
+     &lt;li&gt;First item&lt;/li&gt;
+     &lt;li&gt;Next item&lt;/li&gt;
+     &lt;/ol&gt;</code></pre>
+</div>
+
+
+<h3>HTML 定义清单</h3>
+
+<div>
+  <pre><code class='html'>&lt;dl&gt;
+     &lt;dt&gt;First term&lt;/dt&gt;
+     &lt;dd&gt;Definition&lt;/dd&gt;
+     &lt;dt&gt;Next term&lt;/dt&gt;
+     &lt;dd&gt;Definition&lt;/dd&gt;
+     &lt;/dl&gt;</code></pre>
+</div>
+
+
+<h3>HTML 表格</h3>
+
+<div>
+  <pre><code class='html'>&lt;table border=&quot;1&quot;&gt;
+     &lt;tr&gt;
+       &lt;th&gt;someheader&lt;/th&gt;
+       &lt;th&gt;someheader&lt;/th&gt;
+     &lt;/tr&gt;
+     &lt;tr&gt;
+       &lt;td&gt;sometext&lt;/td&gt;
+       &lt;td&gt;sometext&lt;/td&gt;
+     &lt;/tr&gt;
+     &lt;/table&gt;</code></pre>
+</div>
+
+
+<h3>HTML 框架</h3>
+
+<div>
+  <pre><code class='html'>&lt;frameset cols=&quot;25%，75%&quot;&gt;
+       &lt;frame src=&quot;page1.htm&quot;&gt;
+       &lt;frame src=&quot;page2.htm&quot;&gt;
+     &lt;/frameset&gt;</code></pre>
+</div>
+
+
+<h3>HTML 表单</h3>
+
+<div>
+  <pre><code class='html'>&lt;from action=&quot;http://www.example.com/test.asp&quot; method=&quot;post/get&quot;&gt;
+     &lt;input type=&quot;text&quot; name=&quot;lastname&quot;
+     value=&quot;Nixon&quot; size=&quot;30&quot; maxlength=&quot;50&quot;&gt;
+     &lt;input type=&quot;password&quot;&gt;
+     &lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot;&gt;
+     &lt;input type=&quot;radio&quot; checked=&quot;checked&quot;&gt;
+     &lt;input type=&quot;submit&quot;&gt;
+     &lt;input type=&quot;reset&quot;&gt;
+     &lt;input type=&quot;hidden&quot;&gt;
+     &lt;select&gt;
+     &lt;option&gt;Apples
+     &lt;option selected&gt;Bananas
+     &lt;option&gt;Cherries
+     &lt;/select&gt;
+     &lt;textarea name=&quot;Comment&quot; rows=&quot;60&quot;
+     cols=&quot;20&quot;&gt;&lt;/textarea&gt;
+     &lt;/form&gt;</code></pre>
+</div>
+
+
+<h3>HTML 对象</h3>
+
+<div>
+  <pre><code class='html'>&amp;lt; is the same as &lt;
+     &amp;gt; is the same as &gt;
+     &amp;#169; is the same as ©</code></pre>
+</div>
+
+
+<h3>HTML 其它元素</h3>
+
+<div>
+  <pre><code class='html'>&lt;!-- This is a comment --&gt; 注释，不会在页面出现
+     &lt;blockquote&gt;
+     Text quoted from some source.
+     &lt;/blockquote&gt;
+     &lt;address&gt;
+     Address 1&lt;br&gt;
+     Address 2&lt;br&gt;
+     City&lt;br&gt;
+     &lt;/address&gt;</code></pre>
+</div>
+
+
+<p>参考文章：</p>
+
+<p>   <a href="http://www.w3school.com.cn/html/html_quick.asp">http://www.w3school.com.cn/html/html_quick.asp</a>
+   <a href="http://hi.baidu.com/snowicesky/item/3d22450b826124304ac4a311">http://hi.baidu.com/snowicesky/item/3d22450b826124304ac4a311</a></p>
+
+			<p class="postmetadata"><a href="/Rubyonrails/2013/08/30/Html-study.html#disqus_thread"></a><br /><br /></p>
+		</div><br />
+	  </div>
+	  
+	<div class="posts">
+		<h2><a href="/Tools/2013/08/29/Goodbye-xp.html" title="万恶的 XP系统">万恶的 XP系统</a></h2>
+		<span style="float:right">29 Aug 2013</span>
+		<div class="entry">
+			<p>神奇的笔记本，温度突然居高不下，CPU保持在88度左右，这是啥概念啊，鲁大师一直高温预警。我认为那应该是风扇老化，不给力了，幸好公司买了戴尔服务，可以电脑免费维修。随便说一句，戴尔电脑实在不乍滴，那公司为什么选择戴尔，多半因为服务比较好吧。此处绝对不是广告！</p>
+
+<p>原本以为换了风扇万事大吉，可本本的温度还是没有随着新风扇的到来而下降。那肯定是主板有毛病，再换一个新主板吧，反正不掏钱，换换更健康。对新主板充满期待，并寄予厚望，结果却应了“希望越大，失望越大”，温度还是维持在快90度。</p>
+
+<p>见这情况，我内心捣鼓着，燃烧吧，电脑！直接搞残废了，换一个新的更好。可是在还没彻底残废前，也不能做事不理，就试着重新装下系统，虽然内心一直认为高温和系统两者八杆子打不着的关系。重装系统后，温度还真呼呼下来了，50度，绝对可以接受的一个数值。俗话说好事多磨，哪那么容易就正常了。现在本本又出现蓝屏，插网线能PING通，不能上网等症状。蓝屏分析提示是网卡驱动不稳定导致，可按照360修复提示更新驱动，到官网也手动下载合适驱动都还不行，蓝屏偶尔还是会发生。插一句，上述的蓝屏/不能上网两个问题，只发生在家里，在公司一切正常，我真的是有理说不清。</p>
+
+<p>折腾两天蓝屏/不能上网，问题还是没有彻底解决，我真都快要疯了。破XP系统，明天再换Win7试试，要不是公司软件不支持Linux,我真打算把公司电脑也换Ubuntu了。希望明天重装后，一切正常吧，再折腾不起了啊!~</p>
+
+			<p class="postmetadata"><a href="/Tools/2013/08/29/Goodbye-xp.html#disqus_thread"></a><br /><br /></p>
+		</div><br />
+	  </div>
+	  
+	
+	<!--
+		<div class="navigation">
+        
+          
+          	<a class="num" href="/">1</a>
+          
+        
+          
+          	<a class="num" href="/page2/">2</a>
+          
+        
+          
+          	<a class="num" href="/page3/">3</a>
+          
+        
+          
+          	<a class="num" href="/page4/">4</a>
+          
+        
+          
+          	<span class="num">5</span>
+          
+        
+          
+          	<a class="num" href="/page6/">6</a>
+          
+        
+          
+          	<a class="num" href="/page7/">7</a>
+          
+        
+		</div>
+  -->
+  
+  
+  	
+  		<a href="/page4" rel="bookmark"> << Previous Page</a>
+  	
+  
+  
+  	<a href="/page6" rel="bookmark" style="float:right">Next Page >></a>
+  
+
+					
+				</div>
+				<div class="sidebar">
+					<ul>
+						<li>
+							<h2>Google Search</h2>
+							<form method="get" action="http://www.google.com/search" target="google_window">
+								<label class="hidden" for="s">Search...</label>
+								<div>	
+				    			<input type="text" value="Search..." name="q" id="s" onfocus="if (this.value == 'Search...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search...';}">
+				    			<input type="submit" name="btnG" id="searchsubmit" value="">
+								</div>
+								<input type="hidden" name="ie" value="UTF-8″ />
+								<input type="hidden" name="oe" value="UTF-8″ />
+								<input type="hidden" name="hl" value="zh-CN" />
+								<input type="hidden" name="domains" value="http://www.wangyaojia.com" />
+								<input type="hidden" name="sitesearch" value="http://www.wangyaojia.com" />
+							</form>
+							<h2>Calendar</h2>
+								<script language="javascript" type="text/javascript">
+									calendar();
+								</script>
+							<h2>Categories</h2>
+								<ul>
+									
+									<li class="cat-item cat-item-18"><a href="/category/Rubyonrails/Rubyonrails.html" title="View all posts filed under Rubyonrails">Rubyonrails (18)</a></li>
+									
+									<li class="cat-item cat-item-1"><a href="/category/gztour/gztour.html" title="View all posts filed under gztour">gztour (1)</a></li>
+									
+									<li class="cat-item cat-item-14"><a href="/category/Tools/Tools.html" title="View all posts filed under Tools">Tools (14)</a></li>
+									
+								</ul>
+							<h2>Archives</h2>
+								<ul>
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+							        <li><a href="/archive/
+											2014
+										/
+											2014
+										.html">
+											2014
+										</a></li>
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+							        <li><a href="/archive/
+											2013
+										/
+											2013
+										.html">
+											2013
+										</a></li>
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+								</ul>
+							<h2>Related Posts</h2>
+								<ul>
+									
+								</ul>
+							<div id="recentcomments" class="dsq-widget">
+								<h2 class="dsq-widget-title">Recent Comments</h2>
+								<script type="text/javascript" src="http://wangyaojiablog.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=200"></script>
+							</div>
+						</li>        
+					</ul>
+				</div>	
+				<div class="clear_float"></div>
+			</div>		
+		</div>
+		<script type="text/javascript" defer>if(VeryCD.gotop) VeryCD.gotop.ini();</script>
+		<div id="footer">
+    	<p class="credit">Theme by <a href="http://www.wangyaojia.com/" rel="nofollow">wangyzyoga</a></p>
+    	<p class="legal">Copyright © 2013 <a href="http://www.wangyaojia.com" rel="nofollow">WangYaojia-Blog</a>&nbsp;&nbsp;</p>
+    	<p>&nbsp;</p>  
+		</div>
+	<a href="http://github.com/wangyzyoga"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+	<script type="text/javascript" src="/js/prettify.js"></script>
+	<script type="text/javascript" src="/js/jquery-1.9.1.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		// google-code-prettify
+		prettyPrint();
+		
+		$('a#about-toggle').click(function() {
+			$('#header').slideToggle(400);
+			return false;
+		});
+		
+		$('a#contact-toggle').click(function() {
+			$('#weibo').slideToggle(400);
+			$('#github').slideToggle(400);
+			$('#facebook').slideToggle(400);
+			$('#twitter').slideToggle(400);
+			$('#gmail').slideToggle(400);
+			return false;
+		});
+		
+		$('a#archive-toggle').click(function() {
+			$('#archive_posts').slideToggle(400);
+			return false;
+		});
+	});
+	</script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-45805822-1']);
+      _gaq.push(['_trackPageview']);
+
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+    </script>
+
+	<script type="text/javascript">
+		/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'wangyaojiablog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+
+   <!-- UJian Button BEGIN
+   <div class="ujian-hook"></div>
+   <script type="text/javascript">var ujian_config = {num:8,showType:3};</script>
+   <script type="text/javascript" src="http://v1.ujian.cc/code/ujian.js?uid=1866619"></script>
+   <a href="http://www.ujian.cc" style="border:0;"><img src="http://img.ujian.cc/pixel.png" alt="友荐云推荐" style="border:0;padding:0;margin:0;" /></a>
+   UJian Button END -->
+
+	<script>
+    (function(d, t) {
+    var g = d.createElement(t),
+    s = d.getElementsByTagName(t)[0];
+    g.async = true;
+    g.src = 'https://apis.google.com/js/plusone.js';
+    s.parentNode.insertBefore(g, s);
+    })(document, 'script');
+  </script>
+
+  <!-- Baidu Button BEGIN -->
+  <script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=6&amp;pos=right&amp;uid=6867463" ></script>
+  <script type="text/javascript" id="bdshell_js"></script>
+  <script type="text/javascript">
+  document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+  </script>
+  <!-- Baidu Button END -->
+
+	</body>
+</html>

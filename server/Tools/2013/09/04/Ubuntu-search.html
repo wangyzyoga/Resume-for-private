@@ -1,0 +1,855 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
+   	<title>
+   		
+          WangYaojia-Blog
+          
+		</title>  	
+   	<meta name="generator" content="Jekyll" />
+    <meta name="author" content="wangyzyoga" />
+    <meta name="description" content="Wangyzyoga Love Open Source" />
+		
+		<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+   	    <link rel="stylesheet" href="/css/syntax.css" type="text/css" media="screen" />	
+		<link rel="stylesheet" href="/css/default.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/css/global.css" type="text/css" media="all" />
+			
+		<script type="text/javascript" src="/js/yahoo.js"></script>
+		<script type="text/javascript" src="/js/global.js"></script>	
+		<script type="text/javascript" src="/js/calendar.js"></script>	
+	</head>
+
+	<body>
+		<div id="header_wrapper">
+			<div id="nav_background">
+      	<div id="navigation">
+        	<ul>
+          	<li class="menu"><a href="http://www.wangyaojia.com">Home</a><a id="archive-toggle" href="#">Archive</a><a id="contact-toggle" href="#">Contact</a><a id="about-toggle" href="#">About</a></li>
+        	</ul>
+				</div>
+				<div class="clear_float"></div>
+			</div>
+			<div id="header">
+         <FONT style="FONT-SIZE: 25pt; WIDTH: 100%; LINE-HEIGHT: 100%; FONT-FAMILY: 华文行楷"> 
+           <B><EM>Wangyzyoga Go For Open Source</EM></B>
+         </FONT>
+				<table>
+	<tr>
+		<td><a href="http://weibo.com/wangyzyoga" id="weibo" style="display:none" target="_blank" title="weibo" rel="nofollow"><img src="/images/sina.png" /></a></td>
+		<td><a href="https://github.com/wangyzyoga" id="github" style="display:none" target="_blank" title="github" rel="nofollow"><img src="/images/github.png" /></a></td>
+		<td><a href="http://www.facebook.com/wangyzyoga" id="facebook" style="display:none" target="_blank" title="facebook" rel="nofollow"><img src="/images/facebook.png" /></a></td>
+		<td><a href="https://twitter.com/#!/wangyzyoga" id="twitter" style="display:none" target="_blank" title="twitter" rel="nofollow"><img src="/images/twitter.png" /></a></td>
+		<td><a href="https://wangyzyoga@gmail.com" id="gmail" style="display:none" target="_blank" title="gmail" rel="nofollow"><img src="/images/gmail.png" /></a></td>
+	</tr>
+</table>
+			</div>
+		</div>
+		<div id="background_container">
+			<div id="content_container">
+				<div id="container">
+					<div id="archive_posts" style="display:none">
+					   <ul>
+		    			
+		      			<li><span>27 May 2014</span> &raquo; <a href="/Tools/2014/05/27/Ubuntu-share-wifi.html">Ubuntu中创建Android手机识别Wifi</a></li>
+		    			
+		      			<li><span>25 May 2014</span> &raquo; <a href="/Tools/2014/05/25/ThinkpadT440p-use-wifi.html">解决ThinkpadT440p无线网卡驱动问题-Ubuntu13.10</a></li>
+		    			
+		      			<li><span>03 Dec 2013</span> &raquo; <a href="/Rubyonrails/2013/12/03/Ruby-Keywords.html">Ruby中部分Keywords的含义及用法</a></li>
+		    			
+		      			<li><span>03 Dec 2013</span> &raquo; <a href="/Rubyonrails/2013/12/03/Ruby-Basicdatatypes.html">Ruby的基本数据类型</a></li>
+		    			
+		      			<li><span>24 Nov 2013</span> &raquo; <a href="/Tools/2013/11/24/Ubuntu-postgresql.html">Ubuntu12.04下安装与配置PostgreSQL-9.1详解</a></li>
+		    			
+		      			<li><span>24 Nov 2013</span> &raquo; <a href="/Rubyonrails/2013/11/24/Ruby-postgresql.html">Rails中使用PostgreSQL数据库经常遇到两个问题</a></li>
+		    			
+		      			<li><span>21 Nov 2013</span> &raquo; <a href="/Rubyonrails/2013/11/21/Ruby-yield.html">Ruby中yield的用法</a></li>
+		    			
+		      			<li><span>18 Nov 2013</span> &raquo; <a href="/Rubyonrails/2013/11/18/Ruby-self.html">Ruby中self各种含义诠释</a></li>
+		    			
+		      			<li><span>13 Nov 2013</span> &raquo; <a href="/Tools/2013/11/13/Vim-three-plug-in.html">Vim中常用三个插件（nerdtree/ctrlp/ack）</a></li>
+		    			
+		      			<li><span>12 Nov 2013</span> &raquo; <a href="/Tools/2013/11/12/Vim-split-screen.html">Vim中分屏操作大全详解</a></li>
+		    			
+		  			   </ul>
+					</div>
+					
+						<div class="posts">
+		<h2><a href="/Tools/2013/09/04/Ubuntu-search.html" title="Ubuntu系统中查找文件和字符命令介绍">Ubuntu系统中查找文件和字符命令介绍</a> <g:plusone size="medium"></g:plusone></h2>
+		<span style="float:right">04 Sep 2013</span>
+		<div class="entry">
+			<p>在刚开始接触Ubuntu的时候，通常会遇到自己建立的文件不知道放在硬盘的什么地方，这就需要掌握一些搜索命令，快速找到我们想找的文件。下来我们以查找文件和查找字符两大类，对find、locate、which、grep四种命令进行介绍。</p>
+
+<h2>一、查找文件</h2>
+
+<h3>1、find命令</h3>
+
+<p><strong>1.1 find的语法：</strong></p>
+
+<div>
+  <pre><code class='ruby'>find [起始目录] 寻找条件 操作
+    find PATH OPTION [-exec COMMAND { } \;]</code></pre>
+</div>
+
+
+<p><strong>该命令中的寻找条件可以是一个用逻辑运算符not、and、or组成的复合条件,逻辑运算符and、or、not的含义为：</strong></p>
+
+<p>and：逻辑与，在命令中用“-a”表示，是系统缺省的选项，表示只有当所给的条件都满足时，寻找条件才算满足。例如:</p>
+
+<div>
+  <pre><code class='ruby'>find –name ’tmp’ –xtype c -user ’inin’</code></pre>
+</div>
+
+
+<p>该命令寻找三个给定条件都满足的所有文件。</p>
+
+<p>or：逻辑或，在命令中用“-o”表示。该运算符表示只要所给的条件中有一个满足时，寻找条件就算满足。例如:</p>
+
+<div>
+  <pre><code class='ruby'>find –name ’tmp’ –o –name ’mina*’</code></pre>
+</div>
+
+
+<p>该命令查询文件名为’tmp’或是匹配’mina*’的所有文件。</p>
+
+<p>not：逻辑非，在命令中用“!”表示。该运算符表示查找不满足所给条件的文件。例如:</p>
+
+<div>
+  <pre><code class='ruby'>find ! –name ’tmp’</code></pre>
+</div>
+
+
+<p>该命令查询文件名不是’tmp’的所有文件。</p>
+
+<p>需要说明的是：当使用很多的逻辑选项时，可以用括号把这些选项括起来。例如：</p>
+
+<div>
+  <pre><code class='ruby'>find (–name ’tmp’ –xtype c -user ’inin’ )</code></pre>
+</div>
+
+
+<p><strong>1.2 在option中，具体有参数：</strong></p>
+
+<p>-name ’字串’ 查找文件名匹配所给字串的所有文件，字串内可用通配符 *、?、[ ]。</p>
+
+<p>-lname ’字串’ 查找文件名匹配所给字串的所有符号链接文件，字串内可用通配符 *、?、[ ]。</p>
+
+<p>-gid n 查找属于ID号为 n 的用户组的所有文件。</p>
+
+<p>-uid n 查找属于ID号为 n 的用户的所有文件。</p>
+
+<p>-group ’字串’ 查找属于用户组名为所给字串的所有的文件。</p>
+
+<p>-user ’字串’ 查找属于用户名为所给字串的所有的文件。</p>
+
+<p>-empty 查找大小为 0的目录或文件。</p>
+
+<p>-path ’字串’ 查找路径名匹配所给字串的所有文件，字串内可用通配符*、?、[ ]。</p>
+
+<p><strong>1.3 我们再看一下exec选项：</strong></p>
+
+<p>-exec：对搜索的结构指令指定的shell命令。注意格式要正确："-exec 命令 {} \;"</p>
+
+<p>在}和\之间一定要有空格才行;{}表示命令的参数即为所找到的文件;命令的末尾必须以“\;”结束。</p>
+
+<p>例如：对root以及子目录查找不包括目录/root/bin的，greek用户的，文件类型为普通文件的，3天之前的名为test-find.c的文件进行删除操作，命令如下：</p>
+
+<div>
+  <pre><code class='ruby'>find / -name &quot;test-find.c&quot; -type f -mtime +3 -user greek -prune /root/bin -exec rm {} \;</code></pre>
+</div>
+
+
+<p>find命令指令实例：</p>
+
+<div>
+  <pre><code class='ruby'>find . - name ‘main*’ - exec more {} \;</code></pre>
+</div>
+
+
+<p>查找当前目录中所有以main开头的文件，并显示这些文件的内容。</p>
+
+<div>
+  <pre><code class='ruby'>find . (- name a.out - o - name ‘*.o’)&gt; - atime +7 - exec rm {} \;</code></pre>
+</div>
+
+
+<p>删除当前目录下所有一周之内没有被访问过的a .out或*.o文件。</p>
+
+<p>命令中的“.”表示当前目录，此时 find 将从当前目录开始，逐个在其子目录中查找满足后面指定条件的文件。</p>
+
+<p>“-name a.out” 是指要查找名为a.out的文件;</p>
+
+<p>“-name ‘*.o’” 是指要查找所有名字以 .o 结尾的文件。</p>
+
+<p>这两个 -name 之间的 -o 表示逻辑或(or)，即查找名字为a.out或名字以 .o结尾的文件。</p>
+
+<p>find命令在当前目录及其子目录下找到这佯的文件之后，再进行判断，看其最后访问时间是否在7天以前(条件 -atime +7)，若是，则对该文件执行命令rm(-exec rm {} \;)。</p>
+
+<p>其中 {} 代表当前查到的符合条件的文件名，\;则是语法所要求的。</p>
+
+<h3>2、locate命令</h3>
+
+<p>locate命令其实是“find -name”的另一种写法，但是要比后者快得多，原因在于它不搜索具体目录，而是搜索一个数据库（/var/lib/locatedb），这个数据库中含有本地所有文件信息。Linux系统自动创建这个数据库，并且每天自动更新一次，所以使用locate命令查不到最新变动过的文件。为了避免这种情况，可以在使用locate之前，先使用'sudo updatedb'命令，手动更新数据库。</p>
+
+<p><strong>locate常用写法：</strong></p>
+
+<div>
+  <pre><code class='ruby'>locate filename</code></pre>
+</div>
+
+
+<p>locate命令的使用实例：</p>
+
+<div>
+  <pre><code class='ruby'>locate /etc/sh</code></pre>
+</div>
+
+
+<p>搜索etc目录下所有以sh开头的文件。</p>
+
+<div>
+  <pre><code class='ruby'>locate ~/m</code></pre>
+</div>
+
+
+<p>搜索用户主目录下，所有以m开头的文件。</p>
+
+<div>
+  <pre><code class='ruby'>locate -i ~/m</code></pre>
+</div>
+
+
+<p>搜索用户主目录下，所有以m开头的文件，并且忽略大小写。</p>
+
+<h3>3、which命令</h3>
+
+<p>根据可执行文件的文件名,查找可执行文件。</p>
+
+<p><strong>which常用写法：</strong></p>
+
+<div>
+  <pre><code class='ruby'>which executeable_name</code></pre>
+</div>
+
+
+<p>例如:</p>
+
+<div>
+  <pre><code class='ruby'>which apache2</code></pre>
+</div>
+
+
+<p>返回/usr/sbin/apache2</p>
+
+<h2>二、查找字符</h2>
+
+<h3>4、grep命令</h3>
+
+<p>grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来。grep全称是Global Regular Expression Print，表示全局正则表达式版本，它的使用权限是所有用户。</p>
+
+<p><strong>4.1 grep的语法：</strong></p>
+
+<div>
+  <pre><code class='ruby'>语法: grep [options] PATTERN [FILE...]</code></pre>
+</div>
+
+
+<p><strong>4.2 [options]主要参数：</strong></p>
+
+<blockquote><p>－c：只输出匹配行的计数。</p>
+
+<p>－I：不区分大 小写(只适用于单字符)。</p>
+
+<p>－h：查询多文件时不显示文件名。</p>
+
+<p>－l：查询多文件时只输出包含匹配字符的文件名。</p>
+
+<p>－n：显示匹配行及 行号。</p>
+
+<p>－s：不显示不存在或无匹配文本的错误信息。</p>
+
+<p>－v：显示不包含匹配文本的所有行。</p></blockquote>
+
+<p><strong>4.3 PATTERN主要参数：</strong></p>
+
+<p>\： 忽略正则表达式中特殊字符的原有含义。</p>
+
+<p>^：匹配正则表达式的开始行。</p>
+
+<p>$: 匹配正则表达式的结束行。</p>
+
+<p>\&lt;：从匹配正则表达 式的行开始。</p>
+
+<p>>：到匹配正则表达式的行结束。</p>
+
+<p>[ ]：单个字符，如[A]即A符合要求 。</p>
+
+<p>[ - ]：范围，如[A-Z]，即A、B、C一直到Z都符合要求 。</p>
+
+<p>。：所有的单个字符。</p>
+
+<p>* ：有字符，长度可以为0。</p>
+
+<p><strong>4.4 grep命令使用简单实例</strong></p>
+
+<div>
+  <pre><code class='ruby'>grep ‘test’ d*</code></pre>
+</div>
+
+
+<p>显示所有以d开头的文件中包含 test的行。</p>
+
+<div>
+  <pre><code class='ruby'>grep ‘test’ aa bb cc</code></pre>
+</div>
+
+
+<p>显示在aa，bb，cc文件中匹配test的行。</p>
+
+<div>
+  <pre><code class='ruby'>grep ‘[a-z]\{5\}’ aa</code></pre>
+</div>
+
+
+<p>显示所有包含每个字符串至少有5个连续小写字符的字符串的行。</p>
+
+<div>
+  <pre><code class='ruby'>grep ‘w\(es\)t.*\1′ aa</code></pre>
+</div>
+
+
+<p>如果west被匹配，则es就被存储到内存中，并标记为1，然后搜索任意个字符(.<em>)，这些字符后面紧跟着 另外一个es(\1)，找到就显示该行。如果用egrep或grep -E，就不用”\”号进行转义，直接写成’w(es)t.</em>\1′就可以了。</p>
+
+<p><strong>4.5 grep命令使用复杂实例</strong></p>
+
+<p>假设在’/usr/src/Linux/Doc’目录下搜索带字符 串’magic’的文件：</p>
+
+<div>
+  <pre><code class='ruby'>grep magic /usr/src/Linux/Doc/*
+    sysrq.txt:* How do I enable the magic SysRQ key?
+    sysrq.txt:* How do I use the magic SysRQ key?</code></pre>
+</div>
+
+
+<p>其中文件’sysrp.txt’包含该字符串，讨论的是SysRQ的功能。
+默认情况下，’grep’只搜索当前目录。如果此目录下有许多子目录，’grep’会以如下形式列出：</p>
+
+<div>
+  <pre><code class='ruby'>grep: sound: Is a directory</code></pre>
+</div>
+
+
+<p>这可能会使’grep’ 的输出难于阅读。这里有两种解决的办法：
+明确要求搜索子目录：grep -r
+或忽略子目录：grep -d skip
+如果有很多输出时，可以通过管道将其转到’less’上阅读：</p>
+
+<div>
+  <pre><code class='ruby'>grep magic /usr/src/Linux/Documentation/* | less</code></pre>
+</div>
+
+
+<p>这样，就可以更方便地阅读。</p>
+
+<p>有一点要注意，必需提供一个文件过滤方式(搜索全部文件的话用 *)。如果忘了，’grep’会一直等着，直到该程序被中断。如果遇到了这样的情况，按 <CTRL c> ，然后再试。</p>
+
+			<p class="postmetadata">
+				<div id="disqus_thread"></div>
+				<script type="text/javascript">
+				    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+				    var disqus_shortname = 'wangyaojiablog'; // required: replace example with your forum shortname
+				
+				    /* * * DON'T EDIT BELOW THIS LINE * * */
+				    (function() {
+				        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+				        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				    })();
+				</script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-45805822-1']);
+      _gaq.push(['_trackPageview']);
+
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+    </script>
+				
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		</p>
+		</div>
+
+		<div class="navigation">
+	    
+	      <a class="next" href="/Rubyonrails/2013/09/06/Rails-new-blog.html" rel="bookmark">&laquo;&nbsp;Rails4.0建立博客遇到问题一</a>
+	    
+	    
+	    	<a class="prev" href="/Rubyonrails/2013/09/02/Ruby-require-csv.html" rel="bookmark" style="float:right">Ruby从入门到精通 学习记录二(require/CSV)&nbsp;&raquo;</a>
+	    
+  	    </div>
+  </div>
+					
+				</div>
+				<div class="sidebar">
+					<ul>
+						<li>
+							<h2>Google Search</h2>
+							<form method="get" action="http://www.google.com/search" target="google_window">
+								<label class="hidden" for="s">Search...</label>
+								<div>	
+				    			<input type="text" value="Search..." name="q" id="s" onfocus="if (this.value == 'Search...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search...';}">
+				    			<input type="submit" name="btnG" id="searchsubmit" value="">
+								</div>
+								<input type="hidden" name="ie" value="UTF-8″ />
+								<input type="hidden" name="oe" value="UTF-8″ />
+								<input type="hidden" name="hl" value="zh-CN" />
+								<input type="hidden" name="domains" value="http://www.wangyaojia.com" />
+								<input type="hidden" name="sitesearch" value="http://www.wangyaojia.com" />
+							</form>
+							<h2>Calendar</h2>
+								<script language="javascript" type="text/javascript">
+									calendar();
+								</script>
+							<h2>Categories</h2>
+								<ul>
+									
+									<li class="cat-item cat-item-18"><a href="/category/Rubyonrails/Rubyonrails.html" title="View all posts filed under Rubyonrails">Rubyonrails (18)</a></li>
+									
+									<li class="cat-item cat-item-1"><a href="/category/gztour/gztour.html" title="View all posts filed under gztour">gztour (1)</a></li>
+									
+									<li class="cat-item cat-item-14"><a href="/category/Tools/Tools.html" title="View all posts filed under Tools">Tools (14)</a></li>
+									
+								</ul>
+							<h2>Archives</h2>
+								<ul>
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+							        <li><a href="/archive/
+											2014
+										/
+											2014
+										.html">
+											2014
+										</a></li>
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+							        <li><a href="/archive/
+											2013
+										/
+											2013
+										.html">
+											2013
+										</a></li>
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+										
+										
+	
+								    
+								      
+								    
+							      
+									  
+									
+								</ul>
+							<h2>Related Posts</h2>
+								<ul>
+									
+						  			<li><span>27 May 2014</span> &raquo; <a href="/Tools/2014/05/27/Ubuntu-share-wifi.html">Ubuntu中创建Android手机识别Wifi</a></li>
+									
+						  			<li><span>25 May 2014</span> &raquo; <a href="/Tools/2014/05/25/ThinkpadT440p-use-wifi.html">解决ThinkpadT440p无线网卡驱动问题-Ubuntu13.10</a></li>
+									
+						  			<li><span>03 Dec 2013</span> &raquo; <a href="/Rubyonrails/2013/12/03/Ruby-Keywords.html">Ruby中部分Keywords的含义及用法</a></li>
+									
+						  			<li><span>03 Dec 2013</span> &raquo; <a href="/Rubyonrails/2013/12/03/Ruby-Basicdatatypes.html">Ruby的基本数据类型</a></li>
+									
+						  			<li><span>24 Nov 2013</span> &raquo; <a href="/Tools/2013/11/24/Ubuntu-postgresql.html">Ubuntu12.04下安装与配置PostgreSQL-9.1详解</a></li>
+									
+								</ul>
+							<div id="recentcomments" class="dsq-widget">
+								<h2 class="dsq-widget-title">Recent Comments</h2>
+								<script type="text/javascript" src="http://wangyaojiablog.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=200"></script>
+							</div>
+						</li>        
+					</ul>
+				</div>	
+				<div class="clear_float"></div>
+			</div>		
+		</div>
+		<script type="text/javascript" defer>if(VeryCD.gotop) VeryCD.gotop.ini();</script>
+		<div id="footer">
+    	<p class="credit">Theme by <a href="http://www.wangyaojia.com/" rel="nofollow">wangyzyoga</a></p>
+    	<p class="legal">Copyright © 2013 <a href="http://www.wangyaojia.com" rel="nofollow">WangYaojia-Blog</a>&nbsp;&nbsp;</p>
+    	<p>&nbsp;</p>  
+		</div>
+	<a href="http://github.com/wangyzyoga"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+	<script type="text/javascript" src="/js/prettify.js"></script>
+	<script type="text/javascript" src="/js/jquery-1.9.1.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		// google-code-prettify
+		prettyPrint();
+		
+		$('a#about-toggle').click(function() {
+			$('#header').slideToggle(400);
+			return false;
+		});
+		
+		$('a#contact-toggle').click(function() {
+			$('#weibo').slideToggle(400);
+			$('#github').slideToggle(400);
+			$('#facebook').slideToggle(400);
+			$('#twitter').slideToggle(400);
+			$('#gmail').slideToggle(400);
+			return false;
+		});
+		
+		$('a#archive-toggle').click(function() {
+			$('#archive_posts').slideToggle(400);
+			return false;
+		});
+	});
+	</script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-45805822-1']);
+      _gaq.push(['_trackPageview']);
+
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+    </script>
+
+	<script type="text/javascript">
+		/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'wangyaojiablog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+
+   <!-- UJian Button BEGIN
+   <div class="ujian-hook"></div>
+   <script type="text/javascript">var ujian_config = {num:8,showType:3};</script>
+   <script type="text/javascript" src="http://v1.ujian.cc/code/ujian.js?uid=1866619"></script>
+   <a href="http://www.ujian.cc" style="border:0;"><img src="http://img.ujian.cc/pixel.png" alt="友荐云推荐" style="border:0;padding:0;margin:0;" /></a>
+   UJian Button END -->
+
+	<script>
+    (function(d, t) {
+    var g = d.createElement(t),
+    s = d.getElementsByTagName(t)[0];
+    g.async = true;
+    g.src = 'https://apis.google.com/js/plusone.js';
+    s.parentNode.insertBefore(g, s);
+    })(document, 'script');
+  </script>
+
+  <!-- Baidu Button BEGIN -->
+  <script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=6&amp;pos=right&amp;uid=6867463" ></script>
+  <script type="text/javascript" id="bdshell_js"></script>
+  <script type="text/javascript">
+  document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+  </script>
+  <!-- Baidu Button END -->
+
+	</body>
+</html>
